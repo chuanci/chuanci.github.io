@@ -565,6 +565,169 @@ public void reverse() {
             
               
                 
+                <a class="post-title-link" href="/2016/05/20/Java注解/" itemprop="url">
+                  Java注解
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-20T22:23:08+08:00" content="2016-05-20">
+              2016-05-20
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Java注解"><a href="#Java注解" class="headerlink" title="Java注解"></a>Java注解</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>注解（Annotation），也叫元数据。一种代码级别的说明。它是JDK1.5及以后版本引入的一个特性，与类、接口、枚举是在同一个层次。它可以声明在包、类、字段、方法、局部变量、方法参数等的前面，用来对这些元素进行说明，注释.</p>
+<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><ol>
+<li>编写文档：通过代码里标识的元数据生成文档【生成文档doc文档】</li>
+<li>代码分析：通过代码里标识的元数据对代码进行分析【使用反射】</li>
+<li>编译检查：通过代码里标识的元数据让编译器能够实现基本的编译检查【Override】</li>
+</ol>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><h3 id="基本内置注解"><a href="#基本内置注解" class="headerlink" title="基本内置注解"></a>基本内置注解</h3><h4 id="Override"><a href="#Override" class="headerlink" title="@Override"></a>@Override</h4><p>它的作用是对覆盖超类中方法的方法进行标记，如果被标记的方法并没有实际覆盖超类中的方法，则编译器会发出错误警告。</p>
+<h4 id="Deprecated"><a href="#Deprecated" class="headerlink" title="@Deprecated"></a>@Deprecated</h4><p>它的作用是对不应该再使用的方法添加注解，当编程人员使用这些方法时，将会在编译时显示提示信息，它与javadoc里的@deprecated标记有相同的功能，准确的说，它还不如javadoc @deprecated，因为它不支持参数.</p>
+<h4 id="SuppressWarnings"><a href="#SuppressWarnings" class="headerlink" title="@SuppressWarnings"></a>@SuppressWarnings</h4><p>其参数有：</p>
+<ul>
+<li>deprecation，使用了过时的类或方法时的警告</li>
+<li>unchecked，执行了未检查的转换时的警告</li>
+<li>fallthrough，当 switch 程序块直接通往下一种情况而没有 break 时的警告</li>
+<li>path，在类路径、源文件路径等中有不存在的路径时的警告</li>
+<li>serial，当在可序列化的类上缺少serialVersionUID 定义时的警告</li>
+<li>finally ，任何 finally 子句不能正常完成时的警告</li>
+<li>all，关于以上所有情况的警告</li>
+</ul>
+<h3 id="元注解"><a href="#元注解" class="headerlink" title="元注解"></a>元注解</h3><p>元注解:注解的注解  </p>
+<ul>
+<li>@Target</li>
+<li>@Retention</li>
+<li>@Documented</li>
+<li>@Inherited</li>
+</ul>
+<h4 id="target"><a href="#target" class="headerlink" title="@target"></a>@target</h4><p>用于描述注解的使用范围（即：被描述的注解可以用在什么地方）</p>
+<ul>
+<li>CONSTRUCTOR:用于描述构造器</li>
+<li>FIELD:用于描述域</li>
+<li>LOCAL_VARIABLE:用于描述局部变量</li>
+<li>METHOD:用于描述方法</li>
+<li>PACKAGE:用于描述包</li>
+<li>PARAMETER:用于描述参数</li>
+<li>TYPE:用于描述类、接口(包括注解类型) 或enum声明</li>
+</ul>
+<h4 id="Retention"><a href="#Retention" class="headerlink" title="@Retention"></a>@Retention</h4><p>表示需要在什么级别保存该注释信息，用于描述注解的生命周期（即：被描述的注解在什么范围内有效）</p>
+<ul>
+<li>SOURCE:在源文件中有效（即源文件保留）</li>
+<li>CLASS:在class文件中有效（即class保留）</li>
+<li>RUNTIME:在运行时有效（即运行时保留）</li>
+</ul>
+<h4 id="Documented"><a href="#Documented" class="headerlink" title="@Documented"></a>@Documented</h4><p>用于描述其它类型的annotation应该被作为被标注的程序成员的公共API，因此可以被例如javadoc此类的工具文档化。Documented是一个标记注解，没有成员。</p>
+<h4 id="Inherited"><a href="#Inherited" class="headerlink" title="@Inherited"></a>@Inherited</h4><p>阐述了某个被标注的类型是被继承的。如果一个使用了@Inherited修饰的annotation类型被用于一个class，则这个annotation将被用于该class的子类。</p>
+<p>注意：@Inherited annotation类型是被标注过的class的子类所继承。类并不从它所实现的接口继承annotation，方法并不从它所重载的方法继承annotation。</p>
+<p>当@Inherited annotation类型标注的annotation的Retention是RetentionPolicy.RUNTIME，则反射API增强了这种继承性。如果我们使用java.lang.reflect去查询一个@Inherited annotation类型的annotation时，反射代码检查将展开工作：检查class和其父类，直到发现指定的annotation类型被发现，或者到达类继承结构的顶层。</p>
+<h3 id="自定义注解"><a href="#自定义注解" class="headerlink" title="自定义注解"></a>自定义注解</h3><h4 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h4><p>public @interface 注解名 {定义体}</p>
+<h4 id="注解参数可支持的数据类型"><a href="#注解参数可支持的数据类型" class="headerlink" title="注解参数可支持的数据类型"></a>注解参数可支持的数据类型</h4><ul>
+<li>所有基本数据类型（int,float,boolean,byte,double,char,long,short)</li>
+<li>String类型</li>
+<li>Class类型</li>
+<li>enum类型</li>
+<li>Annotation类型</li>
+<li>以上所有类型的数组</li>
+</ul>
+<h5 id="Annotation类型里面的参数该怎么设定"><a href="#Annotation类型里面的参数该怎么设定" class="headerlink" title="Annotation类型里面的参数该怎么设定:"></a>Annotation类型里面的参数该怎么设定:</h5><ol>
+<li>只能用public或默认(default)这两个访问权修饰.例如,String value();这里把方法设为defaul默认类型；　</li>
+<li>参数成员只能用基本类型byte,short,char,int,long,float,double,boolean八种基本数据类型和 String,Enum,Class,annotations等数据类型,以及这一些类型的数组.例如,String value();这里的参数成员就为String;　</li>
+<li>,如果只有一个参数成员,最好把参数名称设为”value”,后加小括号.例:下面的例子FruitName注解就只有一个参数成员。</li>
+</ol>
+<h4 id="注解元素的默认值"><a href="#注解元素的默认值" class="headerlink" title="注解元素的默认值"></a>注解元素的默认值</h4><p>注解元素必须有确定的值，要么在定义注解的默认值中指定，要么在使用注解时指定，非基本类型的注解元素的值不可为null。因此, 使用空字符串或0作为默认值是一种常用的做法。这个约束使得处理器很难表现一个元素的存在或缺失的状态，因为每个注解的声明中，所有元素都存在，并且都具有相应的值，为了绕开这个约束，我们只能定义一些特殊的值，例如空字符串或者负数，一次表示某个元素不存在，在定义注解时，这已经成为一个习惯用法。</p>
+<h3 id="注解处理器"><a href="#注解处理器" class="headerlink" title="注解处理器"></a>注解处理器</h3><p>注意：要想使用反射去读取注解，必须将Retention的值选为Runtime</p>
+<pre><code>public class TitleUtils {
+        public static String getTitle(Class&lt;Title&gt; clazz){
+        if(clazz.isAnnotationPresent(Title.class)){
+            Title annotation = clazz.getAnnotation(Title.class);
+            return annotation.value();
+        }
+        return null;
+        }
+}
+</code></pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/04/02/Android控件-Toast/" itemprop="url">
                   Android控件---Toast
                 </a>
@@ -907,7 +1070,7 @@ toast.show();
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -917,7 +1080,7 @@ toast.show();
           
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>
