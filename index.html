@@ -238,8 +238,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/05/30/android属性动画/" itemprop="url">
-                  android属性动画
+                <a class="post-title-link" href="/2016/05/30/Android属性动画/" itemprop="url">
+                  Android属性动画
                 </a>
               
             
@@ -544,6 +544,131 @@ public void reverse() {
 
 
     
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/04/02/Android控件-Toast/" itemprop="url">
+                  Android控件---Toast
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-02T19:21:39+08:00" content="2016-04-02">
+              2016-04-02
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Toast"><a href="#Toast" class="headerlink" title="Toast"></a>Toast</h1><p>一个可视控件,用于向用户显示一些提示.</p>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ol>
+<li>只需要一个Context,就可以使用.所以在Service中也能用.</li>
+<li>要在主线程中调用.</li>
+</ol>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ul>
+<li>Toast.makeText(context,text,duration);//返回一个toast</li>
+<li>toast.setDuration(duration);//设置持续时间</li>
+<li>toast.setGravity(gravity,xOffset,yOffset);//设置显示位置</li>
+<li>toast.setText(s);//设置显示内容</li>
+<li>toast.show;//显示</li>
+</ul>
+<h2 id="几种Toast"><a href="#几种Toast" class="headerlink" title="几种Toast"></a>几种Toast</h2><h3 id="默认Toast"><a href="#默认Toast" class="headerlink" title="默认Toast"></a>默认Toast</h3><p><img src="http://ob8b0pedx.bkt.clouddn.com/toast1.png" alt=""></p>
+<pre><code>Toast.makeText(MainActivity.this, getString(R.string.toast1), Toast.LENGTH_SHORT).show();
+</code></pre><h3 id="带图片的Toast"><a href="#带图片的Toast" class="headerlink" title="带图片的Toast"></a>带图片的Toast</h3><p><img src="http://ob8b0pedx.bkt.clouddn.com/toast2.png" alt=""></p>
+<pre><code>Toast toast = Toast.makeText(MainActivity.this, getString(R.string.toast2), Toast.LENGTH_SHORT);
+toast.setGravity(Gravity.CENTER, 0, 0);
+LinearLayout layout = (LinearLayout) toast.getView();
+ImageView imageView = new ImageView(getApplicationContext());
+imageView.setImageResource(R.mipmap.ic_launcher);
+layout.addView(imageView, 0);
+toast.show();
+</code></pre><h3 id="改变位置的Toast"><a href="#改变位置的Toast" class="headerlink" title="改变位置的Toast"></a>改变位置的Toast</h3><p><img src="http://ob8b0pedx.bkt.clouddn.com/toast3.png" alt=""></p>
+<pre><code>Toast toast = Toast.makeText(MainActivity.this, getString(R.string.toast3), Toast.LENGTH_SHORT);
+toast.setGravity(Gravity.TOP, 0, 0);
+toast.show();
+</code></pre><h3 id="自定义的Toast"><a href="#自定义的Toast" class="headerlink" title="自定义的Toast"></a>自定义的Toast</h3><p><img src="http://ob8b0pedx.bkt.clouddn.com/toast4.png" alt=""></p>
+<pre><code>Toast toast = new Toast(getApplicationContext());
+View view = View.inflate(getApplicationContext(), R.layout.toast_layout, null);
+toast.setView(view);
+toast.setDuration(Toast.LENGTH_SHORT);
+toast.show();
+</code></pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
   
@@ -585,7 +710,7 @@ public void reverse() {
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-count">2</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
