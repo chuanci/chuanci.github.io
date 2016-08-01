@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="chuanci" />
+  <meta name="keywords" content="SSO," />
 
 
 
@@ -84,15 +84,45 @@
 
 
 
-<meta name="description" content="云销雨霁 彩彻区明">
-<meta property="og:type" content="website">
-<meta property="og:title" content="chuanci">
-<meta property="og:url" content="http://blog.chuanci.cc/index.html">
+<meta name="description" content="接触在UTOUU项目中的登录流程.
+
+通过用户名密码获得TGT
+通过TGT获得ST
+再用ST去请求用户数据
+
+每一个需要登录操作的接口,都要在请求头里加入ST.如果返回ST失效,就用TGT再去请求一个ST.请求到ST以后,再去请求需要登录操作的接口.如果TGT也失效,那么就跳到登录.  
+CAS实现SSO单点登录原理原文CAS实现SSO单点登录原理
+CAS 简介什么是CAS?CAS （ Centr">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CAS实现SSO单点登录原理">
+<meta property="og:url" content="http://blog.chuanci.cc/2016/01/17/CAS实现SSO单点登录原理/index.html">
 <meta property="og:site_name" content="chuanci">
-<meta property="og:description" content="云销雨霁 彩彻区明">
+<meta property="og:description" content="接触在UTOUU项目中的登录流程.
+
+通过用户名密码获得TGT
+通过TGT获得ST
+再用ST去请求用户数据
+
+每一个需要登录操作的接口,都要在请求头里加入ST.如果返回ST失效,就用TGT再去请求一个ST.请求到ST以后,再去请求需要登录操作的接口.如果TGT也失效,那么就跳到登录.  
+CAS实现SSO单点登录原理原文CAS实现SSO单点登录原理
+CAS 简介什么是CAS?CAS （ Centr">
+<meta property="og:image" content="http://ob8b0pedx.bkt.clouddn.com/cas_clip_image001.jpg">
+<meta property="og:image" content="http://ob8b0pedx.bkt.clouddn.com/cas_clip_image003.gif">
+<meta property="og:image" content="http://ob8b0pedx.bkt.clouddn.com/cas_clip_image004.jpg">
+<meta property="og:image" content="http://ob8b0pedx.bkt.clouddn.com/cas_clip_image005.jpg">
+<meta property="og:updated_time" content="2016-08-01T14:02:49.310Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="chuanci">
-<meta name="twitter:description" content="云销雨霁 彩彻区明">
+<meta name="twitter:title" content="CAS实现SSO单点登录原理">
+<meta name="twitter:description" content="接触在UTOUU项目中的登录流程.
+
+通过用户名密码获得TGT
+通过TGT获得ST
+再用ST去请求用户数据
+
+每一个需要登录操作的接口,都要在请求头里加入ST.如果返回ST失效,就用TGT再去请求一个ST.请求到ST以后,再去请求需要登录操作的接口.如果TGT也失效,那么就跳到登录.  
+CAS实现SSO单点登录原理原文CAS实现SSO单点登录原理
+CAS 简介什么是CAS?CAS （ Centr">
+<meta name="twitter:image" content="http://ob8b0pedx.bkt.clouddn.com/cas_clip_image001.jpg">
 
 
 
@@ -113,9 +143,9 @@
 
 
 
-  <link rel="canonical" href="http://blog.chuanci.cc/"/>
+  <link rel="canonical" href="http://blog.chuanci.cc/2016/01/17/CAS实现SSO单点登录原理/"/>
 
-  <title> chuanci </title>
+  <title> CAS实现SSO单点登录原理 | chuanci </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -136,9 +166,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -215,9 +243,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -237,462 +265,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/05/30/Android属性动画/" itemprop="url">
-                  Android属性动画
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-30T01:08:26+08:00" content="2016-05-30">
-              2016-05-30
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="属性动画"><a href="#属性动画" class="headerlink" title="属性动画"></a>属性动画</h1><p>属性动画是API 11加入的特性,<br>使用<a href="http://nineoldandroids.com" target="_blank" rel="external">nineoldandroids库</a>,可以在API 11以下使用属性动画,但底层是用View动画来实现的.<br>它可以对任一对象(Object)做动画,甚至可以没有对象.<br>它通过反射来set某个属性,如果没有提供初始值,那么就会在动画开始时调用get某属性的方法.</p>
-<p>首先来个例子,将一个TextView tvTest的背景,从白色变到黑色.</p>
-<pre><code>public void startAnimator() {
-    ObjectAnimator animator = null;
-    if (android.os.Build.VERSION.SDK_INT &gt;= android.os.Build.VERSION_CODES.LOLLIPOP) {
-        animator = ObjectAnimator.ofArgb(tvTest, &quot;backgroundColor&quot;, 0xffff0000, 0xff0000ff);//ofArgb是API 21加入的方法
-    }else{
-        animator = ObjectAnimator.ofInt(tvTest, &quot;backgroundColor&quot;, 0xffffffff, 0xff000000);
-        animator.setEvaluator(new ArgbEvaluator());
-    }
-    animator.setDuration(2000);//设置动画时间
-    animator.setInterpolator(new LinearInterpolator());//设置插值器为匀速变化
-    animator.setRepeatCount(2);//重复2次
-    animator.setRepeatMode(ValueAnimator.REVERSE);//第一次动画结束后,第二次动画反转执行
-    animator.start();
-}
-</code></pre><p>当然,看看ofArgb方法,这是API 21加入的方法.</p>
-<pre><code>public static ObjectAnimator ofArgb(Object target, String propertyName, int... values) {
-    ObjectAnimator animator = ofInt(target, propertyName, values);
-    animator.setEvaluator(ArgbEvaluator.getInstance());
-    return animator;
-}
-</code></pre><p>其实它也是用的ofInt方法,那<br>animator.setEvaluator(ArgbEvaluator.getInstance());<br>和我们自己写的<br>animator.setEvaluator(new ArgbEvaluator());<br>也一样</p>
-<p>那么这个ArgbEvaluator是什么呢?为什么要加入呢?</p>
-<pre><code>public class ArgbEvaluator implements TypeEvaluator {
-    private static final ArgbEvaluator sInstance = new ArgbEvaluator();
-
-    public static ArgbEvaluator getInstance() {
-        return sInstance;
-    }
-
-    public Object evaluate(float fraction, Object startValue, Object endValue) {
-        int startInt = (Integer) startValue;
-        int startA = (startInt &gt;&gt; 24) &amp; 0xff;
-        int startR = (startInt &gt;&gt; 16) &amp; 0xff;
-        int startG = (startInt &gt;&gt; 8) &amp; 0xff;
-        int startB = startInt &amp; 0xff;
-
-        int endInt = (Integer) endValue;
-        int endA = (endInt &gt;&gt; 24) &amp; 0xff;
-        int endR = (endInt &gt;&gt; 16) &amp; 0xff;
-        int endG = (endInt &gt;&gt; 8) &amp; 0xff;
-        int endB = endInt &amp; 0xff;
-
-        return (int)((startA + (int)(fraction * (endA - startA))) &lt;&lt; 24) |
-                (int)((startR + (int)(fraction * (endR - startR))) &lt;&lt; 16) |
-                (int)((startG + (int)(fraction * (endG - startG))) &lt;&lt; 8) |
-                (int)((startB + (int)(fraction * (endB - startB))));
-    }
-}
-</code></pre><p>除掉getInstance,ArgbEvaluator实现了TypeEvaluator接口,且接口中就只有一个方法.</p>
-<h2 id="TypeEvaluator-估值器"><a href="#TypeEvaluator-估值器" class="headerlink" title="TypeEvaluator 估值器"></a>TypeEvaluator 估值器</h2><p>这个类就是估值器.</p>
-<pre><code>/**
-float faction :  当前属性更变的百分比,由插值器提供
-T startValue  :     初始值
-T endValue  :     结束值
-return T  :         当前属性的值
-
-若未设置估值器,那默认实现为
-  return startInt + fraction * (endValue - startInt);
-
-**/
-public interface TypeEvaluator&lt;T&gt; {
-       public T evaluate(float fraction, T startValue, T endValue);
-}
-</code></pre><p>ArgbEvaluator里面,将ARGB这4种分开计算.如果使用默认的话,颜色就会不准.</p>
-<h3 id="常用的几种估值器"><a href="#常用的几种估值器" class="headerlink" title="常用的几种估值器:"></a>常用的几种估值器:</h3><ul>
-<li>ArgbEvaluator</li>
-<li>FloatEvaluator</li>
-<li>IntEvaluator</li>
-<li>RectEvaluator</li>
-</ul>
-<h2 id="TimeInterpolator-时间插值器"><a href="#TimeInterpolator-时间插值器" class="headerlink" title="TimeInterpolator 时间插值器"></a>TimeInterpolator 时间插值器</h2><p>估值器中的第一个参数是由时间插值器提供的.</p>
-<p>插值器也是一个接口:</p>
-<pre><code>public interface TimeInterpolator {
-    float getInterpolation(float input);
-}
-</code></pre><h3 id="常用的几种插值器"><a href="#常用的几种插值器" class="headerlink" title="常用的几种插值器:"></a>常用的几种插值器:</h3><ul>
-<li>LinearInterpolator:匀速</li>
-<li>AccelerateInterpolator:加速</li>
-<li>DecelerateInterpolator:减速</li>
-<li>AccelerateDecelerateInterpolator:先加速后减速</li>
-</ul>
-<h2 id="一些其他属性"><a href="#一些其他属性" class="headerlink" title="一些其他属性"></a>一些其他属性</h2><p>setDuration 动画的时长,默认是300ms<br>setRepeatCount 动画重复次数,设置为-1,则无限循环<br>setRepeatMode 第二次动画从哪开始.</p>
-<p>注意: 如果次数设置为-1,那么在退出activity时,要先停掉动画,否则会出现内存泄漏.</p>
-<h2 id="监听"><a href="#监听" class="headerlink" title="监听"></a>监听</h2><h3 id="更新监听"><a href="#更新监听" class="headerlink" title="更新监听"></a>更新监听</h3><pre><code>animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-    @Override
-    public void onAnimationUpdate(ValueAnimator animation) {
-        int animatedValue = (int) animation.getAnimatedValue();
-        //这样就可以得到当前值.给其他控件设置
-    }
-});
-</code></pre><h3 id="状态监听"><a href="#状态监听" class="headerlink" title="状态监听"></a>状态监听</h3><pre><code>animator.addListener(new Animator.AnimatorListener() {
-    @Override
-    public void onAnimationStart(Animator animation) {
-
-    }
-
-    @Override
-    public void onAnimationEnd(Animator animation) {
-
-    }
-
-    @Override
-    public void onAnimationCancel(Animator animation) {
-
-    }
-
-    @Override
-    public void onAnimationRepeat(Animator animation) {
-
-    }
-});
-</code></pre><p>由于不是每一个状态都会用到,所以系统提供了另一个监听,它空实现了这4个方法.</p>
-<pre><code>animator.addListener(new AnimatorListenerAdapter() {
-
-});
-</code></pre><h2 id="属性动画的工作原理"><a href="#属性动画的工作原理" class="headerlink" title="属性动画的工作原理"></a>属性动画的工作原理</h2><p>入口是start()方法.</p>
-<pre><code>  @Override
-public void start() {
-    // See if any of the current active/pending animators need to be canceled
-    AnimationHandler handler = sAnimationHandler.get();
-    if (handler != null) {
-        int numAnims = handler.mAnimations.size();
-        for (int i = numAnims - 1; i &gt;= 0; i--) {
-            if (handler.mAnimations.get(i) instanceof ObjectAnimator) {
-                ObjectAnimator anim = (ObjectAnimator) handler.mAnimations.get(i);
-                if (anim.mAutoCancel &amp;&amp; hasSameTargetAndProperties(anim)) {
-                    anim.cancel();
-                }
-            }
-        }
-        numAnims = handler.mPendingAnimations.size();
-        for (int i = numAnims - 1; i &gt;= 0; i--) {
-            if (handler.mPendingAnimations.get(i) instanceof ObjectAnimator) {
-                ObjectAnimator anim = (ObjectAnimator) handler.mPendingAnimations.get(i);
-                if (anim.mAutoCancel &amp;&amp; hasSameTargetAndProperties(anim)) {
-                    anim.cancel();
-                }
-            }
-        }
-        numAnims = handler.mDelayedAnims.size();
-        for (int i = numAnims - 1; i &gt;= 0; i--) {
-            if (handler.mDelayedAnims.get(i) instanceof ObjectAnimator) {
-                ObjectAnimator anim = (ObjectAnimator) handler.mDelayedAnims.get(i);
-                if (anim.mAutoCancel &amp;&amp; hasSameTargetAndProperties(anim)) {
-                    anim.cancel();
-                }
-            }
-        }
-    }
-    if (DBG) {
-        Log.d(LOG_TAG, &quot;Anim target, duration: &quot; + getTarget() + &quot;, &quot; + getDuration());
-        for (int i = 0; i &lt; mValues.length; ++i) {
-            PropertyValuesHolder pvh = mValues[i];
-            Log.d(LOG_TAG, &quot;   Values[&quot; + i + &quot;]: &quot; +
-                pvh.getPropertyName() + &quot;, &quot; + pvh.mKeyframes.getValue(0) + &quot;, &quot; +
-                pvh.mKeyframes.getValue(1));
-        }
-    }
-    super.start();
-}
-</code></pre><p>sAnimationHandler是ValueAnimator中的一个ThreadLocal,通过sAnimationHandler.get()的到了一个AnimationHandler.<br>它是一个Runnable,里面封装了很多集合,用来存放动画.<br>这里先将handler里的动画移除,然后打印Log,最后调用父类的start()方法.</p>
-<p>那么我们来看ValueAnimator中的start()方法</p>
-<pre><code>@Override
-public void start() {
-    start(false);
-}
-</code></pre><p>这里调用的start(false),在反转的时候调用的start(true)</p>
-<pre><code> @Override
-public void reverse() {
-    mPlayingBackwards = !mPlayingBackwards;
-    if (mPlayingState == RUNNING) {
-        long currentTime = AnimationUtils.currentAnimationTimeMillis();
-        long currentPlayTime = currentTime - mStartTime;
-        long timeLeft = mDuration - currentPlayTime;
-        mStartTime = currentTime - timeLeft;
-        mStartTimeCommitted = true; // do not allow start time to be compensated for jank
-        mReversing = !mReversing;
-    } else if (mStarted) {
-        end();
-    } else {
-        start(true);
-    }
-}
-</code></pre><p>继续看start(boolean b)方法</p>
-<pre><code>   private void start(boolean playBackwards) {
-    if (Looper.myLooper() == null) {
-        throw new AndroidRuntimeException(&quot;Animators may only be run on Looper threads&quot;);
-    }
-    mReversing = playBackwards;
-    mPlayingBackwards = playBackwards;
-    if (playBackwards &amp;&amp; mSeekFraction != -1) {
-        if (mSeekFraction == 0 &amp;&amp; mCurrentIteration == 0) {
-            // special case: reversing from seek-to-0 should act as if not seeked at all
-            mSeekFraction = 0;
-        } else if (mRepeatCount == INFINITE) {
-            mSeekFraction = 1 - (mSeekFraction % 1);
-        } else {
-            mSeekFraction = 1 + mRepeatCount - (mCurrentIteration + mSeekFraction);
-        }
-        mCurrentIteration = (int) mSeekFraction;
-        mSeekFraction = mSeekFraction % 1;
-    }
-    if (mCurrentIteration &gt; 0 &amp;&amp; mRepeatMode == REVERSE &amp;&amp;
-            (mCurrentIteration &lt; (mRepeatCount + 1) || mRepeatCount == INFINITE)) {
-        // if we were seeked to some other iteration in a reversing animator,
-        // figure out the correct direction to start playing based on the iteration
-        if (playBackwards) {
-            mPlayingBackwards = (mCurrentIteration % 2) == 0;
-        } else {
-            mPlayingBackwards = (mCurrentIteration % 2) != 0;
-        }
-    }
-    int prevPlayingState = mPlayingState;
-    mPlayingState = STOPPED;
-    mStarted = true;
-    mStartedDelay = false;
-    mPaused = false;
-    updateScaledDuration(); // in case the scale factor has changed since creation time
-    AnimationHandler animationHandler = getOrCreateAnimationHandler();
-    animationHandler.mPendingAnimations.add(this);
-    if (mStartDelay == 0) {
-        // This sets the initial value of the animation, prior to actually starting it running
-        if (prevPlayingState != SEEKED) {
-            setCurrentPlayTime(0);
-        }
-        mPlayingState = STOPPED;
-        mRunning = true;
-        notifyStartListeners();
-    }
-    animationHandler.start();
-}
-</code></pre><p>看以看出,它是运行在有Looper的线程当中的，<br>首先，根据通过getOrCreateAnimationHandler()方法获取AnimationHandler对象，有则创建并且将其赋值，否则直接获取。<br>然后通过AnimationHandler将动画加到mPendingAnimations延时动画里去。<br>最后调用AnimationHandler的start()方法，即执行AnimationHandler的run()方法</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/02/Android控件-Toast/" itemprop="url">
-                  Android控件---Toast
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-02T19:21:39+08:00" content="2016-04-02">
-              2016-04-02
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Toast"><a href="#Toast" class="headerlink" title="Toast"></a>Toast</h1><p>一个可视控件,用于向用户显示一些提示.</p>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ol>
-<li>只需要一个Context,就可以使用.所以在Service中也能用.</li>
-<li>要在主线程中调用.</li>
-</ol>
-<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ul>
-<li>Toast.makeText(context,text,duration);//返回一个toast</li>
-<li>toast.setDuration(duration);//设置持续时间</li>
-<li>toast.setGravity(gravity,xOffset,yOffset);//设置显示位置</li>
-<li>toast.setText(s);//设置显示内容</li>
-<li>toast.show;//显示</li>
-</ul>
-<h2 id="几种Toast"><a href="#几种Toast" class="headerlink" title="几种Toast"></a>几种Toast</h2><h3 id="默认Toast"><a href="#默认Toast" class="headerlink" title="默认Toast"></a>默认Toast</h3><p><img src="http://ob8b0pedx.bkt.clouddn.com/toast1.png" alt=""></p>
-<pre><code>Toast.makeText(MainActivity.this, getString(R.string.toast1), Toast.LENGTH_SHORT).show();
-</code></pre><h3 id="带图片的Toast"><a href="#带图片的Toast" class="headerlink" title="带图片的Toast"></a>带图片的Toast</h3><p><img src="http://ob8b0pedx.bkt.clouddn.com/toast2.png" alt=""></p>
-<pre><code>Toast toast = Toast.makeText(MainActivity.this, getString(R.string.toast2), Toast.LENGTH_SHORT);
-toast.setGravity(Gravity.CENTER, 0, 0);
-LinearLayout layout = (LinearLayout) toast.getView();
-ImageView imageView = new ImageView(getApplicationContext());
-imageView.setImageResource(R.mipmap.ic_launcher);
-layout.addView(imageView, 0);
-toast.show();
-</code></pre><h3 id="改变位置的Toast"><a href="#改变位置的Toast" class="headerlink" title="改变位置的Toast"></a>改变位置的Toast</h3><p><img src="http://ob8b0pedx.bkt.clouddn.com/toast3.png" alt=""></p>
-<pre><code>Toast toast = Toast.makeText(MainActivity.this, getString(R.string.toast3), Toast.LENGTH_SHORT);
-toast.setGravity(Gravity.TOP, 0, 0);
-toast.show();
-</code></pre><h3 id="自定义的Toast"><a href="#自定义的Toast" class="headerlink" title="自定义的Toast"></a>自定义的Toast</h3><p><img src="http://ob8b0pedx.bkt.clouddn.com/toast4.png" alt=""></p>
-<pre><code>Toast toast = new Toast(getApplicationContext());
-View view = View.inflate(getApplicationContext(), R.layout.toast_layout, null);
-toast.setView(view);
-toast.setDuration(Toast.LENGTH_SHORT);
-toast.show();
-</code></pre>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/01/17/CAS实现SSO单点登录原理/" itemprop="url">
-                  CAS实现SSO单点登录原理
-                </a>
+                CAS实现SSO单点登录原理
               
             
           </h1>
@@ -732,9 +305,7 @@ toast.show();
       
 
       
-        
-          
-            <h1 id="接触"><a href="#接触" class="headerlink" title="接触"></a>接触</h1><p>在UTOUU项目中的登录流程.</p>
+        <h1 id="接触"><a href="#接触" class="headerlink" title="接触"></a>接触</h1><p>在UTOUU项目中的登录流程.</p>
 <ol>
 <li>通过用户名密码获得TGT</li>
 <li>通过TGT获得ST</li>
@@ -839,36 +410,64 @@ toast.show();
 <li><a href="http://baike.baidu.com/view/190743.htm" target="_blank" rel="external">http://baike.baidu.com/view/190743.htm</a></li>
 </ol>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="传慈 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫一扫上面的二维码，关注我的微信公众号！</div>
+</div>
+
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/SSO/" rel="tag">#SSO</a>
+          
+        </div>
       
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/04/02/Android控件-Toast/" rel="prev" title="Android控件---Toast">
+                Android控件---Toast <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -876,6 +475,10 @@ toast.show();
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -895,8 +498,17 @@ toast.show();
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.png"
@@ -939,6 +551,17 @@ toast.show();
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#接触"><span class="nav-number">1.</span> <span class="nav-text">接触</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CAS实现SSO单点登录原理"><span class="nav-number">2.</span> <span class="nav-text">CAS实现SSO单点登录原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CAS-简介"><span class="nav-number">2.1.</span> <span class="nav-text">CAS 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是CAS"><span class="nav-number">2.1.1.</span> <span class="nav-text">什么是CAS?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主要特性"><span class="nav-number">2.1.2.</span> <span class="nav-text">主要特性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSO-单点登录原理"><span class="nav-number">2.2.</span> <span class="nav-text">SSO 单点登录原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是SSO"><span class="nav-number">2.2.1.</span> <span class="nav-text">什么是SSO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SSO-原理"><span class="nav-number">2.2.2.</span> <span class="nav-text">SSO 原理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#SSO-体系中的角色"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">SSO 体系中的角色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SSO-实现模式的原则"><span class="nav-number">2.2.2.2.</span> <span class="nav-text">SSO 实现模式的原则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SSO-主要实现方式"><span class="nav-number">2.2.2.3.</span> <span class="nav-text">SSO 主要实现方式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#共享-cookies"><span class="nav-number">2.2.2.3.1.</span> <span class="nav-text">共享 cookies</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Broker-based-基于经纪人"><span class="nav-number">2.2.2.3.2.</span> <span class="nav-text">Broker-based( 基于经纪人 )</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Agent-based-（基于代理人）"><span class="nav-number">2.2.2.3.3.</span> <span class="nav-text">Agent-based （基于代理人）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Token-based"><span class="nav-number">2.2.2.3.4.</span> <span class="nav-text">Token-based</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#基于网关"><span class="nav-number">2.2.2.3.5.</span> <span class="nav-text">基于网关</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#基于-SAML"><span class="nav-number">2.2.2.3.6.</span> <span class="nav-text">基于 SAML</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CAS-的基本原理"><span class="nav-number">2.3.</span> <span class="nav-text">CAS 的基本原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#结构体系"><span class="nav-number">2.3.1.</span> <span class="nav-text">结构体系</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CAS-Server"><span class="nav-number">2.3.1.1.</span> <span class="nav-text">CAS Server</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CAS-Client"><span class="nav-number">2.3.1.2.</span> <span class="nav-text">CAS Client</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CAS-原理和协议"><span class="nav-number">2.3.2.</span> <span class="nav-text">CAS 原理和协议</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基础模式"><span class="nav-number">2.3.2.1.</span> <span class="nav-text">基础模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CAS-如何实现-SSO"><span class="nav-number">2.3.2.2.</span> <span class="nav-text">CAS 如何实现 SSO</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CAS-代理模式"><span class="nav-number">2.3.2.3.</span> <span class="nav-text">CAS 代理模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#辅助说明"><span class="nav-number">2.3.2.4.</span> <span class="nav-text">辅助说明</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#术语解释"><span class="nav-number">2.3.3.</span> <span class="nav-text">术语解释</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CAS-安全性"><span class="nav-number">2.4.</span> <span class="nav-text">CAS 安全性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TGC-PGT-安全性"><span class="nav-number">2.4.1.</span> <span class="nav-text">TGC/PGT 安全性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ST-PT-安全性"><span class="nav-number">2.4.2.</span> <span class="nav-text">ST/PT 安全性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ST-只能使用一次"><span class="nav-number">2.4.2.1.</span> <span class="nav-text">ST 只能使用一次</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ST-在一段时间内失效"><span class="nav-number">2.4.2.2.</span> <span class="nav-text">ST 在一段时间内失效</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ST-是基于随机数生成的"><span class="nav-number">2.4.2.3.</span> <span class="nav-text">ST 是基于随机数生成的</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">2.5.</span> <span class="nav-text">参考资料</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -1035,6 +658,10 @@ toast.show();
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
