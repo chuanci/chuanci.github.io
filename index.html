@@ -238,6 +238,126 @@
             
               
                 
+                <a class="post-title-link" href="/2016/07/18/Android之Json/" itemprop="url">
+                  Android之Json解析
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-18T18:22:06+08:00" content="2016-07-18">
+              2016-07-18
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Json"><a href="#Json" class="headerlink" title="Json"></a>Json</h1><p>JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。</p>
+<h2 id="Android中的类"><a href="#Android中的类" class="headerlink" title="Android中的类"></a>Android中的类</h2><ul>
+<li>JSONObject</li>
+<li>JSONStringer</li>
+<li>JSONArray</li>
+<li>JSONTokener</li>
+<li>JSONException</li>
+</ul>
+<h3 id="JSONObject"><a href="#JSONObject" class="headerlink" title="JSONObject"></a>JSONObject</h3><p>一个Json对象.这是系统中有关JSON定义的基本单元</p>
+<h3 id="JSONStringer"><a href="#JSONStringer" class="headerlink" title="JSONStringer"></a>JSONStringer</h3><p>json文本构建类 ，根据官方的解释，这个类可以帮助快速和便捷的创建JSON text。<br>最大的优点在于可以减少由于格式的错误导致程序异常，引用这个类可以自动严格按照JSON语法规则（syntax rules）创建JSON text。<br>每个JSONStringer实体只能对应创建一个JSON text。</p>
+<h3 id="JSONArray"><a href="#JSONArray" class="headerlink" title="JSONArray"></a>JSONArray</h3><p>它代表一组有序的数值。[value1,value2,value3]</p>
+<h3 id="JSONTokener"><a href="#JSONTokener" class="headerlink" title="JSONTokener"></a>JSONTokener</h3><p>Json解析类</p>
+<h3 id="JSONException"><a href="#JSONException" class="headerlink" title="JSONException"></a>JSONException</h3><p>Json异常类</p>
+<h2 id="解析库"><a href="#解析库" class="headerlink" title="解析库"></a>解析库</h2><ul>
+<li><a href="https://github.com/google/gson" target="_blank" rel="external">Gson</a></li>
+<li>Jackson</li>
+<li><a href="https://github.com/alibaba/fastjson" target="_blank" rel="external">FastJson</a></li>
+<li><a href="https://github.com/bluelinelabs/LoganSquare" target="_blank" rel="external">Logan Square</a></li>
+</ul>
+<h3 id="Gson"><a href="#Gson" class="headerlink" title="Gson"></a>Gson</h3><p><a href="http://ob9zoxx4a.bkt.clouddn.com/GsonUtils.java" target="_blank" rel="external">GsonUtils</a></p>
+<h3 id="Jackson"><a href="#Jackson" class="headerlink" title="Jackson"></a>Jackson</h3><h3 id="FastJson"><a href="#FastJson" class="headerlink" title="FastJson"></a>FastJson</h3><p><a href="https://github.com/Alibaba/fastjson/wiki/%E9%A6%96%E9%A1%B5" target="_blank" rel="external">使用说明</a></p>
+<p><a href="http://ob9zoxx4a.bkt.clouddn.com/FastJsonUtils.java" target="_blank" rel="external">FastJsonUtils</a></p>
+<h3 id="Logan-Square"><a href="#Logan-Square" class="headerlink" title="Logan Square"></a>Logan Square</h3><p><a href="http://www.jianshu.com/p/9c3173b2e70b" target="_blank" rel="external">使用说明</a></p>
+<h2 id="使用GsonFormat"><a href="#使用GsonFormat" class="headerlink" title="使用GsonFormat"></a>使用GsonFormat</h2><p>在AndroidStudio中,安装GsonFormat插件,可以通过一段Json字符串生成实体类.</p>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><ul>
+<li>实体类里的变量都用String,使用时再转换.(即不要相信数据)</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/07/03/Android工具类/" itemprop="url">
                   Android工具类
                 </a>
@@ -292,7 +412,15 @@
 <h3 id="软键盘相关辅助类"><a href="#软键盘相关辅助类" class="headerlink" title="软键盘相关辅助类"></a>软键盘相关辅助类</h3><p><a href="http://ob9zoxx4a.bkt.clouddn.com/KeyBoardUtils.java" target="_blank" rel="external">KeyBoardUtils</a></p>
 <h3 id="网络相关辅助类"><a href="#网络相关辅助类" class="headerlink" title="网络相关辅助类"></a>网络相关辅助类</h3><p><a href="http://ob9zoxx4a.bkt.clouddn.com/NetUtils.java" target="_blank" rel="external">NetUtils</a></p>
 <h2 id="APP研发录"><a href="#APP研发录" class="headerlink" title="APP研发录"></a>APP研发录</h2><h3 id="类型安全转换工具类"><a href="#类型安全转换工具类" class="headerlink" title="类型安全转换工具类"></a>类型安全转换工具类</h3><p><a href="http://ob9zoxx4a.bkt.clouddn.com/ConvertUtils.java" target="_blank" rel="external">ConvertUtils</a></p>
-<h2 id="Glide工具类"><a href="#Glide工具类" class="headerlink" title="Glide工具类"></a>Glide工具类</h2><p><a href="http://ob9zoxx4a.bkt.clouddn.com/GlideUtils.java" target="_blank" rel="external">GlideUtils</a></p>
+<h2 id="加载图片工具类"><a href="#加载图片工具类" class="headerlink" title="加载图片工具类"></a>加载图片工具类</h2><ul>
+<li><a href="http://ob9zoxx4a.bkt.clouddn.com/GlideUtils.java" target="_blank" rel="external">GlideUtils</a></li>
+</ul>
+<h2 id="Json解析工具类"><a href="#Json解析工具类" class="headerlink" title="Json解析工具类"></a>Json解析工具类</h2><ul>
+<li><p><a href="http://ob9zoxx4a.bkt.clouddn.com/GsonUtils.java" target="_blank" rel="external">GsonUtils</a></p>
+</li>
+<li><p><a href="http://ob9zoxx4a.bkt.clouddn.com/FastJsonUtils.java" target="_blank" rel="external">FastJsonUtils</a></p>
+</li>
+</ul>
 
           
         
@@ -1732,7 +1860,7 @@ toast.show();
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">8</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
