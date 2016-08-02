@@ -84,45 +84,46 @@
 
 
 
-<meta name="description" content="Toast一个可视控件,用于向用户显示一些提示.
-注意
-只需要一个Context,就可以使用.所以在Service中也能用.
-要在主线程中调用.
-
-方法
-Toast.makeText(context,text,duration);//返回一个toast
-toast.setDuration(duration);//设置持续时间
-toast.setGravity(gravity,xOffset,yOf">
+<meta name="description" content="常用工具类转自鸿洋_博客Log日志工具类L
+Toast工具类T
+SP工具类SPUtils
+单位转换类DensityUtils
+SD卡相关辅助类SDCardUtils
+屏幕相关辅助类ScreenUtils
+App相关辅助类AppUtils
+软键盘相关辅助类KeyBoardUtils
+网络相关辅助类NetUtils
+APP研发录类型安全转换工具类ConvertUtils
+Glide工具类GlideUt">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AndroidUI之Toast">
-<meta property="og:url" content="http://blog.chuanci.cc/2016/04/02/AndroidUI之Toast/index.html">
+<meta property="og:title" content="Android工具类">
+<meta property="og:url" content="http://blog.chuanci.cc/2016/07/03/Android工具类/index.html">
 <meta property="og:site_name" content="chuanci">
-<meta property="og:description" content="Toast一个可视控件,用于向用户显示一些提示.
-注意
-只需要一个Context,就可以使用.所以在Service中也能用.
-要在主线程中调用.
-
-方法
-Toast.makeText(context,text,duration);//返回一个toast
-toast.setDuration(duration);//设置持续时间
-toast.setGravity(gravity,xOffset,yOf">
-<meta property="og:image" content="http://ob8b0pedx.bkt.clouddn.com/toast1.png">
-<meta property="og:image" content="http://ob8b0pedx.bkt.clouddn.com/toast2.png">
-<meta property="og:image" content="http://ob8b0pedx.bkt.clouddn.com/toast3.png">
-<meta property="og:image" content="http://ob8b0pedx.bkt.clouddn.com/toast4.png">
-<meta property="og:updated_time" content="2016-08-01T16:24:30.777Z">
+<meta property="og:description" content="常用工具类转自鸿洋_博客Log日志工具类L
+Toast工具类T
+SP工具类SPUtils
+单位转换类DensityUtils
+SD卡相关辅助类SDCardUtils
+屏幕相关辅助类ScreenUtils
+App相关辅助类AppUtils
+软键盘相关辅助类KeyBoardUtils
+网络相关辅助类NetUtils
+APP研发录类型安全转换工具类ConvertUtils
+Glide工具类GlideUt">
+<meta property="og:updated_time" content="2016-08-02T09:33:22.449Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AndroidUI之Toast">
-<meta name="twitter:description" content="Toast一个可视控件,用于向用户显示一些提示.
-注意
-只需要一个Context,就可以使用.所以在Service中也能用.
-要在主线程中调用.
-
-方法
-Toast.makeText(context,text,duration);//返回一个toast
-toast.setDuration(duration);//设置持续时间
-toast.setGravity(gravity,xOffset,yOf">
-<meta name="twitter:image" content="http://ob8b0pedx.bkt.clouddn.com/toast1.png">
+<meta name="twitter:title" content="Android工具类">
+<meta name="twitter:description" content="常用工具类转自鸿洋_博客Log日志工具类L
+Toast工具类T
+SP工具类SPUtils
+单位转换类DensityUtils
+SD卡相关辅助类SDCardUtils
+屏幕相关辅助类ScreenUtils
+App相关辅助类AppUtils
+软键盘相关辅助类KeyBoardUtils
+网络相关辅助类NetUtils
+APP研发录类型安全转换工具类ConvertUtils
+Glide工具类GlideUt">
 
 
 
@@ -143,9 +144,9 @@ toast.setGravity(gravity,xOffset,yOf">
 
 
 
-  <link rel="canonical" href="http://blog.chuanci.cc/2016/04/02/AndroidUI之Toast/"/>
+  <link rel="canonical" href="http://blog.chuanci.cc/2016/07/03/Android工具类/"/>
 
-  <title> AndroidUI之Toast | chuanci </title>
+  <title> Android工具类 | chuanci </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -265,7 +266,7 @@ toast.setGravity(gravity,xOffset,yOf">
             
             
               
-                AndroidUI之Toast
+                Android工具类
               
             
           </h1>
@@ -277,8 +278,8 @@ toast.setGravity(gravity,xOffset,yOf">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-02T19:21:39+08:00" content="2016-04-02">
-              2016-04-02
+            <time itemprop="dateCreated" datetime="2016-07-03T17:10:37+08:00" content="2016-07-03">
+              2016-07-03
             </time>
           </span>
 
@@ -305,39 +306,18 @@ toast.setGravity(gravity,xOffset,yOf">
       
 
       
-        <h1 id="Toast"><a href="#Toast" class="headerlink" title="Toast"></a>Toast</h1><p>一个可视控件,用于向用户显示一些提示.</p>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ol>
-<li>只需要一个Context,就可以使用.所以在Service中也能用.</li>
-<li>要在主线程中调用.</li>
-</ol>
-<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ul>
-<li>Toast.makeText(context,text,duration);//返回一个toast</li>
-<li>toast.setDuration(duration);//设置持续时间</li>
-<li>toast.setGravity(gravity,xOffset,yOffset);//设置显示位置</li>
-<li>toast.setText(s);//设置显示内容</li>
-<li>toast.show;//显示</li>
-</ul>
-<h2 id="几种Toast"><a href="#几种Toast" class="headerlink" title="几种Toast"></a>几种Toast</h2><h3 id="默认Toast"><a href="#默认Toast" class="headerlink" title="默认Toast"></a>默认Toast</h3><p><img src="http://ob8b0pedx.bkt.clouddn.com/toast1.png" alt=""></p>
-<pre><code>Toast.makeText(MainActivity.this, getString(R.string.toast1), Toast.LENGTH_SHORT).show();
-</code></pre><h3 id="带图片的Toast"><a href="#带图片的Toast" class="headerlink" title="带图片的Toast"></a>带图片的Toast</h3><p><img src="http://ob8b0pedx.bkt.clouddn.com/toast2.png" alt=""></p>
-<pre><code>Toast toast = Toast.makeText(MainActivity.this, getString(R.string.toast2), Toast.LENGTH_SHORT);
-toast.setGravity(Gravity.CENTER, 0, 0);
-LinearLayout layout = (LinearLayout) toast.getView();
-ImageView imageView = new ImageView(getApplicationContext());
-imageView.setImageResource(R.mipmap.ic_launcher);
-layout.addView(imageView, 0);
-toast.show();
-</code></pre><h3 id="改变位置的Toast"><a href="#改变位置的Toast" class="headerlink" title="改变位置的Toast"></a>改变位置的Toast</h3><p><img src="http://ob8b0pedx.bkt.clouddn.com/toast3.png" alt=""></p>
-<pre><code>Toast toast = Toast.makeText(MainActivity.this, getString(R.string.toast3), Toast.LENGTH_SHORT);
-toast.setGravity(Gravity.TOP, 0, 0);
-toast.show();
-</code></pre><h3 id="自定义的Toast"><a href="#自定义的Toast" class="headerlink" title="自定义的Toast"></a>自定义的Toast</h3><p><img src="http://ob8b0pedx.bkt.clouddn.com/toast4.png" alt=""></p>
-<pre><code>Toast toast = new Toast(getApplicationContext());
-View view = View.inflate(getApplicationContext(), R.layout.toast_layout, null);
-toast.setView(view);
-toast.setDuration(Toast.LENGTH_SHORT);
-toast.show();
-</code></pre>
+        <h1 id="常用工具类"><a href="#常用工具类" class="headerlink" title="常用工具类"></a>常用工具类</h1><h2 id="转自鸿洋-博客"><a href="#转自鸿洋-博客" class="headerlink" title="转自鸿洋_博客"></a><a href="http://blog.csdn.net/lmj623565791/article/details/38965311" target="_blank" rel="external">转自鸿洋_博客</a></h2><h3 id="Log日志工具类"><a href="#Log日志工具类" class="headerlink" title="Log日志工具类"></a>Log日志工具类</h3><p><a href="http://ob9zoxx4a.bkt.clouddn.com/L.java" target="_blank" rel="external">L</a></p>
+<h3 id="Toast工具类"><a href="#Toast工具类" class="headerlink" title="Toast工具类"></a>Toast工具类</h3><p><a href="http://ob9zoxx4a.bkt.clouddn.com/T.java" target="_blank" rel="external">T</a></p>
+<h3 id="SP工具类"><a href="#SP工具类" class="headerlink" title="SP工具类"></a>SP工具类</h3><p><a href="http://ob9zoxx4a.bkt.clouddn.com/SPUtils.java" target="_blank" rel="external">SPUtils</a></p>
+<h3 id="单位转换类"><a href="#单位转换类" class="headerlink" title="单位转换类"></a>单位转换类</h3><p><a href="http://ob9zoxx4a.bkt.clouddn.com/DensityUtils.java" target="_blank" rel="external">DensityUtils</a></p>
+<h3 id="SD卡相关辅助类"><a href="#SD卡相关辅助类" class="headerlink" title="SD卡相关辅助类"></a>SD卡相关辅助类</h3><p><a href="http://ob9zoxx4a.bkt.clouddn.com/SDCardUtils.java" target="_blank" rel="external">SDCardUtils</a></p>
+<h3 id="屏幕相关辅助类"><a href="#屏幕相关辅助类" class="headerlink" title="屏幕相关辅助类"></a>屏幕相关辅助类</h3><p><a href="http://ob9zoxx4a.bkt.clouddn.com/ScreenUtils.java" target="_blank" rel="external">ScreenUtils</a></p>
+<h3 id="App相关辅助类"><a href="#App相关辅助类" class="headerlink" title="App相关辅助类"></a>App相关辅助类</h3><p><a href="http://ob9zoxx4a.bkt.clouddn.com/AppUtils.java" target="_blank" rel="external">AppUtils</a></p>
+<h3 id="软键盘相关辅助类"><a href="#软键盘相关辅助类" class="headerlink" title="软键盘相关辅助类"></a>软键盘相关辅助类</h3><p><a href="http://ob9zoxx4a.bkt.clouddn.com/KeyBoardUtils.java" target="_blank" rel="external">KeyBoardUtils</a></p>
+<h3 id="网络相关辅助类"><a href="#网络相关辅助类" class="headerlink" title="网络相关辅助类"></a>网络相关辅助类</h3><p><a href="http://ob9zoxx4a.bkt.clouddn.com/NetUtils.java" target="_blank" rel="external">NetUtils</a></p>
+<h2 id="APP研发录"><a href="#APP研发录" class="headerlink" title="APP研发录"></a>APP研发录</h2><h3 id="类型安全转换工具类"><a href="#类型安全转换工具类" class="headerlink" title="类型安全转换工具类"></a>类型安全转换工具类</h3><p><a href="http://ob9zoxx4a.bkt.clouddn.com/ConvertUtils.java" target="_blank" rel="external">ConvertUtils</a></p>
+<h2 id="Glide工具类"><a href="#Glide工具类" class="headerlink" title="Glide工具类"></a>Glide工具类</h2><p><a href="http://ob9zoxx4a.bkt.clouddn.com/GlideUtils.java" target="_blank" rel="external">GlideUtils</a></p>
+
       
     </div>
 
@@ -373,17 +353,13 @@ toast.show();
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/17/CAS实现SSO单点登录原理/" rel="next" title="CAS实现SSO单点登录原理">
-                <i class="fa fa-chevron-left"></i> CAS实现SSO单点登录原理
+              <a href="/2016/05/30/Android属性动画/" rel="next" title="Android属性动画">
+                <i class="fa fa-chevron-left"></i> Android属性动画
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/09/AndroidUI之Dialog/" rel="prev" title="AndroidUI之Dialog">
-                AndroidUI之Dialog <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -490,7 +466,7 @@ toast.show();
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Toast"><span class="nav-number">1.</span> <span class="nav-text">Toast</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#注意"><span class="nav-number">1.1.</span> <span class="nav-text">注意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法"><span class="nav-number">1.2.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#几种Toast"><span class="nav-number">1.3.</span> <span class="nav-text">几种Toast</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#默认Toast"><span class="nav-number">1.3.1.</span> <span class="nav-text">默认Toast</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#带图片的Toast"><span class="nav-number">1.3.2.</span> <span class="nav-text">带图片的Toast</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#改变位置的Toast"><span class="nav-number">1.3.3.</span> <span class="nav-text">改变位置的Toast</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义的Toast"><span class="nav-number">1.3.4.</span> <span class="nav-text">自定义的Toast</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#常用工具类"><span class="nav-number">1.</span> <span class="nav-text">常用工具类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#转自鸿洋-博客"><span class="nav-number">1.1.</span> <span class="nav-text">转自鸿洋_博客</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Log日志工具类"><span class="nav-number">1.1.1.</span> <span class="nav-text">Log日志工具类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Toast工具类"><span class="nav-number">1.1.2.</span> <span class="nav-text">Toast工具类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SP工具类"><span class="nav-number">1.1.3.</span> <span class="nav-text">SP工具类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单位转换类"><span class="nav-number">1.1.4.</span> <span class="nav-text">单位转换类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SD卡相关辅助类"><span class="nav-number">1.1.5.</span> <span class="nav-text">SD卡相关辅助类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#屏幕相关辅助类"><span class="nav-number">1.1.6.</span> <span class="nav-text">屏幕相关辅助类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#App相关辅助类"><span class="nav-number">1.1.7.</span> <span class="nav-text">App相关辅助类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#软键盘相关辅助类"><span class="nav-number">1.1.8.</span> <span class="nav-text">软键盘相关辅助类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络相关辅助类"><span class="nav-number">1.1.9.</span> <span class="nav-text">网络相关辅助类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#APP研发录"><span class="nav-number">1.2.</span> <span class="nav-text">APP研发录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#类型安全转换工具类"><span class="nav-number">1.2.1.</span> <span class="nav-text">类型安全转换工具类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Glide工具类"><span class="nav-number">1.3.</span> <span class="nav-text">Glide工具类</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
