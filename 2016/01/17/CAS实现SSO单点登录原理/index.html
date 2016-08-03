@@ -84,41 +84,38 @@
 
 
 
-<meta name="description" content="接触在UTOUU项目中的登录流程.
+<meta name="description" content="在新项目中的流程.
 
 通过用户名密码获得TGT
 通过TGT获得ST
 再用ST去请求用户数据
 
-每一个需要登录操作的接口,都要在请求头里加入ST.如果返回ST失效,就用TGT再去请求一个ST.请求到ST以后,再去请求需要登录操作的接口.如果TGT也失效,那么就跳到登录.  
-CAS实现SSO单点登录原理原文CAS实现SSO单点登录原理">
+每一个需要登录操作的接口,都要在请求头里加入ST.如果返回ST失效,就用TGT再去请求一个ST.请求到ST以后,再去请求需要登录操作的接口.如果TGT也失效,就需要重新登录了.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CAS实现SSO单点登录原理">
 <meta property="og:url" content="http://blog.chuanci.cc/2016/01/17/CAS实现SSO单点登录原理/index.html">
 <meta property="og:site_name" content="chuanci">
-<meta property="og:description" content="接触在UTOUU项目中的登录流程.
+<meta property="og:description" content="在新项目中的流程.
 
 通过用户名密码获得TGT
 通过TGT获得ST
 再用ST去请求用户数据
 
-每一个需要登录操作的接口,都要在请求头里加入ST.如果返回ST失效,就用TGT再去请求一个ST.请求到ST以后,再去请求需要登录操作的接口.如果TGT也失效,那么就跳到登录.  
-CAS实现SSO单点登录原理原文CAS实现SSO单点登录原理">
+每一个需要登录操作的接口,都要在请求头里加入ST.如果返回ST失效,就用TGT再去请求一个ST.请求到ST以后,再去请求需要登录操作的接口.如果TGT也失效,就需要重新登录了.">
 <meta property="og:image" content="http://ob8b0pedx.bkt.clouddn.com/cas_clip_image001.jpg">
 <meta property="og:image" content="http://ob8b0pedx.bkt.clouddn.com/cas_clip_image003.gif">
 <meta property="og:image" content="http://ob8b0pedx.bkt.clouddn.com/cas_clip_image004.jpg">
 <meta property="og:image" content="http://ob8b0pedx.bkt.clouddn.com/cas_clip_image005.jpg">
-<meta property="og:updated_time" content="2016-08-02T12:55:56.996Z">
+<meta property="og:updated_time" content="2016-08-03T04:21:11.858Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CAS实现SSO单点登录原理">
-<meta name="twitter:description" content="接触在UTOUU项目中的登录流程.
+<meta name="twitter:description" content="在新项目中的流程.
 
 通过用户名密码获得TGT
 通过TGT获得ST
 再用ST去请求用户数据
 
-每一个需要登录操作的接口,都要在请求头里加入ST.如果返回ST失效,就用TGT再去请求一个ST.请求到ST以后,再去请求需要登录操作的接口.如果TGT也失效,那么就跳到登录.  
-CAS实现SSO单点登录原理原文CAS实现SSO单点登录原理">
+每一个需要登录操作的接口,都要在请求头里加入ST.如果返回ST失效,就用TGT再去请求一个ST.请求到ST以后,再去请求需要登录操作的接口.如果TGT也失效,就需要重新登录了.">
 <meta name="twitter:image" content="http://ob8b0pedx.bkt.clouddn.com/cas_clip_image001.jpg">
 
 
@@ -302,15 +299,15 @@ CAS实现SSO单点登录原理原文CAS实现SSO单点登录原理">
       
 
       
-        <h1 id="接触"><a href="#接触" class="headerlink" title="接触"></a>接触</h1><p>在UTOUU项目中的登录流程.</p>
+        <p>在新项目中的流程.</p>
 <ol>
 <li>通过用户名密码获得TGT</li>
 <li>通过TGT获得ST</li>
 <li>再用ST去请求用户数据</li>
 </ol>
-<p>每一个需要登录操作的接口,都要在请求头里加入ST.<br>如果返回ST失效,就用TGT再去请求一个ST.<br>请求到ST以后,再去请求需要登录操作的接口.<br>如果TGT也失效,那么就跳到登录.  </p>
-<h1 id="CAS实现SSO单点登录原理"><a href="#CAS实现SSO单点登录原理" class="headerlink" title="CAS实现SSO单点登录原理"></a>CAS实现SSO单点登录原理</h1><p>原文<a href="http://www.coin163.com/java/cas/cas.html" target="_blank" rel="external">CAS实现SSO单点登录原理</a></p>
+<p>每一个需要登录操作的接口,都要在请求头里加入ST.<br>如果返回ST失效,就用TGT再去请求一个ST.<br>请求到ST以后,再去请求需要登录操作的接口.<br>如果TGT也失效,就需要重新登录了.  </p>
 <a id="more"></a>
+<h1 id="CAS实现SSO单点登录原理"><a href="#CAS实现SSO单点登录原理" class="headerlink" title="CAS实现SSO单点登录原理"></a>CAS实现SSO单点登录原理</h1><p>原文<a href="http://www.coin163.com/java/cas/cas.html" target="_blank" rel="external">CAS实现SSO单点登录原理</a></p>
 <h2 id="CAS-简介"><a href="#CAS-简介" class="headerlink" title="CAS 简介"></a>CAS 简介</h2><h3 id="什么是CAS"><a href="#什么是CAS" class="headerlink" title="什么是CAS?"></a>什么是CAS?</h3><p>CAS （ Central Authentication Service ） 是 Yale 大学发起的一个企业级的、开源的项目，旨在为 Web 应用系统提供一种可靠的单点登录解决方法（属于 Web SSO ）。<br>CAS 开始于 2001 年， 并在 2004 年 12 月正式成为 JA-SIG 的一个项目。</p>
 <h3 id="主要特性"><a href="#主要特性" class="headerlink" title="主要特性"></a>主要特性</h3><ol>
 <li>开源的、多协议的 SSO 解决方案； Protocols ： Custom Protocol 、 CAS 、 OAuth 、 OpenID 、 RESTful API 、 SAML1.1 、 SAML2.0 等。</li>
@@ -556,7 +553,7 @@ CAS实现SSO单点登录原理原文CAS实现SSO单点登录原理">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#接触"><span class="nav-number">1.</span> <span class="nav-text">接触</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CAS实现SSO单点登录原理"><span class="nav-number">2.</span> <span class="nav-text">CAS实现SSO单点登录原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CAS-简介"><span class="nav-number">2.1.</span> <span class="nav-text">CAS 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是CAS"><span class="nav-number">2.1.1.</span> <span class="nav-text">什么是CAS?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主要特性"><span class="nav-number">2.1.2.</span> <span class="nav-text">主要特性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSO-单点登录原理"><span class="nav-number">2.2.</span> <span class="nav-text">SSO 单点登录原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是SSO"><span class="nav-number">2.2.1.</span> <span class="nav-text">什么是SSO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SSO-原理"><span class="nav-number">2.2.2.</span> <span class="nav-text">SSO 原理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#SSO-体系中的角色"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">SSO 体系中的角色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SSO-实现模式的原则"><span class="nav-number">2.2.2.2.</span> <span class="nav-text">SSO 实现模式的原则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SSO-主要实现方式"><span class="nav-number">2.2.2.3.</span> <span class="nav-text">SSO 主要实现方式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#共享-cookies"><span class="nav-number">2.2.2.3.1.</span> <span class="nav-text">共享 cookies</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Broker-based-基于经纪人"><span class="nav-number">2.2.2.3.2.</span> <span class="nav-text">Broker-based( 基于经纪人 )</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Agent-based-（基于代理人）"><span class="nav-number">2.2.2.3.3.</span> <span class="nav-text">Agent-based （基于代理人）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Token-based"><span class="nav-number">2.2.2.3.4.</span> <span class="nav-text">Token-based</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#基于网关"><span class="nav-number">2.2.2.3.5.</span> <span class="nav-text">基于网关</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#基于-SAML"><span class="nav-number">2.2.2.3.6.</span> <span class="nav-text">基于 SAML</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CAS-的基本原理"><span class="nav-number">2.3.</span> <span class="nav-text">CAS 的基本原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#结构体系"><span class="nav-number">2.3.1.</span> <span class="nav-text">结构体系</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CAS-Server"><span class="nav-number">2.3.1.1.</span> <span class="nav-text">CAS Server</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CAS-Client"><span class="nav-number">2.3.1.2.</span> <span class="nav-text">CAS Client</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CAS-原理和协议"><span class="nav-number">2.3.2.</span> <span class="nav-text">CAS 原理和协议</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基础模式"><span class="nav-number">2.3.2.1.</span> <span class="nav-text">基础模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CAS-如何实现-SSO"><span class="nav-number">2.3.2.2.</span> <span class="nav-text">CAS 如何实现 SSO</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CAS-代理模式"><span class="nav-number">2.3.2.3.</span> <span class="nav-text">CAS 代理模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#辅助说明"><span class="nav-number">2.3.2.4.</span> <span class="nav-text">辅助说明</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#术语解释"><span class="nav-number">2.3.3.</span> <span class="nav-text">术语解释</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CAS-安全性"><span class="nav-number">2.4.</span> <span class="nav-text">CAS 安全性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TGC-PGT-安全性"><span class="nav-number">2.4.1.</span> <span class="nav-text">TGC/PGT 安全性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ST-PT-安全性"><span class="nav-number">2.4.2.</span> <span class="nav-text">ST/PT 安全性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ST-只能使用一次"><span class="nav-number">2.4.2.1.</span> <span class="nav-text">ST 只能使用一次</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ST-在一段时间内失效"><span class="nav-number">2.4.2.2.</span> <span class="nav-text">ST 在一段时间内失效</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ST-是基于随机数生成的"><span class="nav-number">2.4.2.3.</span> <span class="nav-text">ST 是基于随机数生成的</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">2.5.</span> <span class="nav-text">参考资料</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CAS实现SSO单点登录原理"><span class="nav-number">1.</span> <span class="nav-text">CAS实现SSO单点登录原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CAS-简介"><span class="nav-number">1.1.</span> <span class="nav-text">CAS 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是CAS"><span class="nav-number">1.1.1.</span> <span class="nav-text">什么是CAS?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主要特性"><span class="nav-number">1.1.2.</span> <span class="nav-text">主要特性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSO-单点登录原理"><span class="nav-number">1.2.</span> <span class="nav-text">SSO 单点登录原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是SSO"><span class="nav-number">1.2.1.</span> <span class="nav-text">什么是SSO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SSO-原理"><span class="nav-number">1.2.2.</span> <span class="nav-text">SSO 原理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#SSO-体系中的角色"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">SSO 体系中的角色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SSO-实现模式的原则"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">SSO 实现模式的原则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SSO-主要实现方式"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">SSO 主要实现方式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#共享-cookies"><span class="nav-number">1.2.2.3.1.</span> <span class="nav-text">共享 cookies</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Broker-based-基于经纪人"><span class="nav-number">1.2.2.3.2.</span> <span class="nav-text">Broker-based( 基于经纪人 )</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Agent-based-（基于代理人）"><span class="nav-number">1.2.2.3.3.</span> <span class="nav-text">Agent-based （基于代理人）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Token-based"><span class="nav-number">1.2.2.3.4.</span> <span class="nav-text">Token-based</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#基于网关"><span class="nav-number">1.2.2.3.5.</span> <span class="nav-text">基于网关</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#基于-SAML"><span class="nav-number">1.2.2.3.6.</span> <span class="nav-text">基于 SAML</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CAS-的基本原理"><span class="nav-number">1.3.</span> <span class="nav-text">CAS 的基本原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#结构体系"><span class="nav-number">1.3.1.</span> <span class="nav-text">结构体系</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CAS-Server"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">CAS Server</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CAS-Client"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">CAS Client</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CAS-原理和协议"><span class="nav-number">1.3.2.</span> <span class="nav-text">CAS 原理和协议</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基础模式"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">基础模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CAS-如何实现-SSO"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">CAS 如何实现 SSO</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CAS-代理模式"><span class="nav-number">1.3.2.3.</span> <span class="nav-text">CAS 代理模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#辅助说明"><span class="nav-number">1.3.2.4.</span> <span class="nav-text">辅助说明</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#术语解释"><span class="nav-number">1.3.3.</span> <span class="nav-text">术语解释</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CAS-安全性"><span class="nav-number">1.4.</span> <span class="nav-text">CAS 安全性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TGC-PGT-安全性"><span class="nav-number">1.4.1.</span> <span class="nav-text">TGC/PGT 安全性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ST-PT-安全性"><span class="nav-number">1.4.2.</span> <span class="nav-text">ST/PT 安全性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ST-只能使用一次"><span class="nav-number">1.4.2.1.</span> <span class="nav-text">ST 只能使用一次</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ST-在一段时间内失效"><span class="nav-number">1.4.2.2.</span> <span class="nav-text">ST 在一段时间内失效</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ST-是基于随机数生成的"><span class="nav-number">1.4.2.3.</span> <span class="nav-text">ST 是基于随机数生成的</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">1.5.</span> <span class="nav-text">参考资料</span></a></li></ol></li></ol></div>
             
           </div>
         </section>

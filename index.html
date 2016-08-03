@@ -281,14 +281,7 @@
 
       
         
-          <h1 id="Json"><a href="#Json" class="headerlink" title="Json"></a>Json</h1><p>JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。</p>
-<h2 id="Android中的类"><a href="#Android中的类" class="headerlink" title="Android中的类"></a>Android中的类</h2><ul>
-<li>JSONObject</li>
-<li>JSONStringer</li>
-<li>JSONArray</li>
-<li>JSONTokener</li>
-<li>JSONException</li>
-</ul>
+          <p>JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/07/18/Android之Json/#more" rel="contents">
               阅读全文 &raquo;
@@ -384,7 +377,7 @@
 
       
         
-          <h1 id="常用工具类"><a href="#常用工具类" class="headerlink" title="常用工具类"></a>常用工具类</h1>
+          <p>收集了一些常用的工具类</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/07/03/Android工具类/#more" rel="contents">
               阅读全文 &raquo;
@@ -480,7 +473,7 @@
 
       
         
-          <h1 id="属性动画"><a href="#属性动画" class="headerlink" title="属性动画"></a>属性动画</h1><p>属性动画是API 11加入的特性,<br>使用<a href="http://nineoldandroids.com">nineoldandroids库</a>,可以在API 11以下使用属性动画,但底层是用View动画来实现的.<br>它可以对任一对象(Object)做动画,甚至可以没有对象.<br>它通过反射来set某个属性,如果没有提供初始值,那么就会在动画开始时调用get某属性的方法.</p>
+          <p>属性动画是API 11加入的特性,<br>使用<a href="http://nineoldandroids.com">nineoldandroids库</a>,可以在API 11以下使用属性动画,但底层是用View动画来实现的.<br>它可以对任一对象(Object)做动画,甚至可以没有对象.<br>它通过反射来set某个属性,如果没有提供初始值,那么就会在动画开始时调用get某属性的方法.</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/05/30/Android属性动画/#more" rel="contents">
               阅读全文 &raquo;
@@ -576,12 +569,7 @@
 
       
         
-          <h1 id="Java注解"><a href="#Java注解" class="headerlink" title="Java注解"></a>Java注解</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>注解（Annotation），也叫元数据。一种代码级别的说明。它是JDK1.5及以后版本引入的一个特性，与类、接口、枚举是在同一个层次。它可以声明在包、类、字段、方法、局部变量、方法参数等的前面，用来对这些元素进行说明，注释.</p>
-<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><ol>
-<li>编写文档：通过代码里标识的元数据生成文档【生成文档doc文档】</li>
-<li>代码分析：通过代码里标识的元数据对代码进行分析【使用反射】</li>
-<li>编译检查：通过代码里标识的元数据让编译器能够实现基本的编译检查【Override】</li>
-</ol>
+          <p>注解（Annotation），也叫元数据。一种代码级别的说明。<br>它是JDK1.5及以后版本引入的一个特性，与类、接口、枚举是在同一个层次。<br>它可以声明在包、类、字段、方法、局部变量、方法参数等的前面，用来对这些元素进行说明，注释.</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/05/20/Java注解/#more" rel="contents">
               阅读全文 &raquo;
@@ -677,7 +665,7 @@
 
       
         
-          <h1 id="PopupWindow"><a href="#PopupWindow" class="headerlink" title="PopupWindow"></a>PopupWindow</h1><p>PopupWindow这个类用来实现一个弹出框，可以使用任意布局的View作为其内容，这个弹出框是悬浮在当前activity之上的。</p>
+          <p>PopupWindow这个类用来实现一个弹出框，可以使用任意布局的View作为其内容，这个弹出框是悬浮在当前activity之上的。</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/04/16/AndroidUI之PopupWindow/#more" rel="contents">
               阅读全文 &raquo;
@@ -773,10 +761,7 @@
 
       
         
-          <h1 id="Dialog"><a href="#Dialog" class="headerlink" title="Dialog"></a>Dialog</h1><p>对话框.</p>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ul>
-<li>new AlertDialog.Builder(<strong>Context context</strong>) </li>
-</ul>
+          <p>对话框.</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/04/09/AndroidUI之Dialog/#more" rel="contents">
               阅读全文 &raquo;
@@ -872,18 +857,7 @@
 
       
         
-          <h1 id="Toast"><a href="#Toast" class="headerlink" title="Toast"></a>Toast</h1><p>一个可视控件,用于向用户显示一些提示.</p>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ol>
-<li>只需要一个Context,就可以使用.所以在Service中也能用.</li>
-<li>要在主线程中调用.</li>
-</ol>
-<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ul>
-<li>Toast.makeText(context,text,duration);//返回一个toast</li>
-<li>toast.setDuration(duration);//设置持续时间</li>
-<li>toast.setGravity(gravity,xOffset,yOffset);//设置显示位置</li>
-<li>toast.setText(s);//设置显示内容</li>
-<li>toast.show;//显示</li>
-</ul>
+          <p>一个可视控件,用于向用户显示一些提示.</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/04/02/AndroidUI之Toast/#more" rel="contents">
               阅读全文 &raquo;
@@ -979,14 +953,13 @@
 
       
         
-          <h1 id="接触"><a href="#接触" class="headerlink" title="接触"></a>接触</h1><p>在UTOUU项目中的登录流程.</p>
+          <p>在新项目中的流程.</p>
 <ol>
 <li>通过用户名密码获得TGT</li>
 <li>通过TGT获得ST</li>
 <li>再用ST去请求用户数据</li>
 </ol>
-<p>每一个需要登录操作的接口,都要在请求头里加入ST.<br>如果返回ST失效,就用TGT再去请求一个ST.<br>请求到ST以后,再去请求需要登录操作的接口.<br>如果TGT也失效,那么就跳到登录.  </p>
-<h1 id="CAS实现SSO单点登录原理"><a href="#CAS实现SSO单点登录原理" class="headerlink" title="CAS实现SSO单点登录原理"></a>CAS实现SSO单点登录原理</h1><p>原文<a href="http://www.coin163.com/java/cas/cas.html">CAS实现SSO单点登录原理</a></p>
+<p>每一个需要登录操作的接口,都要在请求头里加入ST.<br>如果返回ST失效,就用TGT再去请求一个ST.<br>请求到ST以后,再去请求需要登录操作的接口.<br>如果TGT也失效,就需要重新登录了.  </p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/01/17/CAS实现SSO单点登录原理/#more" rel="contents">
               阅读全文 &raquo;
