@@ -4,12 +4,29 @@
 
     
   <url>
-    <loc>http://blog.chuanci.cc/2016/07/03/Android%E5%B7%A5%E5%85%B7%E7%B1%BB/</loc>
-    <lastmod>2016-11-16T11:03:28.000Z</lastmod>
+    <loc>http://blog.chuanci.cc/2016/11/08/swift%E5%85%A5%E9%97%A8/</loc>
+    <lastmod>2016-12-07T12:45:16.000Z</lastmod>
     <data>
         <display>
-        <title>Android工具类</title>
-        <pubTime>2016-07-03T09:10:37.000Z</pubTime>
+        <title>swift入门</title>
+        <pubTime>2016-11-08T05:08:24.000Z</pubTime>
+        
+        <tag>swift</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.chuanci.cc/2016/05/30/%E5%B1%9E%E6%80%A7%E5%8A%A8%E7%94%BB/</loc>
+    <lastmod>2016-12-07T12:33:55.000Z</lastmod>
+    <data>
+        <display>
+        <title>属性动画</title>
+        <pubTime>2016-05-30T03:08:26.000Z</pubTime>
         
         <tag>Android</tag>
          
@@ -21,12 +38,12 @@
 
     
   <url>
-    <loc>http://blog.chuanci.cc/2016/05/30/Android%E5%B1%9E%E6%80%A7%E5%8A%A8%E7%94%BB/</loc>
-    <lastmod>2016-11-10T11:34:09.000Z</lastmod>
+    <loc>http://blog.chuanci.cc/2016/07/03/Android%E5%B7%A5%E5%85%B7%E7%B1%BB/</loc>
+    <lastmod>2016-11-16T11:03:28.000Z</lastmod>
     <data>
         <display>
-        <title>Android属性动画</title>
-        <pubTime>2016-05-30T03:08:26.000Z</pubTime>
+        <title>Android工具类</title>
+        <pubTime>2016-07-03T09:10:37.000Z</pubTime>
         
         <tag>Android</tag>
          
