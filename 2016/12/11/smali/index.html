@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Android," />
+  <meta name="keywords" content="language," />
 
 
 
@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。">
+<meta name="description" content="Smali，Baksmali分别是指安卓系统里的Java虚拟机（Dalvik）所使用的一种.dex格式文件的汇编器，反汇编器。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android之Json解析">
-<meta property="og:url" content="http://blog.chuanci.cc/2016/07/18/Android之Json/index.html">
+<meta property="og:title" content="smali">
+<meta property="og:url" content="http://blog.chuanci.cc/2016/12/11/smali/index.html">
 <meta property="og:site_name" content="博客">
-<meta property="og:description" content="JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。">
-<meta property="og:updated_time" content="2016-08-03T04:21:28.000Z">
+<meta property="og:description" content="Smali，Baksmali分别是指安卓系统里的Java虚拟机（Dalvik）所使用的一种.dex格式文件的汇编器，反汇编器。">
+<meta property="og:updated_time" content="2016-12-11T06:02:10.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android之Json解析">
-<meta name="twitter:description" content="JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。">
+<meta name="twitter:title" content="smali">
+<meta name="twitter:description" content="Smali，Baksmali分别是指安卓系统里的Java虚拟机（Dalvik）所使用的一种.dex格式文件的汇编器，反汇编器。">
 
 
 
@@ -114,9 +114,9 @@
 
 
 
-  <link rel="canonical" href="http://blog.chuanci.cc/2016/07/18/Android之Json/"/>
+  <link rel="canonical" href="http://blog.chuanci.cc/2016/12/11/smali/"/>
 
-  <title> Android之Json解析 | 博客 </title>
+  <title> smali | 博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -236,7 +236,7 @@
             
             
               
-                Android之Json解析
+                smali
               
             
           </h1>
@@ -248,8 +248,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-18T18:22:06+08:00" content="2016-07-18">
-              2016-07-18
+            <time itemprop="dateCreated" datetime="2016-12-11T13:30:09+08:00" content="2016-12-11">
+              2016-12-11
             </time>
           </span>
 
@@ -276,35 +276,88 @@
       
 
       
-        <p>JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。</p>
+        <p>Smali，Baksmali分别是指安卓系统里的Java虚拟机（Dalvik）所使用的一种.dex格式文件的汇编器，反汇编器。</p>
 <a id="more"></a>
-<h2 id="Android中的类"><a href="#Android中的类" class="headerlink" title="Android中的类"></a>Android中的类</h2><ul>
-<li>JSONObject</li>
-<li>JSONStringer</li>
-<li>JSONArray</li>
-<li>JSONTokener</li>
-<li>JSONException</li>
-</ul>
-<h3 id="JSONObject"><a href="#JSONObject" class="headerlink" title="JSONObject"></a>JSONObject</h3><p>一个Json对象.这是系统中有关JSON定义的基本单元</p>
-<h3 id="JSONStringer"><a href="#JSONStringer" class="headerlink" title="JSONStringer"></a>JSONStringer</h3><p>json文本构建类 ，根据官方的解释，这个类可以帮助快速和便捷的创建JSON text。<br>最大的优点在于可以减少由于格式的错误导致程序异常，引用这个类可以自动严格按照JSON语法规则（syntax rules）创建JSON text。<br>每个JSONStringer实体只能对应创建一个JSON text。</p>
-<h3 id="JSONArray"><a href="#JSONArray" class="headerlink" title="JSONArray"></a>JSONArray</h3><p>它代表一组有序的数值。[value1,value2,value3]</p>
-<h3 id="JSONTokener"><a href="#JSONTokener" class="headerlink" title="JSONTokener"></a>JSONTokener</h3><p>Json解析类</p>
-<h3 id="JSONException"><a href="#JSONException" class="headerlink" title="JSONException"></a>JSONException</h3><p>Json异常类</p>
-<h2 id="解析库"><a href="#解析库" class="headerlink" title="解析库"></a>解析库</h2><ul>
-<li><a href="https://github.com/google/gson" target="_blank" rel="external">Gson</a></li>
-<li>Jackson</li>
-<li><a href="https://github.com/alibaba/fastjson" target="_blank" rel="external">FastJson</a></li>
-<li><a href="https://github.com/bluelinelabs/LoganSquare" target="_blank" rel="external">Logan Square</a></li>
-</ul>
-<h3 id="Gson"><a href="#Gson" class="headerlink" title="Gson"></a>Gson</h3><p><a href="http://ob9zoxx4a.bkt.clouddn.com/GsonUtils.java" target="_blank" rel="external">GsonUtils</a></p>
-<h3 id="Jackson"><a href="#Jackson" class="headerlink" title="Jackson"></a>Jackson</h3><h3 id="FastJson"><a href="#FastJson" class="headerlink" title="FastJson"></a>FastJson</h3><p><a href="https://github.com/Alibaba/fastjson/wiki/%E9%A6%96%E9%A1%B5" target="_blank" rel="external">使用说明</a></p>
-<p><a href="http://ob9zoxx4a.bkt.clouddn.com/FastJsonUtils.java" target="_blank" rel="external">FastJsonUtils</a></p>
-<h3 id="Logan-Square"><a href="#Logan-Square" class="headerlink" title="Logan Square"></a>Logan Square</h3><p><a href="http://www.jianshu.com/p/9c3173b2e70b" target="_blank" rel="external">使用说明</a></p>
-<h2 id="使用GsonFormat"><a href="#使用GsonFormat" class="headerlink" title="使用GsonFormat"></a>使用GsonFormat</h2><p>在AndroidStudio中,安装GsonFormat插件,可以通过一段Json字符串生成实体类.</p>
-<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><ul>
-<li>实体类里的变量都用String,使用时再转换.(即不要相信数据)</li>
-</ul>
+<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><pre><code>原始数据类型
+    V                      void
+    Z                      boolean
+    B                      byte
+    S                      short
+    C                      char
+    I                      int
+    J                      long
+    F                      float
+    D                      double
 
+引用数据类型
+    L                      对象
+    [                      数组
+</code></pre><h1 id="寄存器与变量"><a href="#寄存器与变量" class="headerlink" title="寄存器与变量"></a>寄存器与变量</h1><p>Android是基于寄存器存储的，一个寄存器占32位，java中long和double占8个字节，每一字节占8位，所以要用2个寄存器存储。</p>
+<h2 id="寄存器命名"><a href="#寄存器命名" class="headerlink" title="寄存器命名"></a>寄存器命名</h2><pre><code>v表示本地寄存器
+p表示参数寄存器
+</code></pre><p>如果一个方法有两个本地变量，有三个参数:</p>
+<pre><code>v0 第一个本地寄存器 
+v1 第二个本地寄存器 
+v2 p0 (this) 
+v3 p1 第一个参数 
+v4 p2 第二个参数 
+v5 p3 第三个参数 
+</code></pre><p>当然，如果是静态方法的话就只有5个寄存器了，不需要存this了</p>
+<pre><code>.registers 使用这个指令指定方法中寄存器的总数
+.locals 使用这个指定表明方法中非参寄存器的总数，放在方法的第一行。
+</code></pre><h1 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h1><pre><code>.field 　定义变量
+
+.method　　方法
+
+.parameter　　方法参数
+
+.prologue　　方法开始
+
+.line 12　　此方法位于第12行
+
+invoke-super　　调用父函数
+
+const/high16  v0, 0x7fo3　　把0x7fo3赋值给v0
+
+invoke-direct　　调用函数
+
+return-void　　函数返回void
+
+.end method　　函数结束
+
+new-instance　　创建实例
+
+iput-object　　对象赋值
+
+iget-object　　调用对象
+
+invoke-static　　调用静态函数
+</code></pre><h1 id="跳转语句"><a href="#跳转语句" class="headerlink" title="跳转语句"></a>跳转语句</h1><pre><code>&quot;if-eq vA, vB, :cond_0&quot; 如果vA==vB则跳转到:cond_0
+
+&quot;if-ne vA, vB, :cond_0&quot; 如果vA!=vB则跳转到:cond_0
+
+&quot;if-lt vA, vB, :cond_0&quot; 如果vA&lt;vB则跳转到:cond_0
+
+&quot;if-gt vA, vB, :cond_0&quot; 如果vA&gt;vB则跳转到:cond_0
+
+&quot;if-le vA, vB, :cond_0&quot; 如果vA&lt;=vB则跳转到:cond_0
+
+&quot;if-ge vA, vB, :cond_0&quot; 如果vA&gt;=vB则跳转到:cond_0
+
+&quot;if-eqz vA, :cond_0&quot; 如果vA==0则跳转到:cond_0
+
+&quot;if-nez vA, :cond_0&quot; 如果vA!=0则跳转到:cond_0
+
+&quot;if-ltz vA, :cond_0&quot; 如果vA&lt;0则跳转到:cond_0
+
+&quot;if-lez vA, :cond_0&quot; 如果vA&lt;=0则跳转到:cond_0
+
+&quot;if-gtz vA, :cond_0&quot; 如果vA&gt;0则跳转到:cond_0
+
+&quot;if-gez vA, :cond_0&quot; 如果vA&gt;=0则跳转到:cond_0
+</code></pre><p>#注意</p>
+<pre><code>0代表true
+</code></pre>
       
     </div>
 
@@ -331,7 +384,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Android/" rel="tag">#Android</a>
+            <a href="/tags/language/" rel="tag">#language</a>
           
         </div>
       
@@ -340,17 +393,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/03/Android工具类/" rel="next" title="Android工具类">
-                <i class="fa fa-chevron-left"></i> Android工具类
+              <a href="/2016/11/08/swift入门/" rel="next" title="swift入门">
+                <i class="fa fa-chevron-left"></i> swift入门
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/11/08/swift入门/" rel="prev" title="swift入门">
-                swift入门 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -457,7 +506,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Android中的类"><span class="nav-number">1.</span> <span class="nav-text">Android中的类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JSONObject"><span class="nav-number">1.1.</span> <span class="nav-text">JSONObject</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSONStringer"><span class="nav-number">1.2.</span> <span class="nav-text">JSONStringer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSONArray"><span class="nav-number">1.3.</span> <span class="nav-text">JSONArray</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSONTokener"><span class="nav-number">1.4.</span> <span class="nav-text">JSONTokener</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSONException"><span class="nav-number">1.5.</span> <span class="nav-text">JSONException</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解析库"><span class="nav-number">2.</span> <span class="nav-text">解析库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Gson"><span class="nav-number">2.1.</span> <span class="nav-text">Gson</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Jackson"><span class="nav-number">2.2.</span> <span class="nav-text">Jackson</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FastJson"><span class="nav-number">2.3.</span> <span class="nav-text">FastJson</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Logan-Square"><span class="nav-number">2.4.</span> <span class="nav-text">Logan Square</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用GsonFormat"><span class="nav-number">3.</span> <span class="nav-text">使用GsonFormat</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#注意"><span class="nav-number">3.1.</span> <span class="nav-text">注意</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据类型"><span class="nav-number">1.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#寄存器与变量"><span class="nav-number">2.</span> <span class="nav-text">寄存器与变量</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#寄存器命名"><span class="nav-number">2.1.</span> <span class="nav-text">寄存器命名</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#语法"><span class="nav-number">3.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#跳转语句"><span class="nav-number">4.</span> <span class="nav-text">跳转语句</span></a></li></ol></div>
             
           </div>
         </section>
