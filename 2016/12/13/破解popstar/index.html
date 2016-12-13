@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="language," />
+  <meta name="keywords" content="逆向 android," />
 
 
 
@@ -84,16 +84,26 @@
 
 
 
-<meta name="description" content="Smali，Baksmali分别是指安卓系统里的Java虚拟机（Dalvik）所使用的一种.dex格式文件的汇编器，反汇编器。">
+<meta name="description" content="本文旨在探讨移动开发安全，不以破解获利。
+《Popstar》一款非常容易的消除类游戏，游戏的规则很简单：只需点击两个或两个以上颜色相同的方块即可消除。没有时间限制，每个阶段都有一个目标，完成即可进入下一关。简单轻松的治愈系游戏PopStar，每天工作结束时玩一把，看着小星星飞来飞去，真的有一种带走疲惫的感觉。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="smali">
-<meta property="og:url" content="http://blog.chuanci.cc/2016/12/11/smali/index.html">
+<meta property="og:title" content="逆向popstar">
+<meta property="og:url" content="http://blog.chuanci.cc/2016/12/13/破解popstar/index.html">
 <meta property="og:site_name" content="ChuanCi' Blog">
-<meta property="og:description" content="Smali，Baksmali分别是指安卓系统里的Java虚拟机（Dalvik）所使用的一种.dex格式文件的汇编器，反汇编器。">
-<meta property="og:updated_time" content="2016-12-12T06:22:35.000Z">
+<meta property="og:description" content="本文旨在探讨移动开发安全，不以破解获利。
+《Popstar》一款非常容易的消除类游戏，游戏的规则很简单：只需点击两个或两个以上颜色相同的方块即可消除。没有时间限制，每个阶段都有一个目标，完成即可进入下一关。简单轻松的治愈系游戏PopStar，每天工作结束时玩一把，看着小星星飞来飞去，真的有一种带走疲惫的感觉。">
+<meta property="og:image" content="http://ob8b0pedx.bkt.clouddn.com/popstarapk.png">
+<meta property="og:image" content="http://ob8b0pedx.bkt.clouddn.com/popstar%E7%9B%AE%E5%BD%95.png">
+<meta property="og:image" content="http://ob8b0pedx.bkt.clouddn.com/popstar%E6%94%AF%E4%BB%981.jpg">
+<meta property="og:image" content="http://ob8b0pedx.bkt.clouddn.com/popstar%E6%94%AF%E4%BB%98%E5%A4%B1%E8%B4%A5%E4%BB%A3%E7%A0%81.png">
+<meta property="og:image" content="http://ob8b0pedx.bkt.clouddn.com/popstar%E6%94%AF%E4%BB%982.jpg">
+<meta property="og:image" content="http://ob8b0pedx.bkt.clouddn.com/popstargg.jpg">
+<meta property="og:updated_time" content="2016-12-13T08:59:43.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="smali">
-<meta name="twitter:description" content="Smali，Baksmali分别是指安卓系统里的Java虚拟机（Dalvik）所使用的一种.dex格式文件的汇编器，反汇编器。">
+<meta name="twitter:title" content="逆向popstar">
+<meta name="twitter:description" content="本文旨在探讨移动开发安全，不以破解获利。
+《Popstar》一款非常容易的消除类游戏，游戏的规则很简单：只需点击两个或两个以上颜色相同的方块即可消除。没有时间限制，每个阶段都有一个目标，完成即可进入下一关。简单轻松的治愈系游戏PopStar，每天工作结束时玩一把，看着小星星飞来飞去，真的有一种带走疲惫的感觉。">
+<meta name="twitter:image" content="http://ob8b0pedx.bkt.clouddn.com/popstarapk.png">
 
 
 
@@ -114,9 +124,9 @@
 
 
 
-  <link rel="canonical" href="http://blog.chuanci.cc/2016/12/11/smali/"/>
+  <link rel="canonical" href="http://blog.chuanci.cc/2016/12/13/破解popstar/"/>
 
-  <title> smali | ChuanCi' Blog </title>
+  <title> 逆向popstar | ChuanCi' Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -247,7 +257,7 @@
             
             
               
-                smali
+                逆向popstar
               
             
           </h1>
@@ -259,8 +269,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-12-11T13:30:09+08:00" content="2016-12-11">
-              2016-12-11
+            <time itemprop="dateCreated" datetime="2016-12-13T15:37:27+08:00" content="2016-12-13">
+              2016-12-13
             </time>
           </span>
 
@@ -287,87 +297,45 @@
       
 
       
-        <p>Smali，Baksmali分别是指安卓系统里的Java虚拟机（Dalvik）所使用的一种.dex格式文件的汇编器，反汇编器。</p>
-<a id="more"></a> 
-<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><pre><code>原始数据类型
-    V                      void
-    Z                      boolean
-    B                      byte
-    S                      short
-    C                      char
-    I                      int
-    J                      long
-    F                      float
-    D                      double
+        <p>本文旨在探讨移动开发安全，不以破解获利。</p>
+<p>《Popstar》一款非常容易的消除类游戏，游戏的规则很简单：只需点击两个或两个以上颜色相同的方块即可消除。没有时间限制，每个阶段都有一个目标，完成即可进入下一关。简单轻松的治愈系游戏PopStar，每天工作结束时玩一把，看着小星星飞来飞去，真的有一种带走疲惫的感觉。</p>
+<a id="more"></a>
+<p>过去pc游戏一发布，几天后就可以从3dm，游侠等网站下到破解版，这是单机游戏，应用类软件的通病，代码流程控制放在客户端。</p>
+<h1 id="获取原版apk"><a href="#获取原版apk" class="headerlink" title="获取原版apk"></a>获取原版apk</h1><p>在小米应用上,搜索 popstar</p>
+<p><img src="http://ob8b0pedx.bkt.clouddn.com/popstarapk.png" alt="popstarapk"></p>
+<p>找到一款最新更新的，下载。</p>
+<p><a href="http://ob8b0pedx.bkt.clouddn.com/com.brianbaek.popstar.apk" target="_blank" rel="external">popstar.apk</a></p>
+<h1 id="提取dex"><a href="#提取dex" class="headerlink" title="提取dex"></a>提取dex</h1><p>通过工具提取dex，再转为jar，用gui打开。</p>
+<p><img src="http://ob8b0pedx.bkt.clouddn.com/popstar%E7%9B%AE%E5%BD%95.png" alt="popstar目录"></p>
+<p>这是用的是rx+retrofit2，不愧是2016最流行的开源库之一。</p>
+<p>再点开代码一看。。。没混淆</p>
+<h2 id="混淆"><a href="#混淆" class="headerlink" title="混淆"></a>混淆</h2><h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><pre><code>1，混淆可以减少apk包大小
+2，混淆可以增加破解apk花费时间
+</code></pre><h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><pre><code>混淆可能会制造出新bug，增加测试工作量
+</code></pre><p>在时间允许的情况下，尽量混淆代码。</p>
+<h1 id="进入游戏"><a href="#进入游戏" class="headerlink" title="进入游戏"></a>进入游戏</h1><p>找到购买界面，进入一看，是微信支付，按返回。<br><img src="http://ob8b0pedx.bkt.clouddn.com/popstar%E6%94%AF%E4%BB%981.jpg" alt="popstar支付1"></p>
+<p>这里获得关键词“ 支付失败：支付失败”</p>
+<p>这两个支付失败，按照开发逻辑理解</p>
+<pre><code>第一个是结果，即通过判断code生成
+第二个是原因，即返回的msg
+</code></pre><p>所以，第一个“支付失败：”就在代码中</p>
+<h1 id="搜索“支付失败：”"><a href="#搜索“支付失败：”" class="headerlink" title="搜索“支付失败：”"></a>搜索“支付失败：”</h1><p>在PopstarA.class里面我们找到了这个字符串</p>
+<p>如果没找到，我们可以提取smali文件，将关键词换成unicode进行搜索</p>
+<p><img src="http://ob8b0pedx.bkt.clouddn.com/popstar%E6%94%AF%E4%BB%98%E5%A4%B1%E8%B4%A5%E4%BB%A3%E7%A0%81.png" alt="popstar支付失败代码"></p>
+<p>可以看出，请求返回进入onError中。</p>
+<h1 id="代码注入"><a href="#代码注入" class="headerlink" title="代码注入"></a>代码注入</h1><p>那么我们想执行onSuccess中的代码怎么办？</p>
+<pre><code>1，将onSuccess中的代码cope到onError中
+2，在onError中，删除原有代码，调用onSuccess
+</code></pre><p>按照路径，找到这个内部类，即PopstarA$5.smali</p>
+<p>这里用第一种方案，直接cope代码，避免自己写smali语句</p>
+<p>最后将onError中“支付成功：）”的提示换成“破解成功”</p>
+<h1 id="重新打包"><a href="#重新打包" class="headerlink" title="重新打包"></a>重新打包</h1><p>用工具将smali编译到classes.dex中打包，签名。</p>
+<p>这几步都没遇到问题，</p>
+<h2 id="签名"><a href="#签名" class="headerlink" title="签名"></a>签名</h2><p>在开发中，我们可以通过判断签名的md5来进行一些操作，这可以防止二次打包。</p>
+<p>这个md5可以截成几段分开保存，可以写到so里。</p>
+<h1 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h1><p><img src="http://ob8b0pedx.bkt.clouddn.com/popstar%E6%94%AF%E4%BB%982.jpg" alt="popstar支付2"></p>
+<p><img src="http://ob8b0pedx.bkt.clouddn.com/popstargg.jpg" alt="popstargg"></p>
 
-引用数据类型
-    L                      对象
-    [                      数组
-</code></pre><h1 id="寄存器与变量"><a href="#寄存器与变量" class="headerlink" title="寄存器与变量"></a>寄存器与变量</h1><p>Android是基于寄存器存储的，一个寄存器占32位，java中long和double占8个字节，每一字节占8位，所以要用2个寄存器存储。</p>
-<h2 id="寄存器命名"><a href="#寄存器命名" class="headerlink" title="寄存器命名"></a>寄存器命名</h2><pre><code>v表示本地寄存器
-p表示参数寄存器
-</code></pre><p>如果一个方法有两个本地变量，有三个参数:</p>
-<pre><code>v0 第一个本地寄存器 
-v1 第二个本地寄存器 
-v2 p0 (this) 
-v3 p1 第一个参数 
-v4 p2 第二个参数 
-v5 p3 第三个参数 
-</code></pre><p>当然，如果是静态方法的话就只有5个寄存器了，不需要存this了</p>
-<pre><code>.registers 使用这个指令指定方法中寄存器的总数
-.locals 使用这个指定表明方法中非参寄存器的总数，放在方法的第一行。
-</code></pre><h1 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h1><pre><code>.field 　定义变量
-
-.method　　方法
-
-.parameter　　方法参数
-
-.prologue　　方法开始
-
-.line 12　　此方法位于第12行
-
-invoke-super　　调用父函数
-
-const/high16  v0, 0x7fo3　　把0x7fo3赋值给v0
-
-invoke-direct　　调用函数
-
-return-void　　函数返回void
-
-.end method　　函数结束
-
-new-instance　　创建实例
-
-iput-object　　对象赋值
-
-iget-object　　调用对象
-
-invoke-static　　调用静态函数
-</code></pre><h1 id="跳转语句"><a href="#跳转语句" class="headerlink" title="跳转语句"></a>跳转语句</h1><pre><code>&quot;if-eq vA, vB, :cond_0&quot; 如果vA==vB则跳转到:cond_0
-
-&quot;if-ne vA, vB, :cond_0&quot; 如果vA!=vB则跳转到:cond_0
-
-&quot;if-lt vA, vB, :cond_0&quot; 如果vA&lt;vB则跳转到:cond_0
-
-&quot;if-gt vA, vB, :cond_0&quot; 如果vA&gt;vB则跳转到:cond_0
-
-&quot;if-le vA, vB, :cond_0&quot; 如果vA&lt;=vB则跳转到:cond_0
-
-&quot;if-ge vA, vB, :cond_0&quot; 如果vA&gt;=vB则跳转到:cond_0
-
-&quot;if-eqz vA, :cond_0&quot; 如果vA==0则跳转到:cond_0
-
-&quot;if-nez vA, :cond_0&quot; 如果vA!=0则跳转到:cond_0
-
-&quot;if-ltz vA, :cond_0&quot; 如果vA&lt;0则跳转到:cond_0
-
-&quot;if-lez vA, :cond_0&quot; 如果vA&lt;=0则跳转到:cond_0
-
-&quot;if-gtz vA, :cond_0&quot; 如果vA&gt;0则跳转到:cond_0
-
-&quot;if-gez vA, :cond_0&quot; 如果vA&gt;=0则跳转到:cond_0
-</code></pre><h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><pre><code>0 为 true
-</code></pre>
       
     </div>
 
@@ -394,7 +362,7 @@ invoke-static　　调用静态函数
       
         <div class="post-tags">
           
-            <a href="/tags/language/" rel="tag">#language</a>
+            <a href="/tags/逆向-android/" rel="tag">#逆向 android</a>
           
         </div>
       
@@ -403,17 +371,13 @@ invoke-static　　调用静态函数
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/11/08/swift/" rel="next" title="swift">
-                <i class="fa fa-chevron-left"></i> swift
+              <a href="/2016/12/11/smali/" rel="next" title="smali">
+                <i class="fa fa-chevron-left"></i> smali
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/12/13/破解popstar/" rel="prev" title="逆向popstar">
-                逆向popstar <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -520,7 +484,7 @@ invoke-static　　调用静态函数
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据类型"><span class="nav-number">1.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#寄存器与变量"><span class="nav-number">2.</span> <span class="nav-text">寄存器与变量</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#寄存器命名"><span class="nav-number">2.1.</span> <span class="nav-text">寄存器命名</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#语法"><span class="nav-number">3.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#跳转语句"><span class="nav-number">4.</span> <span class="nav-text">跳转语句</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注意"><span class="nav-number">5.</span> <span class="nav-text">注意</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#获取原版apk"><span class="nav-number">1.</span> <span class="nav-text">获取原版apk</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#提取dex"><span class="nav-number">2.</span> <span class="nav-text">提取dex</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#混淆"><span class="nav-number">2.1.</span> <span class="nav-text">混淆</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#优点"><span class="nav-number">2.1.1.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缺点"><span class="nav-number">2.1.2.</span> <span class="nav-text">缺点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#进入游戏"><span class="nav-number">3.</span> <span class="nav-text">进入游戏</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#搜索“支付失败：”"><span class="nav-number">4.</span> <span class="nav-text">搜索“支付失败：”</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码注入"><span class="nav-number">5.</span> <span class="nav-text">代码注入</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#重新打包"><span class="nav-number">6.</span> <span class="nav-text">重新打包</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#签名"><span class="nav-number">6.1.</span> <span class="nav-text">签名</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#效果"><span class="nav-number">7.</span> <span class="nav-text">效果</span></a></li></ol></div>
             
           </div>
         </section>
