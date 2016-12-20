@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Android," />
+  <meta name="keywords" content="android," />
 
 
 
@@ -84,21 +84,46 @@
 
 
 
-<meta name="description" content="一个可视控件,用于向用户显示一些提示.">
+<meta name="description" content="混淆混淆就是把代码替换成a、b、c基本字母组成的代码
+优点代码混淆后阅读性降低，反编译后破译程序难度提高
+混淆后字节数减少，减少了应用了体积
+缺点混淆后，测试不充分可能导致某些功能不能使用
+
+
+# 不优化 －－默认开启
+-dontoptimize
+
+# 代码循环优化次数，0-7，默认为5
+-optimizationpasses 5">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AndroidUI之Toast">
-<meta property="og:url" content="http://blog.chuanci.cc/2016/04/02/AndroidUI之Toast/index.html">
+<meta property="og:title" content="Android混淆">
+<meta property="og:url" content="http://blog.chuanci.cc/2016/12/15/Android混淆/index.html">
 <meta property="og:site_name" content="ChuanCi' Blog">
-<meta property="og:description" content="一个可视控件,用于向用户显示一些提示.">
-<meta property="og:image" content="http://ob8b0pedx.bkt.clouddn.com/toast1.png">
-<meta property="og:image" content="http://ob8b0pedx.bkt.clouddn.com/toast2.png">
-<meta property="og:image" content="http://ob8b0pedx.bkt.clouddn.com/toast3.png">
-<meta property="og:image" content="http://ob8b0pedx.bkt.clouddn.com/toast4.png">
-<meta property="og:updated_time" content="2016-08-03T04:22:16.000Z">
+<meta property="og:description" content="混淆混淆就是把代码替换成a、b、c基本字母组成的代码
+优点代码混淆后阅读性降低，反编译后破译程序难度提高
+混淆后字节数减少，减少了应用了体积
+缺点混淆后，测试不充分可能导致某些功能不能使用
+
+
+# 不优化 －－默认开启
+-dontoptimize
+
+# 代码循环优化次数，0-7，默认为5
+-optimizationpasses 5">
+<meta property="og:updated_time" content="2016-12-15T02:29:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AndroidUI之Toast">
-<meta name="twitter:description" content="一个可视控件,用于向用户显示一些提示.">
-<meta name="twitter:image" content="http://ob8b0pedx.bkt.clouddn.com/toast1.png">
+<meta name="twitter:title" content="Android混淆">
+<meta name="twitter:description" content="混淆混淆就是把代码替换成a、b、c基本字母组成的代码
+优点代码混淆后阅读性降低，反编译后破译程序难度提高
+混淆后字节数减少，减少了应用了体积
+缺点混淆后，测试不充分可能导致某些功能不能使用
+
+
+# 不优化 －－默认开启
+-dontoptimize
+
+# 代码循环优化次数，0-7，默认为5
+-optimizationpasses 5">
 
 
 
@@ -119,9 +144,9 @@
 
 
 
-  <link rel="canonical" href="http://blog.chuanci.cc/2016/04/02/AndroidUI之Toast/"/>
+  <link rel="canonical" href="http://blog.chuanci.cc/2016/12/15/Android混淆/"/>
 
-  <title> AndroidUI之Toast | ChuanCi' Blog </title>
+  <title> Android混淆 | ChuanCi' Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -282,7 +307,7 @@
             
             
               
-                AndroidUI之Toast
+                Android混淆
               
             
           </h1>
@@ -294,8 +319,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-02T19:21:39+08:00" content="2016-04-02">
-              2016-04-02
+            <time itemprop="dateCreated" datetime="2016-12-15T00:27:07+08:00" content="2016-12-15">
+              2016-12-15
             </time>
           </span>
 
@@ -322,39 +347,17 @@
       
 
       
-        <p>一个可视控件,用于向用户显示一些提示.</p>
-<a id="more"></a>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ol>
-<li>只需要一个Context,就可以使用.所以在Service中也能用.</li>
-<li>要在主线程中调用.</li>
-</ol>
-<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ul>
-<li>Toast.makeText(context,text,duration);//返回一个toast</li>
-<li>toast.setDuration(duration);//设置持续时间</li>
-<li>toast.setGravity(gravity,xOffset,yOffset);//设置显示位置</li>
-<li>toast.setText(s);//设置显示内容</li>
-<li>toast.show;//显示</li>
-</ul>
-<h2 id="几种Toast"><a href="#几种Toast" class="headerlink" title="几种Toast"></a>几种Toast</h2><h3 id="默认Toast"><a href="#默认Toast" class="headerlink" title="默认Toast"></a>默认Toast</h3><p><img src="http://ob8b0pedx.bkt.clouddn.com/toast1.png" alt=""></p>
-<pre><code>Toast.makeText(MainActivity.this, getString(R.string.toast1), Toast.LENGTH_SHORT).show();
-</code></pre><h3 id="带图片的Toast"><a href="#带图片的Toast" class="headerlink" title="带图片的Toast"></a>带图片的Toast</h3><p><img src="http://ob8b0pedx.bkt.clouddn.com/toast2.png" alt=""></p>
-<pre><code>Toast toast = Toast.makeText(MainActivity.this, getString(R.string.toast2), Toast.LENGTH_SHORT);
-toast.setGravity(Gravity.CENTER, 0, 0);
-LinearLayout layout = (LinearLayout) toast.getView();
-ImageView imageView = new ImageView(getApplicationContext());
-imageView.setImageResource(R.mipmap.ic_launcher);
-layout.addView(imageView, 0);
-toast.show();
-</code></pre><h3 id="改变位置的Toast"><a href="#改变位置的Toast" class="headerlink" title="改变位置的Toast"></a>改变位置的Toast</h3><p><img src="http://ob8b0pedx.bkt.clouddn.com/toast3.png" alt=""></p>
-<pre><code>Toast toast = Toast.makeText(MainActivity.this, getString(R.string.toast3), Toast.LENGTH_SHORT);
-toast.setGravity(Gravity.TOP, 0, 0);
-toast.show();
-</code></pre><h3 id="自定义的Toast"><a href="#自定义的Toast" class="headerlink" title="自定义的Toast"></a>自定义的Toast</h3><p><img src="http://ob8b0pedx.bkt.clouddn.com/toast4.png" alt=""></p>
-<pre><code>Toast toast = new Toast(getApplicationContext());
-View view = View.inflate(getApplicationContext(), R.layout.toast_layout, null);
-toast.setView(view);
-toast.setDuration(Toast.LENGTH_SHORT);
-toast.show();
+        <h1 id="混淆"><a href="#混淆" class="headerlink" title="混淆"></a>混淆</h1><p>混淆就是把代码替换成a、b、c基本字母组成的代码</p>
+<h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><pre><code>代码混淆后阅读性降低，反编译后破译程序难度提高
+混淆后字节数减少，减少了应用了体积
+</code></pre><h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><pre><code>混淆后，测试不充分可能导致某些功能不能使用
+
+
+# 不优化 －－默认开启
+-dontoptimize
+
+# 代码循环优化次数，0-7，默认为5
+-optimizationpasses 5
 </code></pre>
       
     </div>
@@ -382,7 +385,7 @@ toast.show();
       
         <div class="post-tags">
           
-            <a href="/tags/Android/" rel="tag">#Android</a>
+            <a href="/tags/android/" rel="tag">#android</a>
           
         </div>
       
@@ -391,16 +394,16 @@ toast.show();
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/02/18/Android事件分发机制/" rel="next" title="Android事件分发机制">
-                <i class="fa fa-chevron-left"></i> Android事件分发机制
+              <a href="/2016/12/13/逆向popstar/" rel="next" title="逆向popstar">
+                <i class="fa fa-chevron-left"></i> 逆向popstar
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/04/09/AndroidUI之Dialog/" rel="prev" title="AndroidUI之Dialog">
-                AndroidUI之Dialog <i class="fa fa-chevron-right"></i>
+              <a href="/2016/12/20/java集合与线程/" rel="prev" title="java集合与线程">
+                java集合与线程 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -508,7 +511,7 @@ toast.show();
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#注意"><span class="nav-number">1.</span> <span class="nav-text">注意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法"><span class="nav-number">2.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#几种Toast"><span class="nav-number">3.</span> <span class="nav-text">几种Toast</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#默认Toast"><span class="nav-number">3.1.</span> <span class="nav-text">默认Toast</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#带图片的Toast"><span class="nav-number">3.2.</span> <span class="nav-text">带图片的Toast</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#改变位置的Toast"><span class="nav-number">3.3.</span> <span class="nav-text">改变位置的Toast</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义的Toast"><span class="nav-number">3.4.</span> <span class="nav-text">自定义的Toast</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#混淆"><span class="nav-number">1.</span> <span class="nav-text">混淆</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#优点"><span class="nav-number">1.1.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缺点"><span class="nav-number">1.2.</span> <span class="nav-text">缺点</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
