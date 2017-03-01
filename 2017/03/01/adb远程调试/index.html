@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="默认情况下，adb是通过usb来连接的，调试起来很麻烦，能不能去掉这跟线呢？">
+<meta name="description" content="默认情况下，adb是通过usb来连接的，调试起来很麻烦，能不能去掉这跟数据线呢？">
 <meta property="og:type" content="article">
 <meta property="og:title" content="adb远程调试">
 <meta property="og:url" content="http://blog.chuanci.cc/2017/03/01/adb远程调试/index.html">
 <meta property="og:site_name" content="ChuanCi' Blog">
-<meta property="og:description" content="默认情况下，adb是通过usb来连接的，调试起来很麻烦，能不能去掉这跟线呢？">
-<meta property="og:updated_time" content="2017-03-01T03:16:06.000Z">
+<meta property="og:description" content="默认情况下，adb是通过usb来连接的，调试起来很麻烦，能不能去掉这跟数据线呢？">
+<meta property="og:updated_time" content="2017-03-01T03:31:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="adb远程调试">
-<meta name="twitter:description" content="默认情况下，adb是通过usb来连接的，调试起来很麻烦，能不能去掉这跟线呢？">
+<meta name="twitter:description" content="默认情况下，adb是通过usb来连接的，调试起来很麻烦，能不能去掉这跟数据线呢？">
 
 
 
@@ -287,17 +287,16 @@
       
 
       
-        <p>默认情况下，adb是通过usb来连接的，调试起来很麻烦，能不能去掉这跟线呢？</p>
+        <p>默认情况下，adb是通过usb来连接的，调试起来很麻烦，能不能去掉这跟数据线呢？</p>
 <a id="more"></a>
 <h1 id="usb切换到wifi"><a href="#usb切换到wifi" class="headerlink" title="usb切换到wifi"></a>usb切换到wifi</h1><ol>
-<li>连接usb</li>
+<li>手机通过usb线连接上电脑</li>
 <li><code>adb tcpip 5555</code></li>
-<li>可以断开usb</li>
-<li><code>adb connect  192.0.0.0</code> 改为android设备的ip</li>
+<li>可以断开usb连接</li>
+<li><code>adb connect  192.x.x.x</code> 修改为android设备的ip</li>
 <li>通过adb进行操作</li>
-<li><code>adb disconnect</code> 断开wifi连接</li>
+<li><code>adb disconnect</code> 断开连接</li>
 </ol>
-<h1 id="wifi切换usb"><a href="#wifi切换usb" class="headerlink" title="wifi切换usb"></a>wifi切换usb</h1><p><code>adb usb</code></p>
 
       
     </div>
@@ -447,7 +446,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#usb切换到wifi"><span class="nav-number">1.</span> <span class="nav-text">usb切换到wifi</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#wifi切换usb"><span class="nav-number">2.</span> <span class="nav-text">wifi切换usb</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#usb切换到wifi"><span class="nav-number">1.</span> <span class="nav-text">usb切换到wifi</span></a></li></ol></div>
             
           </div>
         </section>
