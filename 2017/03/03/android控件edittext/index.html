@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Android," />
+  <meta name="keywords" content="android," />
 
 
 
@@ -84,21 +84,16 @@
 
 
 
-<meta name="description" content="一个可视控件,用于向用户显示一些提示.">
+<meta name="description" content="输入控件">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AndroidUI之Toast">
-<meta property="og:url" content="http://blog.chuanci.cc/2016/04/02/AndroidUI之Toast/index.html">
+<meta property="og:title" content="android控件edittext">
+<meta property="og:url" content="http://blog.chuanci.cc/2017/03/03/android控件edittext/index.html">
 <meta property="og:site_name" content="云销雨霁">
-<meta property="og:description" content="一个可视控件,用于向用户显示一些提示.">
-<meta property="og:image" content="http://ob8b0pedx.bkt.clouddn.com/toast1.png">
-<meta property="og:image" content="http://ob8b0pedx.bkt.clouddn.com/toast2.png">
-<meta property="og:image" content="http://ob8b0pedx.bkt.clouddn.com/toast3.png">
-<meta property="og:image" content="http://ob8b0pedx.bkt.clouddn.com/toast4.png">
-<meta property="og:updated_time" content="2016-08-03T04:22:16.000Z">
+<meta property="og:description" content="输入控件">
+<meta property="og:updated_time" content="2017-03-08T06:38:38.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AndroidUI之Toast">
-<meta name="twitter:description" content="一个可视控件,用于向用户显示一些提示.">
-<meta name="twitter:image" content="http://ob8b0pedx.bkt.clouddn.com/toast1.png">
+<meta name="twitter:title" content="android控件edittext">
+<meta name="twitter:description" content="输入控件">
 
 
 
@@ -119,9 +114,9 @@
 
 
 
-  <link rel="canonical" href="http://blog.chuanci.cc/2016/04/02/AndroidUI之Toast/"/>
+  <link rel="canonical" href="http://blog.chuanci.cc/2017/03/03/android控件edittext/"/>
 
-  <title> AndroidUI之Toast | 云销雨霁 </title>
+  <title> android控件edittext | 云销雨霁 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -262,7 +257,7 @@
             
             
               
-                AndroidUI之Toast
+                android控件edittext
               
             
           </h1>
@@ -274,8 +269,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-02T19:21:39+08:00" content="2016-04-02">
-              2016-04-02
+            <time itemprop="dateCreated" datetime="2017-03-03T11:12:44+08:00" content="2017-03-03">
+              2017-03-03
             </time>
           </span>
 
@@ -285,8 +280,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/02/AndroidUI之Toast/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/02/AndroidUI之Toast/" itemprop="commentsCount"></span>
+                <a href="/2017/03/03/android控件edittext/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/03/android控件edittext/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -309,40 +304,50 @@
       
 
       
-        <p>一个可视控件,用于向用户显示一些提示.</p>
+        <p>输入控件</p>
 <a id="more"></a>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ol>
-<li>只需要一个Context,就可以使用.所以在Service中也能用.</li>
-<li>要在主线程中调用.</li>
-</ol>
-<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ul>
-<li>Toast.makeText(context,text,duration);//返回一个toast</li>
-<li>toast.setDuration(duration);//设置持续时间</li>
-<li>toast.setGravity(gravity,xOffset,yOffset);//设置显示位置</li>
-<li>toast.setText(s);//设置显示内容</li>
-<li>toast.show;//显示</li>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><h2 id="xml属性"><a href="#xml属性" class="headerlink" title="xml属性"></a>xml属性</h2><pre><code>android:inputType=&quot;none&quot;//输入普通字符
+android:inputType=&quot;text&quot;//输入普通字符
+android:inputType=&quot;textCapCharacters&quot;//输入普通字符
+android:inputType=&quot;textCapWords&quot;//单词首字母大小
+android:inputType=&quot;textCapSentences&quot;//仅第一个字母大小
+android:inputType=&quot;textAutoCorrect&quot;//前两个自动完成
+android:inputType=&quot;textAutoComplete&quot;//前两个自动完成
+android:inputType=&quot;textMultiLine&quot;//多行输入
+android:inputType=&quot;textImeMultiLine&quot;//输入法多行（不一定支持）
+android:inputType=&quot;textNoSuggestions&quot;//不提示
+android:inputType=&quot;textUri&quot;//URI格式
+android:inputType=&quot;textEmailAddress&quot;//电子邮件地址格式
+android:inputType=&quot;textEmailSubject&quot;//邮件主题格式
+android:inputType=&quot;textShortMessage&quot;//短消息格式
+android:inputType=&quot;textLongMessage&quot;//长消息格式
+android:inputType=&quot;textPersonName&quot;//人名格式
+android:inputType=&quot;textPostalAddress&quot;//邮政格式
+android:inputType=&quot;textPassword&quot;//密码格式
+android:inputType=&quot;textVisiblePassword&quot;//密码可见格式
+android:inputType=&quot;textWebEditText&quot;//作为网页表单的文本格式
+android:inputType=&quot;textFilter&quot;//文本筛选格式
+android:inputType=&quot;textPhonetic&quot;//拼音输入格式
+//数值类型
+android:inputType=&quot;number&quot;//数字格式
+android:inputType=&quot;numberSigned&quot;//有符号数字格式
+android:inputType=&quot;numberDecimal&quot;//可以带小数点的浮点格式
+android:inputType=&quot;phone&quot;//拨号键盘
+android:inputType=&quot;datetime&quot;//日期+时间格式
+android:inputType=&quot;date&quot;//日期键盘
+android:inputType=&quot;time&quot;//时间键盘
+</code></pre><h2 id="控制EditText只输入英文和数字-3种方法"><a href="#控制EditText只输入英文和数字-3种方法" class="headerlink" title="控制EditText只输入英文和数字(3种方法)"></a>控制EditText只输入英文和数字(3种方法)</h2><ul>
+<li>可以使用android:digits属性,设置允许输入的字符  </li>
 </ul>
-<h2 id="几种Toast"><a href="#几种Toast" class="headerlink" title="几种Toast"></a>几种Toast</h2><h3 id="默认Toast"><a href="#默认Toast" class="headerlink" title="默认Toast"></a>默认Toast</h3><p><img src="http://ob8b0pedx.bkt.clouddn.com/toast1.png" alt=""></p>
-<pre><code>Toast.makeText(MainActivity.this, getString(R.string.toast1), Toast.LENGTH_SHORT).show();
-</code></pre><h3 id="带图片的Toast"><a href="#带图片的Toast" class="headerlink" title="带图片的Toast"></a>带图片的Toast</h3><p><img src="http://ob8b0pedx.bkt.clouddn.com/toast2.png" alt=""></p>
-<pre><code>Toast toast = Toast.makeText(MainActivity.this, getString(R.string.toast2), Toast.LENGTH_SHORT);
-toast.setGravity(Gravity.CENTER, 0, 0);
-LinearLayout layout = (LinearLayout) toast.getView();
-ImageView imageView = new ImageView(getApplicationContext());
-imageView.setImageResource(R.mipmap.ic_launcher);
-layout.addView(imageView, 0);
-toast.show();
-</code></pre><h3 id="改变位置的Toast"><a href="#改变位置的Toast" class="headerlink" title="改变位置的Toast"></a>改变位置的Toast</h3><p><img src="http://ob8b0pedx.bkt.clouddn.com/toast3.png" alt=""></p>
-<pre><code>Toast toast = Toast.makeText(MainActivity.this, getString(R.string.toast3), Toast.LENGTH_SHORT);
-toast.setGravity(Gravity.TOP, 0, 0);
-toast.show();
-</code></pre><h3 id="自定义的Toast"><a href="#自定义的Toast" class="headerlink" title="自定义的Toast"></a>自定义的Toast</h3><p><img src="http://ob8b0pedx.bkt.clouddn.com/toast4.png" alt=""></p>
-<pre><code>Toast toast = new Toast(getApplicationContext());
-View view = View.inflate(getApplicationContext(), R.layout.toast_layout, null);
-toast.setView(view);
-toast.setDuration(Toast.LENGTH_SHORT);
-toast.show();
-</code></pre>
+<p><code>android:digits=&quot;1234567890qwertyuiopasdfghjklzxcvbnm&quot;</code></p>
+<ul>
+<li>使用InputType  </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">et.setInputType(InputType.TYPE_CLASS_NUMBER)</div><div class="line">et.setInputType(InputType.TYPE_TEXT)</div></pre></td></tr></table></figure>
+<ul>
+<li><code>android:numeric=&quot;integer&quot;</code></li>
+</ul>
+
       
     </div>
 
@@ -369,7 +374,7 @@ toast.show();
       
         <div class="post-tags">
           
-            <a href="/tags/Android/" rel="tag">#Android</a>
+            <a href="/tags/android/" rel="tag">#android</a>
           
         </div>
       
@@ -378,16 +383,16 @@ toast.show();
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/02/18/Android事件分发机制/" rel="next" title="Android事件分发机制">
-                <i class="fa fa-chevron-left"></i> Android事件分发机制
+              <a href="/2017/03/01/adb远程调试/" rel="next" title="adb远程调试">
+                <i class="fa fa-chevron-left"></i> adb远程调试
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/04/09/AndroidUI之Dialog/" rel="prev" title="AndroidUI之Dialog">
-                AndroidUI之Dialog <i class="fa fa-chevron-right"></i>
+              <a href="/2017/03/08/android6-0动态权限/" rel="prev" title="android6.0动态权限">
+                android6.0动态权限 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -403,10 +408,10 @@ toast.show();
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/04/02/AndroidUI之Toast/"
-     data-title="AndroidUI之Toast"
+        <div class="ds-share flat" data-thread-key="2017/03/03/android控件edittext/"
+     data-title="android控件edittext"
      data-content=""
-     data-url="http://blog.chuanci.cc/2016/04/02/AndroidUI之Toast/">
+     data-url="http://blog.chuanci.cc/2017/03/03/android控件edittext/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -433,8 +438,8 @@ toast.show();
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/04/02/AndroidUI之Toast/"
-           data-title="AndroidUI之Toast" data-url="http://blog.chuanci.cc/2016/04/02/AndroidUI之Toast/">
+      <div class="ds-thread" data-thread-key="2017/03/03/android控件edittext/"
+           data-title="android控件edittext" data-url="http://blog.chuanci.cc/2017/03/03/android控件edittext/">
       </div>
     
   </div>
@@ -525,7 +530,7 @@ toast.show();
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#注意"><span class="nav-number">1.</span> <span class="nav-text">注意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法"><span class="nav-number">2.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#几种Toast"><span class="nav-number">3.</span> <span class="nav-text">几种Toast</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#默认Toast"><span class="nav-number">3.1.</span> <span class="nav-text">默认Toast</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#带图片的Toast"><span class="nav-number">3.2.</span> <span class="nav-text">带图片的Toast</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#改变位置的Toast"><span class="nav-number">3.3.</span> <span class="nav-text">改变位置的Toast</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义的Toast"><span class="nav-number">3.4.</span> <span class="nav-text">自定义的Toast</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#使用"><span class="nav-number">1.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#xml属性"><span class="nav-number">1.1.</span> <span class="nav-text">xml属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#控制EditText只输入英文和数字-3种方法"><span class="nav-number">1.2.</span> <span class="nav-text">控制EditText只输入英文和数字(3种方法)</span></a></li></ol></li></ol></div>
             
           </div>
         </section>

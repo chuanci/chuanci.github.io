@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.chuanci.cc/categories/index.html</loc>
+    
+    <lastmod>2017-03-11T17:03:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.chuanci.cc/2016/05/20/Java%E6%B3%A8%E8%A7%A3/</loc>
+    
+    <lastmod>2017-03-11T17:00:42.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.chuanci.cc/2017/03/08/android6-0%E5%8A%A8%E6%80%81%E6%9D%83%E9%99%90/</loc>
+    
+    <lastmod>2017-03-08T06:40:04.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.chuanci.cc/2017/03/03/android%E6%8E%A7%E4%BB%B6edittext/</loc>
+    
+    <lastmod>2017-03-08T06:38:38.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.chuanci.cc/2017/02/28/BottomNavigationBar/</loc>
     
     <lastmod>2017-03-01T15:50:46.000Z</lastmod>
@@ -110,13 +138,6 @@
     <loc>http://blog.chuanci.cc/2016/07/18/Android%E4%B9%8BJson/</loc>
     
     <lastmod>2016-08-03T04:21:28.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.chuanci.cc/2016/05/20/Java%E6%B3%A8%E8%A7%A3/</loc>
-    
-    <lastmod>2016-08-03T04:19:34.000Z</lastmod>
     
   </url>
   
