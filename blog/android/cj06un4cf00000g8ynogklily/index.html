@@ -1,0 +1,1068 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="dialog," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="对话框.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AndroidUI之Dialog">
+<meta property="og:url" content="http://blog.chuanci.cc/blog/android/cj06un4cf00000g8ynogklily/index.html">
+<meta property="og:site_name" content="云销雨霁">
+<meta property="og:description" content="对话框.">
+<meta property="og:image" content="http://ob8b0pedx.bkt.clouddn.com/dialog01.png">
+<meta property="og:image" content="http://ob8b0pedx.bkt.clouddn.com/dialog02.png">
+<meta property="og:image" content="http://ob8b0pedx.bkt.clouddn.com/dialog03.png">
+<meta property="og:image" content="http://ob8b0pedx.bkt.clouddn.com/dialog04.png">
+<meta property="og:image" content="http://ob8b0pedx.bkt.clouddn.com/dialog05.png">
+<meta property="og:updated_time" content="2017-03-12T13:49:29.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AndroidUI之Dialog">
+<meta name="twitter:description" content="对话框.">
+<meta name="twitter:image" content="http://ob8b0pedx.bkt.clouddn.com/dialog01.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6313783008482559000',
+      author: '传慈'
+    },
+    algolia: {
+      applicationID: 'B92YYU6NRJ',
+      apiKey: 'f41a76ee231e640a8aedeef630f4ae4b',
+      indexName: 'chuanci',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog.chuanci.cc/blog/android/cj06un4cf00000g8ynogklily/"/>
+
+
+
+
+
+  <title> AndroidUI之Dialog | 云销雨霁 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?46036785cefdb5515cc9fc4776a0afdb";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">云销雨霁</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">云销雨霁 彩彻区明</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://blog.chuanci.cc/blog/android/cj06un4cf00000g8ynogklily/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="传慈">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="云销雨霁">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                AndroidUI之Dialog
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-09T13:51:55+08:00">
+                2016-04-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/android/cj06un4cf00000g8ynogklily/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/android/cj06un4cf00000g8ynogklily/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>对话框.</p>
+<a id="more"></a>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ul>
+<li>new AlertDialog.Builder(<strong>Context context</strong>) </li>
+</ul>
+<h2 id="系统Dialog"><a href="#系统Dialog" class="headerlink" title="系统Dialog"></a>系统Dialog</h2><h3 id="普通Dialog"><a href="#普通Dialog" class="headerlink" title="普通Dialog"></a>普通Dialog</h3><p><img src="http://ob8b0pedx.bkt.clouddn.com/dialog01.png" alt=""></p>
+<pre><code>new AlertDialog.Builder(this)
+           .setTitle(&quot;title&quot;)//设置标题
+           .setIcon(R.mipmap.ic_launcher)//设置Icon
+           .setMessage(&quot;message&quot;)//设置正文消息
+           .setPositiveButton(&quot;positive&quot;, new DialogInterface.OnClickListener() {
+               @Override
+               public void onClick(DialogInterface dialog, int which) {
+                   Toast.makeText(getApplicationContext(),&quot;positive&quot;,Toast.LENGTH_SHORT).show();
+                   dialog.dismiss();
+               }
+           })
+           .setNegativeButton(&quot;negative&quot;, new DialogInterface.OnClickListener() {
+               @Override
+               public void onClick(DialogInterface dialog, int which) {
+                   Toast.makeText(getApplicationContext(),&quot;negative&quot;,Toast.LENGTH_SHORT).show();
+                   dialog.dismiss();
+               }
+           })
+           .setNeutralButton(&quot;neutral&quot;, new DialogInterface.OnClickListener() {
+               @Override
+               public void onClick(DialogInterface dialog, int which) {
+                   Toast.makeText(getApplicationContext(),&quot;neutral&quot;,Toast.LENGTH_SHORT).show();
+                   dialog.dismiss();
+               }
+           })
+           /*
+           这里的which
+           Dialog.BUTTON_POSITIVE
+           Dialog.BUTTON_NEGATIVE
+           Dialog.BUTTON_NEUTRAL
+            */
+           .create()//创建一个AlertDialog对象
+           .show();//显示
+</code></pre><h3 id="列表Dialog"><a href="#列表Dialog" class="headerlink" title="列表Dialog"></a>列表Dialog</h3><p><img src="http://ob8b0pedx.bkt.clouddn.com/dialog02.png" alt=""></p>
+<pre><code> final String[] items = {&quot;张三&quot;, &quot;李四&quot;, &quot;王五&quot;};
+    new AlertDialog.Builder(this)
+            .setTitle(&quot;title&quot;)//设置标题
+            .setIcon(R.mipmap.ic_launcher)//设置Icon
+//          .setMessage(&quot;message&quot;)//设置了message,就不会显示items
+            .setItems(items, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Toast.makeText(getApplicationContext(), items[which], Toast.LENGTH_SHORT).show();
+                    dialog.dismiss();
+                }
+            })
+            .setPositiveButton(&quot;positive&quot;, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Toast.makeText(getApplicationContext(), &quot;positive&quot;, Toast.LENGTH_SHORT).show();
+                    dialog.dismiss();
+                }
+            })
+            .setNegativeButton(&quot;negative&quot;, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Toast.makeText(getApplicationContext(), &quot;negative&quot;, Toast.LENGTH_SHORT).show();
+                    dialog.dismiss();
+                }
+            })
+            .setNeutralButton(&quot;neutral&quot;, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Toast.makeText(getApplicationContext(), &quot;neutral&quot;, Toast.LENGTH_SHORT).show();
+                    dialog.dismiss();
+                }
+            })
+            /*
+            这里的which
+            Dialog.BUTTON_POSITIVE
+            Dialog.BUTTON_NEGATIVE
+            Dialog.BUTTON_NEUTRAL
+             */
+            .create()//创建一个AlertDialog对象
+            .show();//显示
+</code></pre><h3 id="单选Dialog"><a href="#单选Dialog" class="headerlink" title="单选Dialog"></a>单选Dialog</h3><p><img src="http://ob8b0pedx.bkt.clouddn.com/dialog03.png" alt=""></p>
+<pre><code>final String[] items = {&quot;男&quot;,&quot;女&quot;};
+    new AlertDialog.Builder(this)
+            .setTitle(&quot;title&quot;)//设置标题
+            .setIcon(R.mipmap.ic_launcher)//设置Icon
+//          .setMessage(&quot;message&quot;)//设置正文消息,就不会显示items
+            .setSingleChoiceItems(items, 0, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Toast.makeText(getApplicationContext(), items[which], Toast.LENGTH_SHORT).show();
+                    dialog.dismiss();
+                }
+            })
+            .setPositiveButton(&quot;positive&quot;, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Toast.makeText(getApplicationContext(), &quot;positive&quot;, Toast.LENGTH_SHORT).show();
+                    dialog.dismiss();
+                }
+            })
+            .setNegativeButton(&quot;negative&quot;, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Toast.makeText(getApplicationContext(), &quot;negative&quot;, Toast.LENGTH_SHORT).show();
+                    dialog.dismiss();
+                }
+            })
+            .setNeutralButton(&quot;neutral&quot;, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Toast.makeText(getApplicationContext(), &quot;neutral&quot;, Toast.LENGTH_SHORT).show();
+                    dialog.dismiss();
+                }
+            })
+            /*
+            这里的which
+            Dialog.BUTTON_POSITIVE
+            Dialog.BUTTON_NEGATIVE
+            Dialog.BUTTON_NEUTRAL
+             */
+            .create()//创建一个AlertDialog对象
+            .show();//显示
+</code></pre><h3 id="多选Dialog"><a href="#多选Dialog" class="headerlink" title="多选Dialog"></a>多选Dialog</h3><p><img src="http://ob8b0pedx.bkt.clouddn.com/dialog04.png" alt=""></p>
+<pre><code>    final String[] items = {&quot;足球&quot;,&quot;篮球&quot;,&quot;排球&quot;};
+    final boolean[] selected={false,false,true};//当选中或取消选中时,将自动改变selected里对应的值
+    new AlertDialog.Builder(this)
+            .setTitle(&quot;title&quot;)//设置标题
+            .setIcon(R.mipmap.ic_launcher)//设置Icon
+//          .setMessage(&quot;message&quot;)//设置正文消息,就不会显示items
+           .setMultiChoiceItems(items, selected, new DialogInterface.OnMultiChoiceClickListener() {
+               @Override
+               public void onClick(DialogInterface dialog, int which, boolean isChecked) {
+                   Toast.makeText(getApplicationContext(),items[which]+&quot;:&quot;+selected[which] , Toast.LENGTH_SHORT).show();
+               }
+           })
+            .setPositiveButton(&quot;positive&quot;, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Toast.makeText(getApplicationContext(), &quot;positive&quot;, Toast.LENGTH_SHORT).show();
+                    dialog.dismiss();
+                }
+            })
+            .setNegativeButton(&quot;negative&quot;, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Toast.makeText(getApplicationContext(), &quot;negative&quot;, Toast.LENGTH_SHORT).show();
+                    dialog.dismiss();
+                }
+            })
+            .setNeutralButton(&quot;neutral&quot;, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Toast.makeText(getApplicationContext(), &quot;neutral&quot;, Toast.LENGTH_SHORT).show();
+                    dialog.dismiss();
+                }
+            })
+            /*
+            这里的which
+            Dialog.BUTTON_POSITIVE
+            Dialog.BUTTON_NEGATIVE
+            Dialog.BUTTON_NEUTRAL
+             */
+            .create()//创建一个AlertDialog对象
+            .show();//显示
+</code></pre><h3 id="自定义Dialog"><a href="#自定义Dialog" class="headerlink" title="自定义Dialog"></a>自定义Dialog</h3><p><img src="http://ob8b0pedx.bkt.clouddn.com/dialog05.png" alt=""></p>
+<pre><code>  View view = View.inflate(getApplicationContext(), R.layout.dialog_layout, null);
+    new AlertDialog.Builder(this)
+//           .setTitle(&quot;title&quot;)//设置标题
+//           .setIcon(R.mipmap.ic_launcher)//设置Icon
+//           .setMessage(&quot;message&quot;)
+            .setView(view)
+            .setPositiveButton(&quot;positive&quot;, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Toast.makeText(getApplicationContext(), &quot;positive&quot;, Toast.LENGTH_SHORT).show();
+                    dialog.dismiss();
+                }
+            })
+            .setNegativeButton(&quot;negative&quot;, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Toast.makeText(getApplicationContext(), &quot;negative&quot;, Toast.LENGTH_SHORT).show();
+                    dialog.dismiss();
+                }
+            })
+            .setNeutralButton(&quot;neutral&quot;, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Toast.makeText(getApplicationContext(), &quot;neutral&quot;, Toast.LENGTH_SHORT).show();
+                    dialog.dismiss();
+                }
+            })
+            /*
+            这里的which
+            Dialog.BUTTON_POSITIVE
+            Dialog.BUTTON_NEGATIVE
+            Dialog.BUTTON_NEUTRAL
+             */
+            .create()//创建一个AlertDialog对象
+            .show();//显示
+</code></pre>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/path/to/wechat-reward-image" alt="传慈 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/path/to/alipay-reward-image" alt="传慈 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/dialog/" rel="tag"># dialog</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/android/cj06un4cu00060g8yvfjq63va/" rel="next" title="AndroidUI之Toast">
+                <i class="fa fa-chevron-left"></i> AndroidUI之Toast
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/android/cj06un4cm00020g8yxwrv7h5w/" rel="prev" title="AndroidUI之PopupWindow">
+                AndroidUI之PopupWindow <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="blog/android/cj06un4cf00000g8ynogklily/"
+     data-title="AndroidUI之Dialog"
+     data-content=""
+     data-url="http://blog.chuanci.cc/blog/android/cj06un4cf00000g8ynogklily/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="blog/android/cj06un4cf00000g8ynogklily/"
+           data-title="AndroidUI之Dialog" data-url="http://blog.chuanci.cc/blog/android/cj06un4cf00000g8ynogklily/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="传慈" />
+          <p class="site-author-name" itemprop="name">传慈</p>
+           
+              <p class="site-description motion-element" itemprop="description">云销雨霁 彩彻区明</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/chuanci" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#注意"><span class="nav-number">1.</span> <span class="nav-text">注意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统Dialog"><span class="nav-number">2.</span> <span class="nav-text">系统Dialog</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#普通Dialog"><span class="nav-number">2.1.</span> <span class="nav-text">普通Dialog</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列表Dialog"><span class="nav-number">2.2.</span> <span class="nav-text">列表Dialog</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单选Dialog"><span class="nav-number">2.3.</span> <span class="nav-text">单选Dialog</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多选Dialog"><span class="nav-number">2.4.</span> <span class="nav-text">多选Dialog</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义Dialog"><span class="nav-number">2.5.</span> <span class="nav-text">自定义Dialog</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">传慈</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">本站访客数<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人次</span>
+  
+
+  
+    <span class="site-pv">本站总访问量<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"chuanci"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.0"></script>
+
+
+
+  
+
+</body>
+</html>
