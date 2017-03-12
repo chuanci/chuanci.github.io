@@ -1,0 +1,1004 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Android," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="属性动画是API 11加入的特性,使用nineoldandroids库,可以在API 11以下使用属性动画,但底层是用View动画来实现的.它可以对任一对象(Object)做动画,甚至可以没有对象.它通过反射来set某个属性,如果没有提供初始值,那么就会在动画开始时调用get某属性的方法.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="属性动画">
+<meta property="og:url" content="http://blog.chuanci.cc/2016/05/30/cj06ow0j90011a68ykd20ftvn/index.html">
+<meta property="og:site_name" content="云销雨霁">
+<meta property="og:description" content="属性动画是API 11加入的特性,使用nineoldandroids库,可以在API 11以下使用属性动画,但底层是用View动画来实现的.它可以对任一对象(Object)做动画,甚至可以没有对象.它通过反射来set某个属性,如果没有提供初始值,那么就会在动画开始时调用get某属性的方法.">
+<meta property="og:updated_time" content="2016-12-07T12:33:55.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="属性动画">
+<meta name="twitter:description" content="属性动画是API 11加入的特性,使用nineoldandroids库,可以在API 11以下使用属性动画,但底层是用View动画来实现的.它可以对任一对象(Object)做动画,甚至可以没有对象.它通过反射来set某个属性,如果没有提供初始值,那么就会在动画开始时调用get某属性的方法.">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6313783008482559000',
+      author: '传慈'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog.chuanci.cc/2016/05/30/cj06ow0j90011a68ykd20ftvn/"/>
+
+
+
+
+
+  <title> 属性动画 | 云销雨霁 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?46036785cefdb5515cc9fc4776a0afdb";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">云销雨霁</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">云销雨霁 彩彻区明</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://blog.chuanci.cc/2016/05/30/cj06ow0j90011a68ykd20ftvn/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="传慈">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="云销雨霁">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                属性动画
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-30T11:08:26+08:00">
+                2016-05-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/05/30/cj06ow0j90011a68ykd20ftvn/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/30/cj06ow0j90011a68ykd20ftvn/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>属性动画是API 11加入的特性,<br>使用<a href="http://nineoldandroids.com" target="_blank" rel="external">nineoldandroids库</a>,可以在API 11以下使用属性动画,但底层是用View动画来实现的.<br>它可以对任一对象(Object)做动画,甚至可以没有对象.<br>它通过反射来set某个属性,如果没有提供初始值,那么就会在动画开始时调用get某属性的方法.</p>
+<a id="more"></a>
+<p>首先来个例子,将一个TextView tvTest的背景,从白色变到黑色.</p>
+<pre><code>public void startAnimator() {
+    ObjectAnimator animator = null;
+    if (android.os.Build.VERSION.SDK_INT &gt;= android.os.Build.VERSION_CODES.LOLLIPOP) {
+        animator = ObjectAnimator.ofArgb(tvTest, &quot;backgroundColor&quot;, 0xffff0000, 0xff0000ff);//ofArgb是API 21加入的方法
+    }else{
+        animator = ObjectAnimator.ofInt(tvTest, &quot;backgroundColor&quot;, 0xffffffff, 0xff000000);
+        animator.setEvaluator(new ArgbEvaluator());
+    }
+    animator.setDuration(2000);//设置动画时间
+    animator.setInterpolator(new LinearInterpolator());//设置插值器为匀速变化
+    animator.setRepeatCount(2);//重复2次
+    animator.setRepeatMode(ValueAnimator.REVERSE);//第一次动画结束后,第二次动画反转执行
+    animator.start();
+}
+</code></pre><p>当然,看看ofArgb方法,这是API 21加入的方法.</p>
+<pre><code>public static ObjectAnimator ofArgb(Object target, String propertyName, int... values) {
+    ObjectAnimator animator = ofInt(target, propertyName, values);
+    animator.setEvaluator(ArgbEvaluator.getInstance());
+    return animator;
+}
+</code></pre><p>其实它也是用的ofInt方法,那<br>animator.setEvaluator(ArgbEvaluator.getInstance());<br>和我们自己写的<br>animator.setEvaluator(new ArgbEvaluator());<br>也一样</p>
+<p>那么这个ArgbEvaluator是什么呢?为什么要加入呢?</p>
+<pre><code>public class ArgbEvaluator implements TypeEvaluator {
+    private static final ArgbEvaluator sInstance = new ArgbEvaluator();
+
+    public static ArgbEvaluator getInstance() {
+        return sInstance;
+    }
+
+    public Object evaluate(float fraction, Object startValue, Object endValue) {
+        int startInt = (Integer) startValue;
+        int startA = (startInt &gt;&gt; 24) &amp; 0xff;
+        int startR = (startInt &gt;&gt; 16) &amp; 0xff;
+        int startG = (startInt &gt;&gt; 8) &amp; 0xff;
+        int startB = startInt &amp; 0xff;
+
+        int endInt = (Integer) endValue;
+        int endA = (endInt &gt;&gt; 24) &amp; 0xff;
+        int endR = (endInt &gt;&gt; 16) &amp; 0xff;
+        int endG = (endInt &gt;&gt; 8) &amp; 0xff;
+        int endB = endInt &amp; 0xff;
+
+        return (int)((startA + (int)(fraction * (endA - startA))) &lt;&lt; 24) |
+                (int)((startR + (int)(fraction * (endR - startR))) &lt;&lt; 16) |
+                (int)((startG + (int)(fraction * (endG - startG))) &lt;&lt; 8) |
+                (int)((startB + (int)(fraction * (endB - startB))));
+    }
+}
+</code></pre><p>除掉getInstance,ArgbEvaluator实现了TypeEvaluator接口,且接口中就只有一个方法.</p>
+<h2 id="TypeEvaluator-估值器"><a href="#TypeEvaluator-估值器" class="headerlink" title="TypeEvaluator 估值器"></a>TypeEvaluator 估值器</h2><p>这个类就是估值器.</p>
+<pre><code>/**
+float faction :  当前属性更变的百分比,由插值器提供
+T startValue  :     初始值
+T endValue  :     结束值
+return T  :         当前属性的值
+
+若未设置估值器,那默认实现为
+  return startInt + fraction * (endValue - startInt);
+
+**/
+public interface TypeEvaluator&lt;T&gt; {
+       public T evaluate(float fraction, T startValue, T endValue);
+}
+</code></pre><p>ArgbEvaluator里面,将ARGB这4种分开计算.如果使用默认的话,颜色就会不准.</p>
+<h3 id="常用的几种估值器"><a href="#常用的几种估值器" class="headerlink" title="常用的几种估值器:"></a>常用的几种估值器:</h3><ul>
+<li>ArgbEvaluator</li>
+<li>FloatEvaluator</li>
+<li>IntEvaluator</li>
+<li>RectEvaluator</li>
+</ul>
+<h2 id="TimeInterpolator-时间插值器"><a href="#TimeInterpolator-时间插值器" class="headerlink" title="TimeInterpolator 时间插值器"></a>TimeInterpolator 时间插值器</h2><p>估值器中的第一个参数是由时间插值器提供的.</p>
+<p>插值器也是一个接口:</p>
+<pre><code>public interface TimeInterpolator {
+    float getInterpolation(float input);
+}
+</code></pre><h3 id="常用的几种插值器"><a href="#常用的几种插值器" class="headerlink" title="常用的几种插值器:"></a>常用的几种插值器:</h3><ul>
+<li>LinearInterpolator:匀速</li>
+<li>AccelerateInterpolator:加速</li>
+<li>DecelerateInterpolator:减速</li>
+<li>AccelerateDecelerateInterpolator:先加速后减速</li>
+</ul>
+<h2 id="一些其他属性"><a href="#一些其他属性" class="headerlink" title="一些其他属性"></a>一些其他属性</h2><p>setDuration 动画的时长,默认是300ms<br>setRepeatCount 动画重复次数,设置为-1,则无限循环<br>setRepeatMode 第二次动画从哪开始.</p>
+<p>注意: 如果次数设置为-1,那么在退出activity时,要先停掉动画,否则会出现内存泄漏.</p>
+<h2 id="监听"><a href="#监听" class="headerlink" title="监听"></a>监听</h2><h3 id="更新监听"><a href="#更新监听" class="headerlink" title="更新监听"></a>更新监听</h3><pre><code>animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+    @Override
+    public void onAnimationUpdate(ValueAnimator animation) {
+        int animatedValue = (int) animation.getAnimatedValue();
+        //这样就可以得到当前值.给其他控件设置
+    }
+});
+</code></pre><h3 id="状态监听"><a href="#状态监听" class="headerlink" title="状态监听"></a>状态监听</h3><pre><code>animator.addListener(new Animator.AnimatorListener() {
+    @Override
+    public void onAnimationStart(Animator animation) {
+
+    }
+
+    @Override
+    public void onAnimationEnd(Animator animation) {
+
+    }
+
+    @Override
+    public void onAnimationCancel(Animator animation) {
+
+    }
+
+    @Override
+    public void onAnimationRepeat(Animator animation) {
+
+    }
+});
+</code></pre><p>由于不是每一个状态都会用到,所以系统提供了另一个监听,它空实现了这4个方法.</p>
+<pre><code>animator.addListener(new AnimatorListenerAdapter() {
+
+});
+</code></pre><h2 id="属性动画的工作原理"><a href="#属性动画的工作原理" class="headerlink" title="属性动画的工作原理"></a>属性动画的工作原理</h2><p>入口是start()方法.</p>
+<pre><code>  @Override
+public void start() {
+    // See if any of the current active/pending animators need to be canceled
+    AnimationHandler handler = sAnimationHandler.get();
+    if (handler != null) {
+        int numAnims = handler.mAnimations.size();
+        for (int i = numAnims - 1; i &gt;= 0; i--) {
+            if (handler.mAnimations.get(i) instanceof ObjectAnimator) {
+                ObjectAnimator anim = (ObjectAnimator) handler.mAnimations.get(i);
+                if (anim.mAutoCancel &amp;&amp; hasSameTargetAndProperties(anim)) {
+                    anim.cancel();
+                }
+            }
+        }
+        numAnims = handler.mPendingAnimations.size();
+        for (int i = numAnims - 1; i &gt;= 0; i--) {
+            if (handler.mPendingAnimations.get(i) instanceof ObjectAnimator) {
+                ObjectAnimator anim = (ObjectAnimator) handler.mPendingAnimations.get(i);
+                if (anim.mAutoCancel &amp;&amp; hasSameTargetAndProperties(anim)) {
+                    anim.cancel();
+                }
+            }
+        }
+        numAnims = handler.mDelayedAnims.size();
+        for (int i = numAnims - 1; i &gt;= 0; i--) {
+            if (handler.mDelayedAnims.get(i) instanceof ObjectAnimator) {
+                ObjectAnimator anim = (ObjectAnimator) handler.mDelayedAnims.get(i);
+                if (anim.mAutoCancel &amp;&amp; hasSameTargetAndProperties(anim)) {
+                    anim.cancel();
+                }
+            }
+        }
+    }
+    if (DBG) {
+        Log.d(LOG_TAG, &quot;Anim target, duration: &quot; + getTarget() + &quot;, &quot; + getDuration());
+        for (int i = 0; i &lt; mValues.length; ++i) {
+            PropertyValuesHolder pvh = mValues[i];
+            Log.d(LOG_TAG, &quot;   Values[&quot; + i + &quot;]: &quot; +
+                pvh.getPropertyName() + &quot;, &quot; + pvh.mKeyframes.getValue(0) + &quot;, &quot; +
+                pvh.mKeyframes.getValue(1));
+        }
+    }
+    super.start();
+}
+</code></pre><p>sAnimationHandler是ValueAnimator中的一个ThreadLocal,通过sAnimationHandler.get()的到了一个AnimationHandler.<br>它是一个Runnable,里面封装了很多集合,用来存放动画.<br>这里先将handler里的动画移除,然后打印Log,最后调用父类的start()方法.</p>
+<p>那么我们来看ValueAnimator中的start()方法</p>
+<pre><code>@Override
+public void start() {
+    start(false);
+}
+</code></pre><p>这里调用的start(false),在反转的时候调用的start(true)</p>
+<pre><code> @Override
+public void reverse() {
+    mPlayingBackwards = !mPlayingBackwards;
+    if (mPlayingState == RUNNING) {
+        long currentTime = AnimationUtils.currentAnimationTimeMillis();
+        long currentPlayTime = currentTime - mStartTime;
+        long timeLeft = mDuration - currentPlayTime;
+        mStartTime = currentTime - timeLeft;
+        mStartTimeCommitted = true; // do not allow start time to be compensated for jank
+        mReversing = !mReversing;
+    } else if (mStarted) {
+        end();
+    } else {
+        start(true);
+    }
+}
+</code></pre><p>继续看start(boolean b)方法</p>
+<pre><code>   private void start(boolean playBackwards) {
+    if (Looper.myLooper() == null) {
+        throw new AndroidRuntimeException(&quot;Animators may only be run on Looper threads&quot;);
+    }
+    mReversing = playBackwards;
+    mPlayingBackwards = playBackwards;
+    if (playBackwards &amp;&amp; mSeekFraction != -1) {
+        if (mSeekFraction == 0 &amp;&amp; mCurrentIteration == 0) {
+            // special case: reversing from seek-to-0 should act as if not seeked at all
+            mSeekFraction = 0;
+        } else if (mRepeatCount == INFINITE) {
+            mSeekFraction = 1 - (mSeekFraction % 1);
+        } else {
+            mSeekFraction = 1 + mRepeatCount - (mCurrentIteration + mSeekFraction);
+        }
+        mCurrentIteration = (int) mSeekFraction;
+        mSeekFraction = mSeekFraction % 1;
+    }
+    if (mCurrentIteration &gt; 0 &amp;&amp; mRepeatMode == REVERSE &amp;&amp;
+            (mCurrentIteration &lt; (mRepeatCount + 1) || mRepeatCount == INFINITE)) {
+        // if we were seeked to some other iteration in a reversing animator,
+        // figure out the correct direction to start playing based on the iteration
+        if (playBackwards) {
+            mPlayingBackwards = (mCurrentIteration % 2) == 0;
+        } else {
+            mPlayingBackwards = (mCurrentIteration % 2) != 0;
+        }
+    }
+    int prevPlayingState = mPlayingState;
+    mPlayingState = STOPPED;
+    mStarted = true;
+    mStartedDelay = false;
+    mPaused = false;
+    updateScaledDuration(); // in case the scale factor has changed since creation time
+    AnimationHandler animationHandler = getOrCreateAnimationHandler();
+    animationHandler.mPendingAnimations.add(this);
+    if (mStartDelay == 0) {
+        // This sets the initial value of the animation, prior to actually starting it running
+        if (prevPlayingState != SEEKED) {
+            setCurrentPlayTime(0);
+        }
+        mPlayingState = STOPPED;
+        mRunning = true;
+        notifyStartListeners();
+    }
+    animationHandler.start();
+}
+</code></pre><p>看以看出,它是运行在有Looper的线程当中的，<br>首先，根据通过getOrCreateAnimationHandler()方法获取AnimationHandler对象，有则创建并且将其赋值，否则直接获取。<br>然后通过AnimationHandler将动画加到mPendingAnimations延时动画里去。<br>最后调用AnimationHandler的start()方法，即执行AnimationHandler的run()方法</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/path/to/wechat-reward-image" alt="传慈 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/path/to/alipay-reward-image" alt="传慈 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/20/cj06ow0ip000ia68yoa7w8joi/" rel="next" title="Java注解">
+                <i class="fa fa-chevron-left"></i> Java注解
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/03/cj06ow0ij000aa68y6vfzdlj7/" rel="prev" title="Android工具类">
+                Android工具类 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/05/30/cj06ow0j90011a68ykd20ftvn/"
+           data-title="属性动画" data-url="http://blog.chuanci.cc/2016/05/30/cj06ow0j90011a68ykd20ftvn/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="传慈" />
+          <p class="site-author-name" itemprop="name">传慈</p>
+           
+              <p class="site-description motion-element" itemprop="description">云销雨霁 彩彻区明</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/chuanci" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#TypeEvaluator-估值器"><span class="nav-number">1.</span> <span class="nav-text">TypeEvaluator 估值器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用的几种估值器"><span class="nav-number">1.1.</span> <span class="nav-text">常用的几种估值器:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TimeInterpolator-时间插值器"><span class="nav-number">2.</span> <span class="nav-text">TimeInterpolator 时间插值器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用的几种插值器"><span class="nav-number">2.1.</span> <span class="nav-text">常用的几种插值器:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些其他属性"><span class="nav-number">3.</span> <span class="nav-text">一些其他属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#监听"><span class="nav-number">4.</span> <span class="nav-text">监听</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#更新监听"><span class="nav-number">4.1.</span> <span class="nav-text">更新监听</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#状态监听"><span class="nav-number">4.2.</span> <span class="nav-text">状态监听</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#属性动画的工作原理"><span class="nav-number">5.</span> <span class="nav-text">属性动画的工作原理</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">传慈</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">本站访客数<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人次</span>
+  
+
+  
+    <span class="site-pv">本站总访问量<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"chuanci"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
