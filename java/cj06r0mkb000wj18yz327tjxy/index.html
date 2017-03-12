@@ -1,0 +1,883 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="java,注解," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="注解（Annotation），也叫元数据。一种代码级别的说明。它是JDK1.5及以后版本引入的一个特性，与类、接口、枚举是在同一个层次。它可以声明在包、类、字段、方法、局部变量、方法参数等的前面，用来对这些元素进行说明，注释.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java注解">
+<meta property="og:url" content="http://blog.chuanci.cc/java/cj06r0mkb000wj18yz327tjxy/index.html">
+<meta property="og:site_name" content="云销雨霁">
+<meta property="og:description" content="注解（Annotation），也叫元数据。一种代码级别的说明。它是JDK1.5及以后版本引入的一个特性，与类、接口、枚举是在同一个层次。它可以声明在包、类、字段、方法、局部变量、方法参数等的前面，用来对这些元素进行说明，注释.">
+<meta property="og:updated_time" content="2017-03-12T13:48:37.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java注解">
+<meta name="twitter:description" content="注解（Annotation），也叫元数据。一种代码级别的说明。它是JDK1.5及以后版本引入的一个特性，与类、接口、枚举是在同一个层次。它可以声明在包、类、字段、方法、局部变量、方法参数等的前面，用来对这些元素进行说明，注释.">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6313783008482559000',
+      author: '传慈'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog.chuanci.cc/java/cj06r0mkb000wj18yz327tjxy/"/>
+
+
+
+
+
+  <title> Java注解 | 云销雨霁 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?46036785cefdb5515cc9fc4776a0afdb";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">云销雨霁</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">云销雨霁 彩彻区明</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://blog.chuanci.cc/java/cj06r0mkb000wj18yz327tjxy/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="传慈">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="云销雨霁">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Java注解
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-20T22:23:08+08:00">
+                2016-05-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/java/cj06r0mkb000wj18yz327tjxy/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="java/cj06r0mkb000wj18yz327tjxy/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>注解（Annotation），也叫元数据。一种代码级别的说明。<br>它是JDK1.5及以后版本引入的一个特性，与类、接口、枚举是在同一个层次。<br>它可以声明在包、类、字段、方法、局部变量、方法参数等的前面，用来对这些元素进行说明，注释.</p>
+<a id="more"></a>
+<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><ol>
+<li>编写文档：通过代码里标识的元数据生成文档【生成文档doc文档】</li>
+<li>代码分析：通过代码里标识的元数据对代码进行分析【使用反射】</li>
+<li>编译检查：通过代码里标识的元数据让编译器能够实现基本的编译检查【Override】</li>
+</ol>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><h3 id="基本内置注解"><a href="#基本内置注解" class="headerlink" title="基本内置注解"></a>基本内置注解</h3><h4 id="Override"><a href="#Override" class="headerlink" title="@Override"></a>@Override</h4><p>它的作用是对覆盖超类中方法的方法进行标记，如果被标记的方法并没有实际覆盖超类中的方法，则编译器会发出错误警告。</p>
+<h4 id="Deprecated"><a href="#Deprecated" class="headerlink" title="@Deprecated"></a>@Deprecated</h4><p>它的作用是对不应该再使用的方法添加注解，当编程人员使用这些方法时，将会在编译时显示提示信息，它与javadoc里的@deprecated标记有相同的功能，准确的说，它还不如javadoc @deprecated，因为它不支持参数.</p>
+<h4 id="SuppressWarnings"><a href="#SuppressWarnings" class="headerlink" title="@SuppressWarnings"></a>@SuppressWarnings</h4><p>其参数有：</p>
+<ul>
+<li>deprecation，使用了过时的类或方法时的警告</li>
+<li>unchecked，执行了未检查的转换时的警告</li>
+<li>fallthrough，当 switch 程序块直接通往下一种情况而没有 break 时的警告</li>
+<li>path，在类路径、源文件路径等中有不存在的路径时的警告</li>
+<li>serial，当在可序列化的类上缺少serialVersionUID 定义时的警告</li>
+<li>finally ，任何 finally 子句不能正常完成时的警告</li>
+<li>all，关于以上所有情况的警告</li>
+</ul>
+<h3 id="元注解"><a href="#元注解" class="headerlink" title="元注解"></a>元注解</h3><p>元注解:注解的注解  </p>
+<ul>
+<li>@Target</li>
+<li>@Retention</li>
+<li>@Documented</li>
+<li>@Inherited</li>
+</ul>
+<h4 id="target"><a href="#target" class="headerlink" title="@target"></a>@target</h4><p>用于描述注解的使用范围（即：被描述的注解可以用在什么地方）</p>
+<ul>
+<li>CONSTRUCTOR:用于描述构造器</li>
+<li>FIELD:用于描述域</li>
+<li>LOCAL_VARIABLE:用于描述局部变量</li>
+<li>METHOD:用于描述方法</li>
+<li>PACKAGE:用于描述包</li>
+<li>PARAMETER:用于描述参数</li>
+<li>TYPE:用于描述类、接口(包括注解类型) 或enum声明</li>
+</ul>
+<h4 id="Retention"><a href="#Retention" class="headerlink" title="@Retention"></a>@Retention</h4><p>表示需要在什么级别保存该注释信息，用于描述注解的生命周期（即：被描述的注解在什么范围内有效）</p>
+<ul>
+<li>SOURCE:在源文件中有效（即源文件保留）</li>
+<li>CLASS:在class文件中有效（即class保留）</li>
+<li>RUNTIME:在运行时有效（即运行时保留）</li>
+</ul>
+<h4 id="Documented"><a href="#Documented" class="headerlink" title="@Documented"></a>@Documented</h4><p>用于描述其它类型的annotation应该被作为被标注的程序成员的公共API，因此可以被例如javadoc此类的工具文档化。Documented是一个标记注解，没有成员。</p>
+<h4 id="Inherited"><a href="#Inherited" class="headerlink" title="@Inherited"></a>@Inherited</h4><p>阐述了某个被标注的类型是被继承的。如果一个使用了@Inherited修饰的annotation类型被用于一个class，则这个annotation将被用于该class的子类。</p>
+<p>注意：@Inherited annotation类型是被标注过的class的子类所继承。类并不从它所实现的接口继承annotation，方法并不从它所重载的方法继承annotation。</p>
+<p>当@Inherited annotation类型标注的annotation的Retention是RetentionPolicy.RUNTIME，则反射API增强了这种继承性。如果我们使用java.lang.reflect去查询一个@Inherited annotation类型的annotation时，反射代码检查将展开工作：检查class和其父类，直到发现指定的annotation类型被发现，或者到达类继承结构的顶层。</p>
+<h3 id="自定义注解"><a href="#自定义注解" class="headerlink" title="自定义注解"></a>自定义注解</h3><h4 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h4><p>public @interface 注解名 {定义体}</p>
+<h4 id="注解参数可支持的数据类型"><a href="#注解参数可支持的数据类型" class="headerlink" title="注解参数可支持的数据类型"></a>注解参数可支持的数据类型</h4><ul>
+<li>所有基本数据类型（int,float,boolean,byte,double,char,long,short)</li>
+<li>String类型</li>
+<li>Class类型</li>
+<li>enum类型</li>
+<li>Annotation类型</li>
+<li>以上所有类型的数组</li>
+</ul>
+<h5 id="Annotation类型里面的参数该怎么设定"><a href="#Annotation类型里面的参数该怎么设定" class="headerlink" title="Annotation类型里面的参数该怎么设定:"></a>Annotation类型里面的参数该怎么设定:</h5><ol>
+<li>只能用public或默认(default)这两个访问权修饰.例如,String value();这里把方法设为defaul默认类型；　</li>
+<li>参数成员只能用基本类型byte,short,char,int,long,float,double,boolean八种基本数据类型和 String,Enum,Class,annotations等数据类型,以及这一些类型的数组.例如,String value();这里的参数成员就为String;　</li>
+<li>,如果只有一个参数成员,最好把参数名称设为”value”,后加小括号.例:下面的例子FruitName注解就只有一个参数成员。</li>
+</ol>
+<h4 id="注解元素的默认值"><a href="#注解元素的默认值" class="headerlink" title="注解元素的默认值"></a>注解元素的默认值</h4><p>注解元素必须有确定的值，要么在定义注解的默认值中指定，要么在使用注解时指定，非基本类型的注解元素的值不可为null。因此, 使用空字符串或0作为默认值是一种常用的做法。这个约束使得处理器很难表现一个元素的存在或缺失的状态，因为每个注解的声明中，所有元素都存在，并且都具有相应的值，为了绕开这个约束，我们只能定义一些特殊的值，例如空字符串或者负数，一次表示某个元素不存在，在定义注解时，这已经成为一个习惯用法。</p>
+<h3 id="注解处理器"><a href="#注解处理器" class="headerlink" title="注解处理器"></a>注解处理器</h3><p>注意：要想使用反射去读取注解，必须将Retention的值选为Runtime</p>
+<pre><code>public class TitleUtils {
+        public static String getTitle(Class&lt;Title&gt; clazz){
+        if(clazz.isAnnotationPresent(Title.class)){
+            Title annotation = clazz.getAnnotation(Title.class);
+            return annotation.value();
+        }
+        return null;
+        }
+}
+</code></pre>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/path/to/wechat-reward-image" alt="传慈 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/path/to/alipay-reward-image" alt="传慈 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+            <a href="/tags/注解/" rel="tag"># 注解</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/android/cj06r0mj9000aj18yzmmdu8k7/" rel="next" title="AndroidUI之PopupWindow">
+                <i class="fa fa-chevron-left"></i> AndroidUI之PopupWindow
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/android/cj06r0mkv001gj18yzct4gp84/" rel="prev" title="属性动画">
+                属性动画 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="java/cj06r0mkb000wj18yz327tjxy/"
+     data-title="Java注解"
+     data-content=""
+     data-url="http://blog.chuanci.cc/java/cj06r0mkb000wj18yz327tjxy/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="java/cj06r0mkb000wj18yz327tjxy/"
+           data-title="Java注解" data-url="http://blog.chuanci.cc/java/cj06r0mkb000wj18yz327tjxy/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="传慈" />
+          <p class="site-author-name" itemprop="name">传慈</p>
+           
+              <p class="site-description motion-element" itemprop="description">云销雨霁 彩彻区明</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/chuanci" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#作用"><span class="nav-number">1.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现"><span class="nav-number">2.</span> <span class="nav-text">实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本内置注解"><span class="nav-number">2.1.</span> <span class="nav-text">基本内置注解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Override"><span class="nav-number">2.1.1.</span> <span class="nav-text">@Override</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Deprecated"><span class="nav-number">2.1.2.</span> <span class="nav-text">@Deprecated</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SuppressWarnings"><span class="nav-number">2.1.3.</span> <span class="nav-text">@SuppressWarnings</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#元注解"><span class="nav-number">2.2.</span> <span class="nav-text">元注解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#target"><span class="nav-number">2.2.1.</span> <span class="nav-text">@target</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Retention"><span class="nav-number">2.2.2.</span> <span class="nav-text">@Retention</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Documented"><span class="nav-number">2.2.3.</span> <span class="nav-text">@Documented</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Inherited"><span class="nav-number">2.2.4.</span> <span class="nav-text">@Inherited</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义注解"><span class="nav-number">2.3.</span> <span class="nav-text">自定义注解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#格式"><span class="nav-number">2.3.1.</span> <span class="nav-text">格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注解参数可支持的数据类型"><span class="nav-number">2.3.2.</span> <span class="nav-text">注解参数可支持的数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Annotation类型里面的参数该怎么设定"><span class="nav-number">2.3.2.1.</span> <span class="nav-text">Annotation类型里面的参数该怎么设定:</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注解元素的默认值"><span class="nav-number">2.3.3.</span> <span class="nav-text">注解元素的默认值</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注解处理器"><span class="nav-number">2.4.</span> <span class="nav-text">注解处理器</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">传慈</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">本站访客数<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人次</span>
+  
+
+  
+    <span class="site-pv">本站总访问量<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"chuanci"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
