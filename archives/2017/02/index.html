@@ -5,16 +5,19 @@
   
 
 
-<html class="theme-next mist use-motion">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 
 
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
 
 
 
@@ -63,9 +66,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="chuanci" />
@@ -77,7 +80,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
 
 
 
@@ -96,24 +99,35 @@
 
 
 
-<script type="text/javascript" id="hexo.configuration">
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    root: '/',
     scheme: 'Mist',
-    sidebar: {"position":"left","display":"always"},
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: 6313783008482559000,
+      userId: '6313783008482559000',
       author: '传慈'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
 </script>
 
 
 
-
   <link rel="canonical" href="http://blog.chuanci.cc/archives/2017/02/"/>
+
+
+
+
 
   <title> 归档 | 云销雨霁 </title>
 </head>
@@ -124,15 +138,19 @@
 
 
 
+
+
   <script type="text/javascript">
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?46036785cefdb5515cc9fc4776a0afdb";
+      hm.src = "https://hm.baidu.com/hm.js?46036785cefdb5515cc9fc4776a0afdb";
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     })();
   </script>
+
+
 
 
 
@@ -150,25 +168,29 @@
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
 
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">云销雨霁</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">云销雨霁</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">云销雨霁 彩彻区明</p>
+      
   </div>
-  <p class="site-subtitle">云销雨霁 彩彻区明</p>
-</div>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
 <nav class="site-nav">
@@ -236,6 +258,7 @@
 </nav>
 
 
+
  </div>
     </header>
 
@@ -278,7 +301,7 @@
 
       <h1 class="post-title">
         
-            <a class="post-title-link" href="/chuanci/cj06ki6h4000c3u8ypar68gnb/" itemprop="url">
+            <a class="post-title-link" href="/chuanci/cj06mn8si00036l8yug4ug4fi/" itemprop="url">
               
                 <span itemprop="name">BottomNavigationBar</span>
               
@@ -315,7 +338,7 @@
 
       <h1 class="post-title">
         
-            <a class="post-title-link" href="/chuanci/cj06ki6hv00133u8yyp1op6j4/" itemprop="url">
+            <a class="post-title-link" href="/chuanci/cj06mn8tk000y6l8yn85rpm8k/" itemprop="url">
               
                 <span itemprop="name">黄金td</span>
               
@@ -343,7 +366,7 @@
   
 
 
-
+          
           </div>
           
 
@@ -369,25 +392,32 @@
 
       
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.png"
                alt="传慈" />
           <p class="site-author-name" itemprop="name">传慈</p>
-          <p class="site-description motion-element" itemprop="description">云销雨霁 彩彻区明</p>
+           
+              <p class="site-description motion-element" itemprop="description">云销雨霁 彩彻区明</p>
+          
         </div>
         <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">18</span>
-              <span class="site-state-item-name">日志</span>
-            </a>
-          </div>
 
           
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
             <div class="site-state-item site-state-categories">
-              <a href="/categories">
+              <a href="/categories/index.html">
                 <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               </a>
@@ -395,8 +425,10 @@
           
 
           
+            
+            
             <div class="site-state-item site-state-tags">
-              <a href="/tags">
+              <a href="/tags/index.html">
                 <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
@@ -428,7 +460,12 @@
         
         
 
+        
+
+
       </section>
+
+      
 
       
 
@@ -446,21 +483,12 @@
   
   &copy;  2015 - 
   <span itemprop="copyrightYear">2017</span>
-
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">传慈</span>
-
-
 </div>
 
-<div>
-
-  <span> 
-  <script src="https://s4.cnzz.com/z_stat.php?id=1260057121&web_id=1260057121" language="JavaScript"></script></span>
-
-</div>
 
 <div class="powered-by">
   由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
@@ -472,7 +500,6 @@
     NexT.Mist
   </a>
 </div>
-
 
 
         
@@ -497,9 +524,13 @@
       </div>
     </footer>
 
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-    </div>
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
   </div>
 
   
@@ -519,6 +550,7 @@
 
 
   
+
 
 
 
@@ -544,9 +576,9 @@
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
 
 
 
@@ -564,7 +596,7 @@
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
 
 
 
@@ -594,12 +626,24 @@
 
 
 
+
+
+
+
+
+
+
   
   
 
   
 
   
+
+  
+
+  
+
 
   
 

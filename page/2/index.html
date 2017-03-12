@@ -5,16 +5,19 @@
   
 
 
-<html class="theme-next mist use-motion">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 
 
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
 
 
 
@@ -63,9 +66,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="chuanci" />
@@ -77,7 +80,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
 
 
 
@@ -96,24 +99,35 @@
 
 
 
-<script type="text/javascript" id="hexo.configuration">
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    root: '/',
     scheme: 'Mist',
-    sidebar: {"position":"left","display":"always"},
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: 6313783008482559000,
+      userId: '6313783008482559000',
       author: '传慈'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
 </script>
 
 
 
-
   <link rel="canonical" href="http://blog.chuanci.cc/page/2/"/>
+
+
+
+
 
   <title> 云销雨霁 </title>
 </head>
@@ -124,15 +138,19 @@
 
 
 
+
+
   <script type="text/javascript">
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?46036785cefdb5515cc9fc4776a0afdb";
+      hm.src = "https://hm.baidu.com/hm.js?46036785cefdb5515cc9fc4776a0afdb";
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     })();
   </script>
+
+
 
 
 
@@ -152,25 +170,29 @@
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
 
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">云销雨霁</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">云销雨霁</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">云销雨霁 彩彻区明</p>
+      
   </div>
-  <p class="site-subtitle">云销雨霁 彩彻区明</p>
-</div>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
 <nav class="site-nav">
@@ -238,6 +260,7 @@
 </nav>
 
 
+
  </div>
     </header>
 
@@ -251,13 +274,23 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://blog.chuanci.cc/chuanci/cj06mn8sm00066l8y9t2s5nb5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="传慈">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="云销雨霁">
+    </span>
 
     
       <header class="post-header">
@@ -269,7 +302,7 @@
             
               
                 
-                <a class="post-title-link" href="/chuanci/cj06ki6gx00073u8ytl71xfn0/" itemprop="url">
+                <a class="post-title-link" href="/chuanci/cj06mn8sm00066l8y9t2s5nb5/" itemprop="url">
                   Android工具类
                 </a>
               
@@ -279,13 +312,21 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-03T17:10:37+08:00" content="2016-07-03">
-              2016-07-03
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-03T17:10:37+08:00">
+                2016-07-03
+              </time>
+            
+
+            
+
+            
           </span>
 
           
@@ -293,20 +334,26 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/chuanci/cj06ki6gx00073u8ytl71xfn0/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="chuanci/cj06ki6gx00073u8ytl71xfn0/" itemprop="commentsCount"></span>
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/chuanci/cj06mn8sm00066l8y9t2s5nb5/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="chuanci/cj06mn8sm00066l8y9t2s5nb5/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
@@ -320,11 +367,13 @@
       
         
           <p>收集了一些常用的工具类</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/chuanci/cj06ki6gx00073u8ytl71xfn0/#more" rel="contents">
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/chuanci/cj06mn8sm00066l8y9t2s5nb5/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
       
     </div>
@@ -337,7 +386,10 @@
       
     </div>
 
+
     <footer class="post-footer">
+      
+
       
 
       
@@ -354,13 +406,23 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://blog.chuanci.cc/chuanci/cj06mn8tg000u6l8y94qdi8ty/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="传慈">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="云销雨霁">
+    </span>
 
     
       <header class="post-header">
@@ -372,7 +434,7 @@
             
               
                 
-                <a class="post-title-link" href="/chuanci/cj06ki6hr000y3u8yazwbm9g8/" itemprop="url">
+                <a class="post-title-link" href="/chuanci/cj06mn8tg000u6l8y94qdi8ty/" itemprop="url">
                   属性动画
                 </a>
               
@@ -382,13 +444,21 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-30T11:08:26+08:00" content="2016-05-30">
-              2016-05-30
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-30T11:08:26+08:00">
+                2016-05-30
+              </time>
+            
+
+            
+
+            
           </span>
 
           
@@ -396,20 +466,26 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/chuanci/cj06ki6hr000y3u8yazwbm9g8/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="chuanci/cj06ki6hr000y3u8yazwbm9g8/" itemprop="commentsCount"></span>
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/chuanci/cj06mn8tg000u6l8y94qdi8ty/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="chuanci/cj06mn8tg000u6l8y94qdi8ty/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
@@ -423,11 +499,13 @@
       
         
           <p>属性动画是API 11加入的特性,<br>使用<a href="http://nineoldandroids.com">nineoldandroids库</a>,可以在API 11以下使用属性动画,但底层是用View动画来实现的.<br>它可以对任一对象(Object)做动画,甚至可以没有对象.<br>它通过反射来set某个属性,如果没有提供初始值,那么就会在动画开始时调用get某属性的方法.</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/chuanci/cj06ki6hr000y3u8yazwbm9g8/#more" rel="contents">
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/chuanci/cj06mn8tg000u6l8y94qdi8ty/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
       
     </div>
@@ -440,7 +518,10 @@
       
     </div>
 
+
     <footer class="post-footer">
+      
+
       
 
       
@@ -457,13 +538,23 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://blog.chuanci.cc/java/cj06mn8t2000i6l8yoe118au9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="传慈">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="云销雨霁">
+    </span>
 
     
       <header class="post-header">
@@ -475,7 +566,7 @@
             
               
                 
-                <a class="post-title-link" href="/java/cj06ki6ha000j3u8yx77bk2zh/" itemprop="url">
+                <a class="post-title-link" href="/java/cj06mn8t2000i6l8yoe118au9/" itemprop="url">
                   Java注解
                 </a>
               
@@ -485,24 +576,36 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-20T22:23:08+08:00" content="2016-05-20">
-              2016-05-20
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-20T22:23:08+08:00">
+                2016-05-20
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/java/" itemprop="url" rel="index">
                     <span itemprop="name">java</span>
                   </a>
@@ -510,7 +613,6 @@
 
                 
                 
-
               
             </span>
           
@@ -518,20 +620,26 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/java/cj06ki6ha000j3u8yx77bk2zh/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="java/cj06ki6ha000j3u8yx77bk2zh/" itemprop="commentsCount"></span>
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/java/cj06mn8t2000i6l8yoe118au9/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="java/cj06mn8t2000i6l8yoe118au9/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
@@ -545,11 +653,13 @@
       
         
           <p>注解（Annotation），也叫元数据。一种代码级别的说明。<br>它是JDK1.5及以后版本引入的一个特性，与类、接口、枚举是在同一个层次。<br>它可以声明在包、类、字段、方法、局部变量、方法参数等的前面，用来对这些元素进行说明，注释.</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/java/cj06ki6ha000j3u8yx77bk2zh/#more" rel="contents">
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/java/cj06mn8t2000i6l8yoe118au9/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
       
     </div>
@@ -562,7 +672,10 @@
       
     </div>
 
+
     <footer class="post-footer">
+      
+
       
 
       
@@ -579,13 +692,23 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://blog.chuanci.cc/chuanci/cj06mn8s700006l8y6iz04bv1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="传慈">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="云销雨霁">
+    </span>
 
     
       <header class="post-header">
@@ -597,7 +720,7 @@
             
               
                 
-                <a class="post-title-link" href="/chuanci/cj06ki6gh00013u8ylbehzlpv/" itemprop="url">
+                <a class="post-title-link" href="/chuanci/cj06mn8s700006l8y6iz04bv1/" itemprop="url">
                   AndroidUI之PopupWindow
                 </a>
               
@@ -607,13 +730,21 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-16T11:33:21+08:00" content="2016-04-16">
-              2016-04-16
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-16T11:33:21+08:00">
+                2016-04-16
+              </time>
+            
+
+            
+
+            
           </span>
 
           
@@ -621,20 +752,26 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/chuanci/cj06ki6gh00013u8ylbehzlpv/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="chuanci/cj06ki6gh00013u8ylbehzlpv/" itemprop="commentsCount"></span>
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/chuanci/cj06mn8s700006l8y6iz04bv1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="chuanci/cj06mn8s700006l8y6iz04bv1/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
@@ -648,11 +785,13 @@
       
         
           <p>PopupWindow这个类用来实现一个弹出框，可以使用任意布局的View作为其内容，这个弹出框是悬浮在当前activity之上的。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/chuanci/cj06ki6gh00013u8ylbehzlpv/#more" rel="contents">
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/chuanci/cj06mn8s700006l8y6iz04bv1/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
       
     </div>
@@ -665,7 +804,10 @@
       
     </div>
 
+
     <footer class="post-footer">
+      
+
       
 
       
@@ -682,13 +824,23 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://blog.chuanci.cc/chuanci/cj06mn8sc00016l8y8liavfia/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="传慈">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="云销雨霁">
+    </span>
 
     
       <header class="post-header">
@@ -700,7 +852,7 @@
             
               
                 
-                <a class="post-title-link" href="/chuanci/cj06ki6gl00023u8y958uoeg5/" itemprop="url">
+                <a class="post-title-link" href="/chuanci/cj06mn8sc00016l8y8liavfia/" itemprop="url">
                   AndroidUI之Dialog
                 </a>
               
@@ -710,13 +862,21 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-09T13:51:55+08:00" content="2016-04-09">
-              2016-04-09
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-09T13:51:55+08:00">
+                2016-04-09
+              </time>
+            
+
+            
+
+            
           </span>
 
           
@@ -724,20 +884,26 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/chuanci/cj06ki6gl00023u8y958uoeg5/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="chuanci/cj06ki6gl00023u8y958uoeg5/" itemprop="commentsCount"></span>
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/chuanci/cj06mn8sc00016l8y8liavfia/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="chuanci/cj06mn8sc00016l8y8liavfia/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
@@ -751,11 +917,13 @@
       
         
           <p>对话框.</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/chuanci/cj06ki6gl00023u8y958uoeg5/#more" rel="contents">
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/chuanci/cj06mn8sc00016l8y8liavfia/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
       
     </div>
@@ -768,7 +936,10 @@
       
     </div>
 
+
     <footer class="post-footer">
+      
+
       
 
       
@@ -785,13 +956,23 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://blog.chuanci.cc/chuanci/cj06mn8tm00126l8yunr2krr6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="传慈">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="云销雨霁">
+    </span>
 
     
       <header class="post-header">
@@ -803,7 +984,7 @@
             
               
                 
-                <a class="post-title-link" href="/chuanci/cj06ki6gr00043u8yc1d91488/" itemprop="url">
+                <a class="post-title-link" href="/chuanci/cj06mn8tm00126l8yunr2krr6/" itemprop="url">
                   AndroidUI之Toast
                 </a>
               
@@ -813,13 +994,21 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-02T19:21:39+08:00" content="2016-04-02">
-              2016-04-02
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-02T19:21:39+08:00">
+                2016-04-02
+              </time>
+            
+
+            
+
+            
           </span>
 
           
@@ -827,20 +1016,26 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/chuanci/cj06ki6gr00043u8yc1d91488/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="chuanci/cj06ki6gr00043u8yc1d91488/" itemprop="commentsCount"></span>
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/chuanci/cj06mn8tm00126l8yunr2krr6/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="chuanci/cj06mn8tm00126l8yunr2krr6/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
@@ -854,11 +1049,13 @@
       
         
           <p>一个可视控件,用于向用户显示一些提示.</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/chuanci/cj06ki6gr00043u8yc1d91488/#more" rel="contents">
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/chuanci/cj06mn8tm00126l8yunr2krr6/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
       
     </div>
@@ -871,7 +1068,10 @@
       
     </div>
 
+
     <footer class="post-footer">
+      
+
       
 
       
@@ -888,13 +1088,23 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://blog.chuanci.cc/chuanci/cj06mn8sq00086l8yvzjwgo2x/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="传慈">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="云销雨霁">
+    </span>
 
     
       <header class="post-header">
@@ -906,7 +1116,7 @@
             
               
                 
-                <a class="post-title-link" href="/chuanci/cj06ki6gu00053u8yoeit19tj/" itemprop="url">
+                <a class="post-title-link" href="/chuanci/cj06mn8sq00086l8yvzjwgo2x/" itemprop="url">
                   Android事件分发机制
                 </a>
               
@@ -916,13 +1126,21 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-02-18T15:35:01+08:00" content="2016-02-18">
-              2016-02-18
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-02-18T15:35:01+08:00">
+                2016-02-18
+              </time>
+            
+
+            
+
+            
           </span>
 
           
@@ -930,20 +1148,26 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/chuanci/cj06ki6gu00053u8yoeit19tj/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="chuanci/cj06ki6gu00053u8yoeit19tj/" itemprop="commentsCount"></span>
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/chuanci/cj06mn8sq00086l8yvzjwgo2x/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="chuanci/cj06mn8sq00086l8yvzjwgo2x/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
@@ -957,11 +1181,13 @@
       
         
           <p>Android如此受欢迎，就在于其优秀的交互性，这其中，Android优秀的事件分发机制功不可没。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/chuanci/cj06ki6gu00053u8yoeit19tj/#more" rel="contents">
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/chuanci/cj06mn8sq00086l8yvzjwgo2x/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
       
     </div>
@@ -974,7 +1200,10 @@
       
     </div>
 
+
     <footer class="post-footer">
+      
+
       
 
       
@@ -991,13 +1220,23 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://blog.chuanci.cc/chuanci/cj06mn8t0000f6l8y6llzln6d/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="传慈">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="云销雨霁">
+    </span>
 
     
       <header class="post-header">
@@ -1009,7 +1248,7 @@
             
               
                 
-                <a class="post-title-link" href="/chuanci/cj06ki6h7000e3u8y7mz6i5mv/" itemprop="url">
+                <a class="post-title-link" href="/chuanci/cj06mn8t0000f6l8y6llzln6d/" itemprop="url">
                   CAS实现SSO单点登录原理
                 </a>
               
@@ -1019,13 +1258,21 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-11T21:21:45+08:00" content="2016-01-11">
-              2016-01-11
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-01-11T21:21:45+08:00">
+                2016-01-11
+              </time>
+            
+
+            
+
+            
           </span>
 
           
@@ -1033,20 +1280,26 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/chuanci/cj06ki6h7000e3u8y7mz6i5mv/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="chuanci/cj06ki6h7000e3u8y7mz6i5mv/" itemprop="commentsCount"></span>
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/chuanci/cj06mn8t0000f6l8y6llzln6d/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="chuanci/cj06mn8t0000f6l8y6llzln6d/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-
-          
           
 
           
+
+          
+
+          
+
         </div>
       </header>
     
@@ -1066,11 +1319,13 @@
 <li>再用ST去请求用户数据</li>
 </ol>
 <p>每一个需要登录操作的接口,都要在请求头里加入ST.<br>如果返回ST失效,就用TGT再去请求一个ST.<br>请求到ST以后,再去请求需要登录操作的接口.<br>如果TGT也失效,就需要重新登录了.  </p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/chuanci/cj06ki6h7000e3u8y7mz6i5mv/#more" rel="contents">
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/chuanci/cj06mn8t0000f6l8y6llzln6d/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1083,7 +1338,10 @@
       
     </div>
 
+
     <footer class="post-footer">
+      
+
       
 
       
@@ -1105,7 +1363,7 @@
   </nav>
 
 
-
+          
           </div>
           
 
@@ -1131,25 +1389,32 @@
 
       
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.png"
                alt="传慈" />
           <p class="site-author-name" itemprop="name">传慈</p>
-          <p class="site-description motion-element" itemprop="description">云销雨霁 彩彻区明</p>
+           
+              <p class="site-description motion-element" itemprop="description">云销雨霁 彩彻区明</p>
+          
         </div>
         <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">18</span>
-              <span class="site-state-item-name">日志</span>
-            </a>
-          </div>
 
           
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
             <div class="site-state-item site-state-categories">
-              <a href="/categories">
+              <a href="/categories/index.html">
                 <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               </a>
@@ -1157,8 +1422,10 @@
           
 
           
+            
+            
             <div class="site-state-item site-state-tags">
-              <a href="/tags">
+              <a href="/tags/index.html">
                 <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
@@ -1190,7 +1457,12 @@
         
         
 
+        
+
+
       </section>
+
+      
 
       
 
@@ -1208,21 +1480,12 @@
   
   &copy;  2015 - 
   <span itemprop="copyrightYear">2017</span>
-
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">传慈</span>
-
-
 </div>
 
-<div>
-
-  <span> 
-  <script src="https://s4.cnzz.com/z_stat.php?id=1260057121&web_id=1260057121" language="JavaScript"></script></span>
-
-</div>
 
 <div class="powered-by">
   由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
@@ -1234,7 +1497,6 @@
     NexT.Mist
   </a>
 </div>
-
 
 
         
@@ -1259,9 +1521,13 @@
       </div>
     </footer>
 
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-    </div>
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
   </div>
 
   
@@ -1281,6 +1547,7 @@
 
 
   
+
 
 
 
@@ -1306,21 +1573,21 @@
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
 
 
 
   
-  
-
   
 
   
 
+  
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
 
 
 
@@ -1350,12 +1617,24 @@
 
 
 
+
+
+
+
+
+
+
   
   
 
   
 
   
+
+  
+
+  
+
 
   
 
