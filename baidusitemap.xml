@@ -3,21 +3,20 @@
 
 
     
-    
   <url>
-    <loc>http://blog.chuanci.cc/swift/cj06pdvdc000tcl8yjty5b5jb/</loc>
-    <lastmod>2017-03-12T10:36:02.000Z</lastmod>
+    <loc>http://blog.chuanci.cc/android/cj06qe0dg0004el8yhf7y403f/</loc>
+    <lastmod>2017-03-12T13:43:52.000Z</lastmod>
     <data>
         <display>
-        <title>swift</title>
-        <pubTime>2016-11-08T05:08:24.000Z</pubTime>
+        <title>AndroidUI之Dialog</title>
+        <pubTime>2016-04-09T05:51:55.000Z</pubTime>
         
-        <tag>language</tag>
+        <tag>-dialog</tag>
          
          
            
              
-              <breadCrumb title="swift" url="http://blog.chuanci.cc/categories/swift/"/>
+              <breadCrumb title="android" url="http://blog.chuanci.cc/categories/android/"/>
           
         </display>
     </data>
@@ -25,14 +24,74 @@
 
     
   <url>
-    <loc>http://blog.chuanci.cc/java/cj06pdvcw000icl8yxe09c02r/</loc>
-    <lastmod>2017-03-11T17:00:42.000Z</lastmod>
+    <loc>http://blog.chuanci.cc/android/cj06qe0d60000el8yof906uic/</loc>
+    <lastmod>2017-03-12T13:43:41.000Z</lastmod>
+    <data>
+        <display>
+        <title>AndroidUI之PopupWindow</title>
+        <pubTime>2016-04-16T03:33:21.000Z</pubTime>
+        
+        <tag>-PopupWindow</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://blog.chuanci.cc/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.chuanci.cc/android/cj06qe0da0001el8yi9aycuga/</loc>
+    <lastmod>2017-03-12T13:43:25.000Z</lastmod>
+    <data>
+        <display>
+        <title>AndroidUI之Toast</title>
+        <pubTime>2016-04-02T11:21:39.000Z</pubTime>
+        
+        <tag>-toast</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://blog.chuanci.cc/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.chuanci.cc/sso/cj06qe0e1000kel8yoqbg7yk5/</loc>
+    <lastmod>2017-03-12T13:42:51.000Z</lastmod>
+    <data>
+        <display>
+        <title>CAS实现SSO单点登录原理</title>
+        <pubTime>2016-01-11T13:21:45.000Z</pubTime>
+        
+        <tag>－登录</tag>
+         
+         
+           
+             
+              <breadCrumb title="sso" url="http://blog.chuanci.cc/categories/sso/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.chuanci.cc/java/cj06qe0dy000iel8ylkc8du4o/</loc>
+    <lastmod>2017-03-12T13:42:27.000Z</lastmod>
     <data>
         <display>
         <title>Java注解</title>
         <pubTime>2016-05-20T14:23:08.000Z</pubTime>
         
-        <tag>Java</tag>
+        <tag>-注解</tag>
          
          
            
@@ -45,7 +104,68 @@
 
     
   <url>
-    <loc>http://blog.chuanci.cc/blog/cj06pdvcz000kcl8yofazw5lo/</loc>
+    <loc>http://blog.chuanci.cc/java/cj06qe0eb000vel8y1ax8oes5/</loc>
+    <lastmod>2017-03-12T13:42:07.000Z</lastmod>
+    <data>
+        <display>
+        <title>java集合与线程</title>
+        <pubTime>2016-12-20T07:20:43.000Z</pubTime>
+        
+        <tag>-java</tag>
+         
+         
+           
+             
+              <breadCrumb title="java" url="http://blog.chuanci.cc/categories/java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.chuanci.cc/swift/cj06qe0e9000sel8ypjf95aj5/</loc>
+    <lastmod>2017-03-12T13:41:48.000Z</lastmod>
+    <data>
+        <display>
+        <title>smali</title>
+        <pubTime>2016-12-11T05:30:09.000Z</pubTime>
+        
+        <tag>-language</tag>
+         
+         
+           
+             
+              <breadCrumb title="swift" url="http://blog.chuanci.cc/categories/swift/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.chuanci.cc/swift/cj06qe0ee000yel8yh0jandgw/</loc>
+    <lastmod>2017-03-12T13:41:28.000Z</lastmod>
+    <data>
+        <display>
+        <title>swift</title>
+        <pubTime>2016-11-08T05:08:24.000Z</pubTime>
+        
+        <tag>-language</tag>
+         
+         
+           
+             
+              <breadCrumb title="swift" url="http://blog.chuanci.cc/categories/swift/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://blog.chuanci.cc/blog/cj06qe0ds000cel8ydkglhm9a/</loc>
     <lastmod>2017-03-08T06:40:04.000Z</lastmod>
     <data>
         <display>
@@ -62,7 +182,7 @@
 
     
   <url>
-    <loc>http://blog.chuanci.cc/blog/cj06pdvct000gcl8y8cx66l4a/</loc>
+    <loc>http://blog.chuanci.cc/blog/cj06qe0e6000qel8y0qmrhipb/</loc>
     <lastmod>2017-03-08T06:38:38.000Z</lastmod>
     <data>
         <display>
@@ -79,7 +199,7 @@
 
     
   <url>
-    <loc>http://blog.chuanci.cc/blog/cj06pdvcl0008cl8y6cxl07b4/</loc>
+    <loc>http://blog.chuanci.cc/blog/cj06qe0dl0007el8yd7uzdn8i/</loc>
     <lastmod>2017-03-01T15:50:46.000Z</lastmod>
     <data>
         <display>
@@ -96,7 +216,7 @@
 
     
   <url>
-    <loc>http://blog.chuanci.cc/blog/cj06pdvd3000ocl8ypzcig35g/</loc>
+    <loc>http://blog.chuanci.cc/blog/cj06qe0e4000oel8ysegqc8zd/</loc>
     <lastmod>2017-03-01T03:31:42.000Z</lastmod>
     <data>
         <display>
@@ -113,7 +233,7 @@
 
     
   <url>
-    <loc>http://blog.chuanci.cc/blog/cj06pdvdf000wcl8y9nzrdghq/</loc>
+    <loc>http://blog.chuanci.cc/blog/cj06qe0eo0014el8y6p3qgs6n/</loc>
     <lastmod>2017-02-27T06:52:47.000Z</lastmod>
     <data>
         <display>
@@ -130,7 +250,7 @@
 
     
   <url>
-    <loc>http://blog.chuanci.cc/blog/cj06pdvdk0011cl8y4mtx27um/</loc>
+    <loc>http://blog.chuanci.cc/blog/cj06qe0em0011el8y2g4o4mfx/</loc>
     <lastmod>2017-02-25T02:49:32.000Z</lastmod>
     <data>
         <display>
@@ -146,43 +266,9 @@
     </url>
 
     
-  <url>
-    <loc>http://blog.chuanci.cc/blog/cj06pdvd4000pcl8y8t7pze13/</loc>
-    <lastmod>2016-12-20T09:01:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>java集合与线程</title>
-        <pubTime>2016-12-20T07:20:43.000Z</pubTime>
-        
-        <tag>language</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
     
   <url>
-    <loc>http://blog.chuanci.cc/blog/cj06pdvd7000rcl8ygzm2m0bi/</loc>
-    <lastmod>2016-12-12T06:22:35.000Z</lastmod>
-    <data>
-        <display>
-        <title>smali</title>
-        <pubTime>2016-12-11T05:30:09.000Z</pubTime>
-        
-        <tag>language</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.chuanci.cc/blog/cj06pdvdh000zcl8yvp2tls6g/</loc>
+    <loc>http://blog.chuanci.cc/blog/cj06qe0fp001uel8yd72f60wl/</loc>
     <lastmod>2016-12-07T12:33:55.000Z</lastmod>
     <data>
         <display>
@@ -199,7 +285,7 @@
 
     
   <url>
-    <loc>http://blog.chuanci.cc/blog/cj06pdvcg0006cl8y494tguiu/</loc>
+    <loc>http://blog.chuanci.cc/blog/cj06qe0dq000ael8ybardxrgx/</loc>
     <lastmod>2016-11-16T11:03:28.000Z</lastmod>
     <data>
         <display>
@@ -216,24 +302,7 @@
 
     
   <url>
-    <loc>http://blog.chuanci.cc/blog/cj06pdvcr000dcl8yc5fyow6e/</loc>
-    <lastmod>2016-08-03T10:33:01.000Z</lastmod>
-    <data>
-        <display>
-        <title>CAS实现SSO单点登录原理</title>
-        <pubTime>2016-01-11T13:21:45.000Z</pubTime>
-        
-        <tag>SSO</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.chuanci.cc/blog/cj06pdvco000bcl8ydwpy35hn/</loc>
+    <loc>http://blog.chuanci.cc/blog/cj06qe0dx000gel8yuz1qo01n/</loc>
     <lastmod>2016-08-03T10:30:23.000Z</lastmod>
     <data>
         <display>
@@ -250,58 +319,7 @@
 
     
   <url>
-    <loc>http://blog.chuanci.cc/blog/cj06pdvca0003cl8ywmea8zke/</loc>
-    <lastmod>2016-08-03T04:22:38.000Z</lastmod>
-    <data>
-        <display>
-        <title>AndroidUI之Dialog</title>
-        <pubTime>2016-04-09T05:51:55.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.chuanci.cc/blog/cj06pdvc00000cl8yf8h6jixj/</loc>
-    <lastmod>2016-08-03T04:22:25.000Z</lastmod>
-    <data>
-        <display>
-        <title>AndroidUI之PopupWindow</title>
-        <pubTime>2016-04-16T03:33:21.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.chuanci.cc/blog/cj06pdvc40001cl8y432fwtd2/</loc>
-    <lastmod>2016-08-03T04:22:16.000Z</lastmod>
-    <data>
-        <display>
-        <title>AndroidUI之Toast</title>
-        <pubTime>2016-04-02T11:21:39.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.chuanci.cc/blog/cj06pdvcc0004cl8yp304ewht/</loc>
+    <loc>http://blog.chuanci.cc/blog/cj06qe0di0005el8ymlzucqsj/</loc>
     <lastmod>2016-08-03T04:21:28.000Z</lastmod>
     <data>
         <display>
