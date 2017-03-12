@@ -116,7 +116,7 @@
       apiKey: 'f41a76ee231e640a8aedeef630f4ae4b',
       indexName: 'chuanci',
       hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"无法搜索到关于 ${query} 的内容","hits_stats":"在 ${time} ms 内搜索到 ${hits} 结果 "}
     }
   };
 </script>
@@ -251,9 +251,47 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
   
 </nav>
 
@@ -284,7 +322,7 @@
 
       <h1 class="post-title">
         
-            <a class="post-title-link" href="/blog/android/cj06v1hm1000s2b8yvbztqtbq/" itemprop="url">
+            <a class="post-title-link" href="/blog/android/cj06vaoj1000o348ym82jdzq4/" itemprop="url">
               
                 <span itemprop="name">android6.0动态权限</span>
               
@@ -312,7 +350,7 @@
 
       <h1 class="post-title">
         
-            <a class="post-title-link" href="/blog/android/cj06v1hm3000v2b8yda1vu5m3/" itemprop="url">
+            <a class="post-title-link" href="/blog/android/cj06vaojg0012348yvkqpg4k5/" itemprop="url">
               
                 <span itemprop="name">android控件edittext</span>
               
@@ -340,7 +378,7 @@
 
       <h1 class="post-title">
         
-            <a class="post-title-link" href="/blog/android/cj06v1hly000p2b8yusrla0b3/" itemprop="url">
+            <a class="post-title-link" href="/blog/android/cj06vaoio000e348y4rm3o00t/" itemprop="url">
               
                 <span itemprop="name">adb远程调试</span>
               
@@ -368,7 +406,7 @@
 
       <h1 class="post-title">
         
-            <a class="post-title-link" href="/blog/android/cj06v1hlp000e2b8yoercdnft/" itemprop="url">
+            <a class="post-title-link" href="/blog/android/cj06vaoik000c348yopyx5n3c/" itemprop="url">
               
                 <span itemprop="name">BottomNavigationBar</span>
               
@@ -396,7 +434,7 @@
 
       <h1 class="post-title">
         
-            <a class="post-title-link" href="/blog/android/cj06v1hmj001c2b8y6u4a35ks/" itemprop="url">
+            <a class="post-title-link" href="/blog/android/cj06vaojt001c348ypne26aj7/" itemprop="url">
               
                 <span itemprop="name">逆向popstar</span>
               
@@ -424,7 +462,7 @@
 
       <h1 class="post-title">
         
-            <a class="post-title-link" href="/blog/android/cj06v1hlg00072b8y7da4jtdk/" itemprop="url">
+            <a class="post-title-link" href="/blog/android/cj06vaoi50006348yg8nmqomx/" itemprop="url">
               
                 <span itemprop="name">Android之Json解析</span>
               
@@ -452,7 +490,7 @@
 
       <h1 class="post-title">
         
-            <a class="post-title-link" href="/blog/android/cj06v1hlm000c2b8yn5j7axhr/" itemprop="url">
+            <a class="post-title-link" href="/blog/android/cj06vaoi90007348yfkfcpr1j/" itemprop="url">
               
                 <span itemprop="name">Android工具类</span>
               
@@ -480,7 +518,7 @@
 
       <h1 class="post-title">
         
-            <a class="post-title-link" href="/blog/android/cj06v1hmf00182b8y2mia11vx/" itemprop="url">
+            <a class="post-title-link" href="/blog/android/cj06vaojv001f348yw8nizhuu/" itemprop="url">
               
                 <span itemprop="name">属性动画</span>
               
@@ -508,7 +546,7 @@
 
       <h1 class="post-title">
         
-            <a class="post-title-link" href="/blog/android/cj06v1hl000032b8y8nb14haj/" itemprop="url">
+            <a class="post-title-link" href="/blog/android/cj06vaohu0003348y7jb1bf3e/" itemprop="url">
               
                 <span itemprop="name">AndroidUI之PopupWindow</span>
               
@@ -536,7 +574,7 @@
 
       <h1 class="post-title">
         
-            <a class="post-title-link" href="/blog/android/cj06v1hkt00012b8yw0pegri9/" itemprop="url">
+            <a class="post-title-link" href="/blog/android/cj06vaohm0001348yzu5lpjox/" itemprop="url">
               
                 <span itemprop="name">AndroidUI之Dialog</span>
               
@@ -837,6 +875,19 @@
   
 
   
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.0"></script>
+
 
 
   

@@ -116,7 +116,7 @@
       apiKey: 'f41a76ee231e640a8aedeef630f4ae4b',
       indexName: 'chuanci',
       hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"无法搜索到关于 ${query} 的内容","hits_stats":"在 ${time} ms 内搜索到 ${hits} 结果 "}
     }
   };
 </script>
@@ -251,9 +251,47 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
   
 </nav>
 
@@ -301,7 +339,7 @@
 
       <h1 class="post-title">
         
-            <a class="post-title-link" href="/blog/android/cj06v1hm1000s2b8yvbztqtbq/" itemprop="url">
+            <a class="post-title-link" href="/blog/android/cj06vaoj1000o348ym82jdzq4/" itemprop="url">
               
                 <span itemprop="name">android6.0动态权限</span>
               
@@ -338,7 +376,7 @@
 
       <h1 class="post-title">
         
-            <a class="post-title-link" href="/blog/android/cj06v1hm3000v2b8yda1vu5m3/" itemprop="url">
+            <a class="post-title-link" href="/blog/android/cj06vaojg0012348yvkqpg4k5/" itemprop="url">
               
                 <span itemprop="name">android控件edittext</span>
               
@@ -375,7 +413,7 @@
 
       <h1 class="post-title">
         
-            <a class="post-title-link" href="/blog/android/cj06v1hly000p2b8yusrla0b3/" itemprop="url">
+            <a class="post-title-link" href="/blog/android/cj06vaoio000e348y4rm3o00t/" itemprop="url">
               
                 <span itemprop="name">adb远程调试</span>
               
@@ -680,6 +718,19 @@
   
 
   
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.0"></script>
+
 
 
   
